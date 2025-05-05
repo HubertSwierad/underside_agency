@@ -1,22 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './App.css';
 
 function App() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.log("Autoplay failed:", error);
-      });
-    }
-  }, []);
 
   return (
     <div className="App">
       <div className="video-container">
         <video
-          ref={videoRef}
           autoPlay
           loop
           muted
