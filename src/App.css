@@ -7,7 +7,7 @@ body {
 
 .App {
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -79,7 +79,7 @@ body {
 .controls-bar {
   position: absolute;
   left: 50%;
-  bottom: 24px;
+  bottom: max(16px, env(safe-area-inset-bottom) + 12px);
   transform: translateX(-50%);
   z-index: 3;
   display: flex;
