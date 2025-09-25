@@ -118,27 +118,6 @@ function App() {
               play
             </button>
           )}
-          {!showPlayButton && (
-            <button
-              type="button"
-              className="pause-overlay"
-              aria-label="Pause video"
-              onClick={() => {
-                const video = videoRef.current;
-                if (video) {
-                  video.pause();
-                  setShowPlayButton(true);
-                }
-                const audio = audioRef.current;
-                if (audio) {
-                  audio.pause();
-                }
-                setIsMusicOn(false);
-              }}
-            >
-              pause
-            </button>
-          )}
           <button
             type="button"
             className="music-overlay"
