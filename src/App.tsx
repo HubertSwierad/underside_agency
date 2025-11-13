@@ -103,51 +103,60 @@ function App() {
         )}
         <div className="controls-bar" aria-hidden={false}>
           {showPlayButton && (
-            <button
-              type="button"
-              className="play-overlay"
-              aria-label="Play video"
-              onClick={() => {
-                const video = videoRef.current;
-                if (video) {
-                  video.muted = true;
-                  video.play().then(() => setShowPlayButton(false)).catch(() => setShowPlayButton(true));
-                }
-              }}
-            >
-              play
-            </button>
+              <button
+                  type="button"
+                  className="play-overlay"
+                  aria-label="Play video"
+                  onClick={() => {
+                    const video = videoRef.current;
+                    if (video) {
+                      video.muted = true;
+                      video.play().then(() => setShowPlayButton(false)).catch(() => setShowPlayButton(true));
+                    }
+                  }}
+              >
+                play
+              </button>
           )}
           <button
-            type="button"
-            className="music-overlay"
-            aria-label={isMusicOn ? 'Wyłącz muzykę' : 'Włącz muzykę'}
-            onClick={toggleMusic}
+              type="button"
+              className="music-overlay"
+              aria-label={isMusicOn ? 'Wyłącz muzykę' : 'Włącz muzykę'}
+              onClick={toggleMusic}
           >
             {isMusicOn ? 'sound: on' : 'sound: off'}
           </button>
           <a
-            className="social-button"
-            href="mailto:contact@underside.agency"
-            aria-label="Email"
+              className="social-button"
+              href="mailto:contact@underside.agency"
+              aria-label="Email"
           >
             mail
           </a>
           <a
-            className="social-button"
-            href="https://www.instagram.com/underside.agency/"
-            aria-label="Instagram"
-            target="_blank"
-            rel="noopener noreferrer"
+              className="social-button"
+              href="https://www.instagram.com/underside.agency/"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
           >
             instagram
           </a>
+          <a
+              className="social-button"
+              href="https://www.youtube.com/@UNDERSIDEAGENCY"
+              aria-label="YouTube"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            youtube
+          </a>
         </div>
         <img
-          className="logo-overlay"
-          src="/Logo.png"
-          alt="Logo"
-          aria-hidden="true"
+            className="logo-overlay"
+            src="/Logo.png"
+            alt="Logo"
+            aria-hidden="true"
         />
       </div>
     </div>
