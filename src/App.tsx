@@ -135,7 +135,7 @@ function App() {
           </a>
           <a
               className="social-button"
-              href="https://www.instagram.com/underside.agency/"
+              href="https://www.instagram.com/underside.agency?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               aria-label="Instagram"
               target="_blank"
               rel="noopener noreferrer"
