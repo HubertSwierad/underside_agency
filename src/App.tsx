@@ -135,12 +135,21 @@ function App() {
           </a>
           <a
               className="social-button"
+              href="https://underside.online"
+              aria-label="Underside Magazine"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            magazine
+          </a>
+          <a
+              className="social-button"
               href="https://www.instagram.com/underside.agency/"
               aria-label="Instagram"
               target="_blank"
               rel="noopener noreferrer"
           >
-            instagram
+            ig
           </a>
           <a
               className="social-button"
@@ -149,7 +158,7 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
           >
-            youtube
+            yt
           </a>
         </div>
         <img
