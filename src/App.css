@@ -216,3 +216,22 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* Default: mobile */
+.short-label {
+  display: inline;
+}
+.long-label {
+  display: none;
+}
+
+/* Desktop: wider than 600px */
+@media (min-width: 600px) {
+  .short-label {
+    display: none;
+  }
+  .long-label {
+    display: inline;
+  }
+}
+

@@ -149,8 +149,10 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
           >
-            ig
+            <span className="short-label">ig</span>
+            <span className="long-label">instagram</span>
           </a>
+
           <a
               className="social-button"
               href="https://www.youtube.com/@UNDERSIDEAGENCY"
@@ -158,7 +160,8 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
           >
-            yt
+            <span className="short-label">yt</span>
+            <span className="long-label">youtube</span>
           </a>
         </div>
         <img
