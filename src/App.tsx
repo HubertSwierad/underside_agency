@@ -175,7 +175,7 @@ function App() {
         </div>
         <img
             className="logo-overlay"
-            src="/Logo.png"
+            src="/Logo_reverse.png"
             alt="Logo"
             aria-hidden="true"
         />
