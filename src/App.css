@@ -104,7 +104,6 @@ body {
   height: 28px;
 }
 
-.social-button:hover { opacity: 0.85; }
 
 .play-overlay {
   position: relative;
@@ -127,9 +126,6 @@ body {
   height: 28px;
 }
 
-.play-overlay:hover {
-  opacity: 0.8;
-}
 
 .music-overlay {
   position: relative;
@@ -163,9 +159,6 @@ body {
   padding: 0;
 }
 
-.music-overlay:hover {
-  opacity: 0.8;
-}
 
 .music-overlay .icon {
   width: auto;
