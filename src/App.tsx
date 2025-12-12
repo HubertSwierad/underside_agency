@@ -152,7 +152,16 @@ function App() {
             <span className="short-label">ig</span>
             <span className="long-label">instagram</span>
           </a>
-
+          <a
+              className="social-button"
+              href="https://www.facebook.com/profile.php?id=61584588110824"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            <span className="short-label">fb</span>
+            <span className="long-label">facebook</span>
+          </a>
           <a
               className="social-button"
               href="https://www.youtube.com/@UNDERSIDEAGENCY"
