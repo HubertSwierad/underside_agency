@@ -5,6 +5,13 @@ body {
   overflow: hidden;
 }
 
+button {
+  font-family: inherit;
+  font-weight: inherit;
+  -webkit-font-smoothing: inherit;
+  appearance: none;
+}
+
 .App {
   width: 100vw;
   height: 100svh;
@@ -97,7 +104,7 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .social-button .icon {
@@ -120,7 +127,7 @@ body {
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .play-overlay .icon {
@@ -130,7 +137,7 @@ body {
 
 
 .music-overlay {
-  font-weight: bold;
+  font-weight: 500;
   position: relative;
   width: auto;
   height: auto;
@@ -160,14 +167,14 @@ body {
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 
 .music-overlay .icon {
   width: auto;
   height: 28px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .wait-overlay {
