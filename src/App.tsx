@@ -106,7 +106,7 @@ function App() {
               <button
                   type="button"
                   className="play-overlay"
-                  aria-label="Play video"
+                  aria-label="PLAY"
                   onClick={() => {
                     const video = videoRef.current;
                     if (video) {
@@ -124,14 +124,14 @@ function App() {
               aria-label={isMusicOn ? 'Wyłącz muzykę' : 'Włącz muzykę'}
               onClick={toggleMusic}
           >
-            {isMusicOn ? 'sound: on' : 'sound: off'}
+            {isMusicOn ? 'SOUND: ON' : 'SOUND: OFF'}
           </button>
           <a
               className="social-button"
               href="mailto:contact@underside.agency"
               aria-label="Email"
           >
-            mail
+            MAIL
           </a>
           <a
               className="social-button"
@@ -140,7 +140,7 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
           >
-            magazine
+           MAGAZINE
           </a>
           <a
               className="social-button"
@@ -149,8 +149,8 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
           >
-            <span className="short-label">ig</span>
-            <span className="long-label">instagram</span>
+            <span className="short-label">IG</span>
+            <span className="long-label">INSTAGRAM</span>
           </a>
           <a
               className="social-button"
@@ -159,8 +159,8 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
           >
-            <span className="short-label">fb</span>
-            <span className="long-label">facebook</span>
+            <span className="short-label">FB</span>
+            <span className="long-label">FACEBOOK</span>
           </a>
           <a
               className="social-button"
@@ -169,8 +169,8 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
           >
-            <span className="short-label">yt</span>
-            <span className="long-label">youtube</span>
+            <span className="short-label">YT</span>
+            <span className="long-label">YOUTUBE</span>
           </a>
         </div>
         <img
