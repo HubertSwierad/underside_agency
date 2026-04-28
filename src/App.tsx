@@ -149,7 +149,7 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
           >
-            <span className="short-label">IGNSTAGRAM</span>
+            <span className="short-label">IG</span>
             <span className="long-label">INSTAGRAM</span>
           </a>
           <a
@@ -159,7 +159,7 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
           >
-            <span className="short-label">FACEBOOK</span>
+            <span className="short-label">FB</span>
             <span className="long-label">FACEBOOK</span>
           </a>
           <a
@@ -169,7 +169,7 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
           >
-            <span className="short-label">YOUTUBE</span>
+            <span className="short-label">YT</span>
             <span className="long-label">YOUTUBE</span>
           </a>
         </div>
