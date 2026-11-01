@@ -1,0 +1,969 @@
+import youtubeCovers from './youtubeCovers.json';
+
+export type WorkMedia =
+  | { type: 'text'; title: string; body: string }
+  | { type: 'image'; src: string; alt: string; caption?: string }
+  | { type: 'youtube'; src: string; url: string; title: string; caption?: string }
+  | { type: 'video'; src: string; title: string; poster?: string; sizeBytes?: number; aspectRatio?: number; hasAudio?: boolean; caption?: string };
+
+export interface WorkProject {
+  slug: string;
+  title: string;
+  year: string;
+  cover: string;
+  story: string;
+  tags?: string[];
+  media: WorkMedia[];
+}
+
+// The first slide uses title, year and story. The cover follows.
+// Add text, photos and videos to media in the exact order they should appear.
+// Text: { type: 'text', title: 'Photoshoot & atmosphere', body: 'Your section description.' }
+// Image: { type: 'image', src: '/Portfolio/Project/photo.jpg', alt: 'Describe the photo' }
+// YouTube: { type: 'youtube', src: '/Portfolio/Project/film-cover.jpg', url: 'https://www.youtube.com/watch?v=VIDEO_ID', title: 'Full project film' }
+// Optional sizeBytes skips the size check; unknown sizes load only on Play if the check fails.
+// Video: { type: 'video', src: '/Portfolio/Project/film.mp4', title: 'Project film', poster: '/Portfolio/Project/poster.jpg' }
+export const projects: WorkProject[] = [
+  {
+    "slug": "horizon-festival",
+    "title": "HORIZON FESTIVAL",
+    "year": "2026",
+    "cover": "/Portfolio/Horizon/cover.jpeg",
+    "story": "Horizon Festival needed a clear identity to introduce an electronic music festival outside the big cities. We handled brand direction, art direction, photography and a campaign film. The result was a consistent look across campaign materials and event communication, created with a limited budget.",
+    "media": [
+      {
+        "type": "text",
+        "title": "Artists & atmosphere",
+        "body": "We photographed the artists during their sets, capturing performances and stage lighting. The series shows the music and energy at the centre of the festival."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/7BD0A8D8-79A1-4050-9B00-16613FD95101_1_105_c.jpeg",
+        "alt": "Two artists performing under yellow-green stage lights"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/02D21377-BF31-4EE8-A944-32D9CD8E31A6_1_105_c.jpeg",
+        "alt": "DJ performing under red stage lights"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/6E65A3ED-5217-48BF-BAE2-986E1B574AB5_1_105_c.jpeg",
+        "alt": "DJ framed by golden beams of light"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/2F3FBE59-5C9A-48DC-ADCF-624809A84267_1_102_o.jpeg",
+        "alt": "Artist leaning over the decks under blue stage lighting"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/E27D6790-9470-4DF5-AF46-FAD4452E4C72_1_102_o.jpeg",
+        "alt": "Artist mixing vinyl outdoors, framed by green foliage"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/74017F24-896A-4C93-857E-4E6DD9022ACD_1_105_c.jpeg",
+        "alt": "Artist with dreadlocks performing against red and green lighting"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/D06662E5-5EBB-43FA-92A3-04D983721F85_1_105_c.jpeg",
+        "alt": "Singer holding a microphone under blue stage lights"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/E0081C03-722E-484D-933A-857F6D62EF38_1_102_o.jpeg",
+        "alt": "Vocalist performing under green and orange lighting"
+      },
+      {
+        "type": "text",
+        "title": "Inside the crowd",
+        "body": "We also photographed the audience, from dancing to conversations between sets. These images complete the event coverage by showing the people taking part."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/F0BD32E6-8256-472B-910F-72FBC25FE65E_1_102_o.jpeg",
+        "alt": "DJ performing at the decks under red stage lighting"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/066D6714-ACA1-49A4-959B-916D495806AC_1_105_c.jpeg",
+        "alt": "Crowd silhouetted against a turquoise-lit stage"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/571CED53-1B1F-49EC-A16F-091BEFD3346C_1_102_o.jpeg",
+        "alt": "Festival guests dancing in warm stage light"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/B935A41B-97C9-4C33-8D0D-9755A46EABE5_1_105_c.jpeg",
+        "alt": "Guest wearing sunglasses on the dance floor"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/AD9C9907-21C0-4035-8A8F-A374F5447D18_1_105_c.jpeg",
+        "alt": "Dancer raising an arm in golden stage light"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/A0329C4E-E63D-4698-B4BE-53AD2D5B2D78_1_102_o.jpeg",
+        "alt": "Festival guests talking in blue light"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/41C8ADA8-0DA0-4415-AE19-C469182EB7C6_1_102_o.jpeg",
+        "alt": "Artist looking back from the decks in blue light"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/D22EA9AB-BE37-4565-A25F-B9CDDBE42A6D_1_105_c.jpeg",
+        "alt": "Guest raising their arms against blue stage light"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/8030C0EA-E3A7-4386-A36F-E1E8482532F1_1_105_c.jpeg",
+        "alt": "Guests smiling together in warm festival light"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/8CF5C626-07F4-4C10-8604-681AB65F12C1.jpeg",
+        "alt": "View across the mixing desk toward the festival crowd"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/4BB972B5-ABCE-4826-AD1F-91A5E9B003BB_1_105_c.jpeg",
+        "alt": "Artist and guests framed by warm stage lighting"
+      },
+      {
+        "type": "text",
+        "title": "Brand & art direction",
+        "body": "The festival needed a consistent look across its materials. We developed the visual identity and applied it to campaign graphics, photography and event communication, keeping the work focused on what the available budget could support."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/FF33FE58-5928-480F-9349-EF6F1F75BE77_1_102_o.jpeg",
+        "alt": "Horizon Festival identity over a blue-lit artist portrait"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/8C5CB8D0-53B7-46D9-BFF4-D0E3817AE1C5_1_105_c.jpeg",
+        "alt": "Horizon campaign poster against a concrete wall"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/eeee.jpg",
+        "alt": "Grid of Horizon Festival live photography"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/Post Portrait 3@1x.jpg",
+        "alt": "Horizon Festival logo sticker on a laptop"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Horizon/Post Portrait@1x.jpg",
+        "alt": "Horizon Festival social profile displayed on a phone"
+      },
+      {
+        "type": "text",
+        "title": "Introductory campaign",
+        "body": "We created a campaign film to introduce Horizon Festival. It brought the music, people and atmosphere together in a first introduction for audiences."
+      },
+      {
+        "type": "youtube",
+        "src": "/Portfolio/Horizon/watch?v=0USZvW7Ti4w.png",
+        "url": "https://www.youtube.com/watch?v=0USZvW7Ti4w",
+        "title": "Horizon Festival introductory campaign"
+      }
+    ],
+    "tags": [
+      "PHOTO",
+      "BRAND DIRECTION",
+      "ART DIRECTION",
+      "VIDEO"
+    ]
+  },
+  {
+    "slug": "sektion",
+    "title": "SEKTION",
+    "year": "2025",
+    "cover": "/Portfolio/Sektion/cover.jpg",
+    "story": "Sektion needed photography to document three events. We covered the artists, guests and spaces at each gathering. The result is three photo series that show the performances and the people who took part.",
+    "media": [
+      {
+        "type": "text",
+        "title": "Event 01",
+        "body": "We photographed the performances, moments at the decks and guests in the crowd. The series documents the first event from both the artists’ and the audience’s perspective."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_1.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_2.jpeg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_3.jpeg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_4.jpeg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_5.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_6.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_7.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_8.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_9.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "text",
+        "title": "Event 02",
+        "body": "We covered the gathering from daytime activities through to the evening. The photographs bring together the outdoor spaces, performances and time spent together."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_1.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_10.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_11.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_12.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_13.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_14.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_2.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_3.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_4.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_5.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_6.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_7.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_8.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_9.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "text",
+        "title": "Event 03",
+        "body": "We photographed the artists behind the booth and guests on the dance floor. The series records the performances and activity around the room."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ80892.jpg",
+        "alt": "Sektion Event 3: artists, guests and live atmosphere, photograph 1"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ81527-Edit.jpg",
+        "alt": "Sektion Event 3: artists, guests and live atmosphere, photograph 4"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ81742.jpg",
+        "alt": "Guest in sunglasses under red and green lighting at Sektion Event 03"
+      }
+    ],
+    "tags": [
+      "PHOTO"
+    ]
+  },
+  {
+    "slug": "vali-theater-lab",
+    "title": "VALI THEATER LAB",
+    "year": "2025 to 2026",
+    "cover": "/Portfolio/Vali/spectacl 2025/cover.jpg",
+    "story": "Vali Theater Lab needed a record of its performances and creative process across 2025 and 2026. We photographed the productions and workshops, documenting rehearsals, movement exercises and encounters with the audience. The photo series show both the preparation and the finished performances.",
+    "media": [
+      {
+        "type": "text",
+        "title": "Performance 2025",
+        "body": "We photographed the 2025 production, recording the characters, costumes and key scenes. The series also shows how the performers and audience shared the space."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ83411-Edit.jpg",
+        "alt": "Performer silhouetted against a swirling blue projection"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ83418.jpg",
+        "alt": "Performer reaching upward against a blue projection"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ83432-Edit.jpg",
+        "alt": "Two performers beneath a projected heartbeat"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ83439-Edit.jpg",
+        "alt": "Performer raising both arms in a bright doorway"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ84734.jpg",
+        "alt": "Performer addressing an audience indoors"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ84749.jpg",
+        "alt": "Costumed ensemble gathered in a tiled room"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ84759.jpg",
+        "alt": "Performer curled on a bed in soft light"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ84814-2.jpg",
+        "alt": "Performer wearing a top hat and white shirt"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ84878.jpg",
+        "alt": "Performer seated at a table in purple light"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ84882.jpg",
+        "alt": "Performer in a blue-lit room"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ84982.jpg",
+        "alt": "Top-hatted performer with an audience behind"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ85131.jpg",
+        "alt": "Performer leaning forward in a tall bright doorway"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ85230.jpg",
+        "alt": "Performer moving across an orange-lit stage"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ85254.jpg",
+        "alt": "Performer seated before blue curtains"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ85407.jpg",
+        "alt": "Audience gathered before a blue-lit stage"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ85084.jpg",
+        "alt": "Costumed performer on a red-curtained stage during the 2025 performance"
+      },
+      {
+        "type": "text",
+        "title": "Workshops 2026",
+        "body": "We documented the workshop process through photographs of exercises, discussions and rehearsals. The series shows participants developing ideas and working together before the performance."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82129.jpg",
+        "alt": "Two participants standing before a projection"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82151.jpg",
+        "alt": "Participant working at a keyboard during a workshop"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82184-2.jpg",
+        "alt": "Participants collaborating closely in a movement exercise"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82244.jpg",
+        "alt": "Workshop space with a table and standing participants"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82293.jpg",
+        "alt": "Participants seated together along a studio wall"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82309.jpg",
+        "alt": "Participants moving together through the studio"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82336.jpg",
+        "alt": "Participant reaching outward during an exercise"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82355.jpg",
+        "alt": "Group exploring movement in pairs"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82384.jpg",
+        "alt": "Participant in red leaning into a movement exercise"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82494.jpg",
+        "alt": "Participants lying and sitting on a green rug"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82550.jpg",
+        "alt": "Participant in white raising their arms"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82577.jpg",
+        "alt": "Costumed participants seated together during rehearsal"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82597.jpg",
+        "alt": "Participant framed by a small mirror"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82626.jpg",
+        "alt": "Workshop group sharing a discussion"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82637.jpg",
+        "alt": "Participant watching through a partially open door"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82644.jpg",
+        "alt": "Two participants rehearsing together"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82733.jpg",
+        "alt": "Small group rehearsing in a dark room"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82811.jpg",
+        "alt": "Participants working around a lit table"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82952.jpg",
+        "alt": "Workshop group gathered in a classroom"
+      },
+      {
+        "type": "text",
+        "title": "Performance 2026",
+        "body": "We followed the 2026 production through rooms, corridors and outdoor spaces. The photographs record the scenes and the audience moving through the building with the performers."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls100.jpg",
+        "alt": "Performer standing beside a lit display"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls103.jpg",
+        "alt": "Costumed ensemble facing the audience"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls28.jpg",
+        "alt": "Masked character behind a purple-lit counter"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls29.jpg",
+        "alt": "Two masked characters seated on a counter"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls39.jpg",
+        "alt": "Performers seated together in a bright room"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls42.jpg",
+        "alt": "Performer seen through a doorway by the audience"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls43.jpg",
+        "alt": "Performer on a staircase viewed from below"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls46.jpg",
+        "alt": "Audience standing together inside the venue"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls47.jpg",
+        "alt": "Audience watching a performance through a doorway"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls48.jpg",
+        "alt": "Performers and audience outside the building"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls50.jpg",
+        "alt": "Performer in a pink jacket gesturing on stage"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls52.jpg",
+        "alt": "Performer seated before a blue projection"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls57.jpg",
+        "alt": "Performer framed by audience silhouettes"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls59.jpg",
+        "alt": "Performer in white seen past a foreground silhouette"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls68.jpg",
+        "alt": "Audience gathered around an outdoor performance"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls69.jpg",
+        "alt": "Masked performer at an open window"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls70.jpg",
+        "alt": "Two masked performers leaning through a window"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls74.jpg",
+        "alt": "Masked figure standing in a magenta-lit corridor"
+      }
+    ],
+    "tags": [
+      "PHOTO",
+      "VIDEO"
+    ]
+  },
+  {
+    "slug": "sona",
+    "title": "SONA",
+    "year": "2026",
+    "cover": "/Portfolio/Sona/cover.jpg",
+    "story": "Sona needed photos and film to document three music workshops. We photographed all three sessions and created a film of the first workshop. The result shows the activities, equipment and interaction between participants, with a separate photo series for each session.",
+    "media": [
+      {
+        "type": "text",
+        "title": "Workshop 01",
+        "body": "We photographed and filmed the first workshop, covering participants at the decks and their interactions around the room. The photos and film document the session through both still images and moving footage."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_1_1.jpg",
+        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 1"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_1_2.jpg",
+        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 2"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_1_3.jpg",
+        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 3"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_1_4.jpg",
+        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 4"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_1_5.jpg",
+        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 5"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_1_6.jpg",
+        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 6"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_1_7.jpg",
+        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 7"
+      },
+      {
+        "type": "video",
+        "src": "/Portfolio/Sona/web/workshop-01.mp4",
+        "poster": "/Portfolio/Sona/web/workshop-01.jpg",
+        "title": "Sona Workshop 01 film",
+        "sizeBytes": 54200435,
+        "aspectRatio": 1.7777777777777777,
+        "hasAudio": true
+      },
+      {
+        "type": "text",
+        "title": "Workshop 02",
+        "body": "We photographed demonstrations, discussions and participants using the equipment. The series shows how the session was led and how participants took part."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_2_1.jpg",
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 1"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_2_2.jpg",
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 2"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_2_3.jpg",
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 3"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_2_4.jpg",
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 4"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_2_5.jpg",
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 5"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_2_6.jpg",
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 6"
+      },
+      {
+        "type": "text",
+        "title": "Workshop 03",
+        "body": "We photographed participants using the mixer, playing music and trying ideas together. The series records the practical activities and collaboration throughout the session."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_1.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 1"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_2.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 2"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_3.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 3"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_4.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 4"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_5.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 5"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_6.jpg",
+        "alt": "Sona Workshop 3: participants collaborating at the decks"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_7.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 7"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_8.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 8"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_9.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 9"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_10.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 10"
+      }
+    ],
+    "tags": [
+      "PHOTO",
+      "VIDEO"
+    ]
+  },
+  {
+    "slug": "freewheelin",
+    "title": "FREEWHEELIN",
+    "year": "2026",
+    "cover": "/Portfolio/Wh/cover.jpg",
+    "story": "Freewheelin needed photographs to show its shop, team and daily work. We photographed the interior, customer interactions and order preparation. The result is a collection of images that introduces the business from the stockroom to the shop floor.",
+    "media": [
+      {
+        "type": "text",
+        "title": "The shop",
+        "body": "We photographed the entrance, layout and product displays. These images give customers a clear view of the shop before their first visit."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88191.jpg",
+        "alt": "Staff member outside the Freewheelin entrance"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88646.jpg",
+        "alt": "Shop entrance with colourful artwork and clothing"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88644.jpg",
+        "alt": "View along the shop floor and display cabinets"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88648.jpg",
+        "alt": "Shelves and glass display cases inside Freewheelin"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88709.jpg",
+        "alt": "Clothing and glass cabinets along the shop aisle"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88782.jpg",
+        "alt": "Wide view of the shop interior"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ89013.jpg",
+        "alt": "View across the Freewheelin counter"
+      },
+      {
+        "type": "text",
+        "title": "Behind the counter",
+        "body": "We documented staff organising stock, preparing orders and packing parcels. The photographs show the daily work behind the business."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88433.jpg",
+        "alt": "Staff member carrying boxes in the stockroom"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88331.jpg",
+        "alt": "Staff packing an order together"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88447.jpg",
+        "alt": "Overhead view of an order being packed"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88510.jpg",
+        "alt": "Staff selecting products from the stockroom shelves"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88560.jpg",
+        "alt": "Staff member working between stocked shelves"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88888.jpg",
+        "alt": "Shipping label being prepared for an order"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88910.jpg",
+        "alt": "Staff member selecting stock"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88955.jpg",
+        "alt": "Close view of a parcel being sealed"
+      },
+      {
+        "type": "text",
+        "title": "The people & atmosphere",
+        "body": "We photographed staff, customer conversations and details around the counter. The series shows the people and everyday interactions that give the shop its character."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88608.jpg",
+        "alt": "Counter framed by colourful display objects"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88662.jpg",
+        "alt": "Conversation across the shop counter"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88695.jpg",
+        "alt": "Staff member smiling behind the counter"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88722.jpg",
+        "alt": "Staff member arranging clothing by the shop window"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88726.jpg",
+        "alt": "Staff member hanging a T-shirt on a clothing rail"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88747.jpg",
+        "alt": "Staff member seen through display cabinets"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88795.jpg",
+        "alt": "Customer standing near the shop displays"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ89006.jpg",
+        "alt": "Movement through the colourful shop interior"
+      }
+    ],
+    "tags": [
+      "PHOTO"
+    ]
+  },
+  {
+    "slug": "fashion-show-2025",
+    "title": "FASHION SHOW 2025",
+    "year": "2025",
+    "cover": "/Portfolio/FASHION SHOW/watch?v=pepfv6cDHf8.jpg",
+    "story": "The 2025 fashion show needed to be captured on film. We filmed the runway looks, movement and atmosphere of the event. The finished film is available to watch on YouTube.",
+    "media": [],
+    "tags": [
+      "VIDEO"
+    ]
+  },
+  {
+    "slug": "nikita",
+    "title": "NIKITA",
+    "year": "2026",
+    "cover": "/Portfolio/NIKITA/watch?v=BLn4uTtfIpU.jpg",
+    "story": "Nikita’s performance needed to be captured on film. We filmed the performance as it unfolded, recording the movement and atmosphere. The finished performance film is available to watch on YouTube.",
+    "tags": [
+      "VIDEO"
+    ],
+    "media": []
+  }
+];
+
+// Covers named watch?v=VIDEO_ID.png are discovered on start/build and grouped by project folder.
+for (const project of projects) {
+  const folder = project.cover.split('/')[2];
+  const covers = youtubeCovers.filter(cover => cover.folder === folder &&
+    !project.media.some(media => media.type === 'youtube' && media.url === cover.url));
+  if (covers.length) {
+    if (covers.some(cover => cover.src !== project.cover)) {
+      project.media.push({ type: 'text', title: 'Watch the film', body: 'Watch the full film on YouTube.' });
+    }
+    project.media.push(...covers.map(cover => ({
+      type: 'youtube' as const, src: cover.src, url: cover.url, title: `${project.title} film`,
+    })));
+  }
+}

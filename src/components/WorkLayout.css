@@ -1,0 +1,67 @@
+/* Both work views share one frame, navigation row and tile height. */
+.work-view {
+  --work-tile-height: min(55svh, 590px);
+  --work-text-width: max(230px, 20vw);
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+.work-view > .project-heading {
+  flex: 0 0 80px;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 24px 5vw;
+}
+.work-view > .work-slider,
+.work-view > .project-slider {
+  flex: 0 0 auto;
+  height: calc(var(--work-tile-height) + 18px);
+  box-sizing: border-box;
+}
+@media (max-width: 600px) {
+  .work-view { --work-tile-height: min(68svh, calc(100svh - 188px)); --work-text-width: 78vw; }
+}
+
+.work-intro,
+.project-text-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.work-intro h2,
+.project-text-slide h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  margin: .83em 0;
+  overflow-wrap: anywhere;
+}
+.work-intro p,
+.project-text-slide p {
+  max-width: 38ch;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-line;
+  margin: 0 0 24px;
+}
+
+.work-view .work-tile-description,
+.work-view .project-slide.project-text-slide {
+  flex: 0 0 var(--work-text-width);
+  width: var(--work-text-width);
+  min-width: var(--work-text-width);
+  max-width: var(--work-text-width);
+  height: var(--work-tile-height);
+  min-height: var(--work-tile-height);
+  box-sizing: border-box;
+  padding: 0;
+  overflow-y: auto;
+}
