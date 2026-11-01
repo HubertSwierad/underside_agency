@@ -885,8 +885,8 @@ export const projects: WorkProject[] = [
     ]
   },
   {
-    "slug": "fashion-show-2025",
-    "title": "FASHION SHOW 2025",
+    "slug": "fashion-show",
+    "title": "FASHION SHOW",
     "year": "2025",
     "cover": "/Portfolio/FASHION SHOW/watch?v=pepfv6cDHf8.jpg",
     "story": "Silhouette, pace and atmosphere. Our film of the 2025 fashion show carries the designs beyond the runway, preserving their expression in motion.",
