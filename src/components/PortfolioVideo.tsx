@@ -89,9 +89,12 @@ export default function PortfolioVideo({ src, title, poster, aspectRatio, hasAud
           if (playing) videoRef.current?.pause();
           else play();
         }} aria-label={`${error ? 'Retry' : playing ? 'Pause' : 'Play'} ${title}`}>
-          <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><path fillRule="evenodd"
+          <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><path className="video-play-solid" fillRule="evenodd"
             d={playing ? 'M0 0H48V48H0ZM15 14H21V34H15ZM27 14H33V34H27Z' : 'M0 0H48V48H0ZM19 14 35 24 19 34Z'}
-            fill="currentColor" /></svg>
+            fill="currentColor" />
+            <rect className="video-play-outline" x="0.5" y="0.5" width="47" height="47" fill="none" stroke="currentColor" />
+            <path className="video-play-outline" d={playing ? 'M15 14H21V34H15ZM27 14H33V34H27Z' : 'M19 14 35 24 19 34Z'} fill="currentColor" />
+          </svg>
         </button>
       )}
       {error && <span className="video-error" role="alert">Couldn’t play this video. Please try again.</span>}

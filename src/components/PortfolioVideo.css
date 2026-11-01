@@ -11,3 +11,13 @@
 @media (prefers-reduced-motion: reduce) { .video-spinner { animation: none; } }
 
 .portfolio-video video { pointer-events: none; }
+
+.video-play-outline { display: none; }
+@media (hover: hover) {
+  .video-play:hover .video-play-solid { display: none; }
+  .video-play:hover .video-play-outline { display: block; }
+  .video-play:hover svg { filter: none; }
+}
+.video-play:focus-visible .video-play-solid { display: none; }
+.video-play:focus-visible .video-play-outline { display: block; }
+.video-play:focus-visible svg { filter: none; }
