@@ -245,7 +245,7 @@ button {
 .logo-overlay { opacity: 1; transition: opacity 420ms ease 120ms; }
 .is-work-visible .logo-overlay { opacity: 0; transition: opacity 220ms ease-out; }
 .work-toggle { background: none; border: 0; padding: 0; color: white; font-size: 12px; font-weight: 700; cursor: pointer; }
-.work-panel { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: center; color: white; background: rgba(0,0,0,.90); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 350ms ease, visibility 0s linear 350ms; }
+.work-panel { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: center; color: white; background: rgba(0,0,0,.80); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 350ms ease, visibility 0s linear 350ms; }
 .is-work-visible .work-panel { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 500ms ease 120ms, visibility 0s; }
 .work-heading { display: flex; justify-content: space-between; padding: 0 5vw 18px; }
 .work-slider { display: flex; gap: 24px; overflow-x: auto; padding: 0 5vw 18px; scrollbar-width: none; cursor: grab; touch-action: pan-x; user-select: none; overscroll-behavior-x: contain; }
@@ -289,7 +289,7 @@ button:focus-visible, a:focus-visible, .work-slider:focus-visible { outline: 1px
 
 .slider-arrows { display: flex; align-items: center; gap: 0; }
 
-.work-panel.is-project-open { background: rgba(0, 0, 0, .9); }
+.work-panel.is-project-open { background: rgba(0, 0, 0, .8); }
 
 .work-label-mobile { display: none; }
 @media (max-width: 600px) {
