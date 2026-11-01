@@ -88,7 +88,7 @@ export default function WorkPage({ project, onBack }: WorkPageProps) {
             <a className="youtube-tile" href={coverFilm.url} target="_blank" rel="noopener noreferrer"
               draggable={false} aria-label={`Play on YouTube: ${coverFilm.title} (opens in a new tab)`}>
               <PortfolioImage src={project.cover} alt={project.title} />
-              <span className="youtube-play">PLAY ON YOUTUBE ↗</span>
+              <span className="youtube-play">PLAY ON YOUTUBE</span>
             </a>
           ) : <PortfolioImage src={project.cover} alt={project.title} />}
         </figure>

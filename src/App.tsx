@@ -1,7 +1,85 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useSliderNavigation } from './hooks/useSliderNavigation';
+import { PortfolioPlaybackContext } from './components/PortfolioPlaybackContext';
+import PortfolioImage from './components/PortfolioImage';
+import SliderNavigation from './components/SliderNavigation';
+import React, { useRef, useEffect, useLayoutEffect, useState, useCallback } from 'react';
 import './App.css';
+import './components/WorkLayout.css';
+import { slideByTile } from './utils/slideByTile';
+import { projects } from './data/workDatabase';
+import WorkPage from './components/WorkPage';
+
+
+
+function readPath() {
+  const legacyPath = window.location.hash.slice(1);
+  if (legacyPath === '/work' || legacyPath.startsWith('/work/')) {
+    window.history.replaceState(null, '', legacyPath);
+  }
+  return window.location.pathname;
+}
 
 function App() {
+  const [audibleVideos, setAudibleVideos] = useState<string[]>([]);
+  const reportVideoPlayback = useCallback((id: string, audible: boolean) => {
+    setAudibleVideos(current => audible
+      ? current.includes(id) ? current : [...current, id]
+      : current.includes(id) ? current.filter(value => value !== id) : current);
+  }, []);
+  const [path, setPath] = useState(readPath);
+  let projectSlug = '';
+  if (path.startsWith('/work/')) {
+    try { projectSlug = decodeURIComponent(path.slice('/work/'.length)); } catch { /* Invalid address has no selected project. */ }
+  }
+  const navigate = (nextPath: string) => {
+    if (window.location.pathname !== nextPath) window.history.pushState(null, '', nextPath);
+    setPath(nextPath);
+  };
+  const drag = useRef({ active: false, startX: 0, scrollLeft: 0, moved: false });
+  const selectedProject = projects.find(project => project.slug === projectSlug);
+  const workVisible = path === '/work' || path === '/work/' || Boolean(selectedProject);
+
+  const { sliderRef, canSlideLeft, canSlideRight, updateNavigation } = useSliderNavigation(`${workVisible}-${projectSlug}`);
+  const workScrollLeft = useRef(0);
+  const resetWorkAfterHide = useRef(false);
+  const resetWorkPosition = useCallback(() => {
+    resetWorkAfterHide.current = false;
+    workScrollLeft.current = 0;
+    if (sliderRef.current) sliderRef.current.scrollLeft = 0;
+    updateNavigation();
+  }, [sliderRef, updateNavigation]);
+
+  useLayoutEffect(() => {
+    if (selectedProject || !workVisible || !sliderRef.current) return;
+    // A quick reopen must start at the beginning before the panel is painted.
+    if (resetWorkAfterHide.current) resetWorkPosition();
+    sliderRef.current.scrollLeft = workScrollLeft.current;
+    updateNavigation();
+  }, [selectedProject, workVisible, sliderRef, updateNavigation, resetWorkPosition]);
+
+  useEffect(() => {
+    if (!workVisible && resetWorkAfterHide.current && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+      resetWorkPosition();
+    }
+  }, [workVisible, resetWorkPosition]);
+
+
+  useEffect(() => {
+    const onLocationChange = () => setPath(readPath());
+    window.addEventListener('popstate', onLocationChange);
+    window.addEventListener('hashchange', onLocationChange);
+    return () => {
+      window.removeEventListener('popstate', onLocationChange);
+      window.removeEventListener('hashchange', onLocationChange);
+    };
+  }, []);
+
+  const hideWork = () => {
+    resetWorkAfterHide.current = true;
+    navigate('/');
+  };
+  const toggleWork = () => workVisible ? hideWork() : navigate('/work');
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const [showPlayButton, setShowPlayButton] = useState(false);
@@ -52,7 +130,8 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <PortfolioPlaybackContext.Provider value={reportVideoPlayback}>
+    <div className={`App${workVisible ? ' is-work-visible' : ''}`}>
       <div className="video-container">
         <video
           ref={videoRef}
@@ -92,7 +171,7 @@ function App() {
           Your browser does not support the video tag.
         </video>
         {/* Hidden audio element for background music; file should be placed in /public as Music.mp3 */}
-        <audio ref={audioRef} src="/Music.mp3" preload="auto" loop />
+        <audio muted={audibleVideos.length > 0} ref={audioRef} src="/Music.mp3" preload="auto" loop />
         {showPlayButton && (
           <img
             className="wait-overlay"
@@ -125,6 +204,11 @@ function App() {
               onClick={toggleMusic}
           >
             {isMusicOn ? 'SOUND: ON' : 'SOUND: OFF'}
+          </button>
+          <button type="button" className="work-toggle" aria-label={workVisible ? 'HIDE WORK' : 'SHOW WORK'} aria-expanded={workVisible}
+                  aria-controls="work-panel" onClick={toggleWork}>
+            <span className="work-label-mobile" aria-hidden="true">WORK</span>
+            <span className="work-label-desktop" aria-hidden="true">{workVisible ? 'HIDE WORK' : 'SHOW WORK'}</span>
           </button>
           <a
               className="social-button"
@@ -173,6 +257,86 @@ function App() {
             <span className="long-label">YOUTUBE</span>
           </a>
         </div>
+        <section id="work-panel" className={`work-panel${selectedProject ? ' is-project-open' : ''}`} aria-label="Selected work" aria-hidden={!workVisible}
+                 inert={!workVisible}
+                 onTransitionEnd={event => {
+                   if (event.target === event.currentTarget && event.propertyName === 'opacity' && !workVisible && resetWorkAfterHide.current) {
+                     resetWorkPosition();
+                   }
+                 }}
+                 onClick={event => {
+                   const target = event.target as HTMLElement;
+            if (!target.closest('.work-slider, .project-view, .project-heading')) {
+              hideWork();
+            }
+          }}>
+          {selectedProject ? (
+            <WorkPage key={selectedProject.slug} project={selectedProject} onBack={() => navigate('/work')} />
+          ) : (
+            <div className="work-view">
+              <div className="project-heading">
+                <button type="button" className="work-hide" onClick={hideWork}>HIDE</button>
+                <SliderNavigation label="work" canSlideLeft={canSlideLeft} canSlideRight={canSlideRight}
+                  onPrevious={() => { if (sliderRef.current) slideByTile(sliderRef.current, -1); }}
+                  onNext={() => { if (sliderRef.current) slideByTile(sliderRef.current); }} />
+              </div>
+              <div className="work-slider" ref={sliderRef}
+                onScroll={event => {
+                  workScrollLeft.current = event.currentTarget.scrollLeft;
+                  updateNavigation();
+                }} onLoadCapture={updateNavigation} tabIndex={0} role="region" aria-label="Portfolio slider"
+                onKeyDown={event => {
+                  if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+                    event.preventDefault();
+                    slideByTile(event.currentTarget, event.key === 'ArrowRight' ? 1 : -1);
+                  }
+                }}
+                onPointerDown={event => {
+                  if (event.pointerType !== 'mouse' || event.button !== 0) return;
+                  drag.current = { active: true, startX: event.clientX, scrollLeft: event.currentTarget.scrollLeft, moved: false };
+                }}
+                onPointerMove={event => {
+                  if (!drag.current.active) return;
+                  const distance = event.clientX - drag.current.startX;
+                  if (Math.abs(distance) > 6) {
+                    drag.current.moved = true;
+                    event.currentTarget.setPointerCapture(event.pointerId);
+                    event.currentTarget.classList.add('is-dragging');
+                    event.currentTarget.scrollLeft = drag.current.scrollLeft - distance;
+                  }
+                }}
+                onPointerUp={event => {
+                  drag.current.active = false;
+                  event.currentTarget.classList.remove('is-dragging');
+                }}
+                onPointerCancel={event => {
+                  drag.current.active = false;
+                  drag.current.moved = false;
+                  event.currentTarget.classList.remove('is-dragging');
+                }}
+                onPointerLeave={() => { drag.current.active = false; }}
+                onClickCapture={event => {
+                  if (drag.current.moved) { event.preventDefault(); event.stopPropagation(); drag.current.moved = false; }
+                }}>
+                <div className="work-intro work-tile-description">
+                  <h2>VISUAL DIRECTION <br/> FOR ARTISTS AND <br/> LIVE MOMENTS.</h2>
+                  <p>Photography, film and brand direction. From artists and live performances to independent projects, we turn the moment into visuals that stay under your skin.</p>
+                </div>
+                {projects.map((project) => (
+                  <a className="work-tile project-tile" href={`/work/${encodeURIComponent(project.slug)}`} onClick={event => {
+                    if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+                      event.preventDefault();
+                      navigate(`/work/${encodeURIComponent(project.slug)}`);
+                    }
+                  }} key={project.slug} draggable={false}>
+                    <PortfolioImage src={project.cover} alt={`${project.title} portfolio`} />
+                    <div className="tile-caption"><span>{project.title}</span></div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
         <img
             className="logo-overlay"
             src="/Logo_reverse.png"
@@ -181,6 +345,7 @@ function App() {
         />
       </div>
     </div>
+    </PortfolioPlaybackContext.Provider>
   );
 }
 

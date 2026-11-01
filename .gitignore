@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Full-resolution backups created by the image optimizer
+/.image-originals/
+
+# Optional local source-photo folders (never place originals under public/)
+/originals/
+/original-assets/

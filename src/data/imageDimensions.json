@@ -1,7 +1,43 @@
 {
-  "/Portfolio/FASHION SHOW 2025/watch?v=pepfv6cDHf8.png": {
-    "width": 685,
-    "height": 383
+  "/Portfolio/FASHION SHOW/watch?v=pepfv6cDHf8.jpg": {
+    "width": 1677,
+    "height": 938
+  },
+  "/Portfolio/Herning Rocker/_NZ80794-2.jpg": {
+    "width": 1706,
+    "height": 2560
+  },
+  "/Portfolio/Herning Rocker/_NZ81271.jpg": {
+    "width": 1706,
+    "height": 2560
+  },
+  "/Portfolio/Herning Rocker/_NZ81532.jpg": {
+    "width": 1706,
+    "height": 2560
+  },
+  "/Portfolio/Herning Rocker/_NZ82153.jpg": {
+    "width": 1706,
+    "height": 2560
+  },
+  "/Portfolio/Herning Rocker/_NZ82207.jpg": {
+    "width": 1707,
+    "height": 2560
+  },
+  "/Portfolio/Herning Rocker/_NZ82596.jpg": {
+    "width": 1365,
+    "height": 2048
+  },
+  "/Portfolio/Herning Rocker/_NZ83230.jpg": {
+    "width": 1706,
+    "height": 2560
+  },
+  "/Portfolio/Herning Rocker/_NZ83352.jpg": {
+    "width": 1707,
+    "height": 2560
+  },
+  "/Portfolio/Herning Rocker/cover.jpg": {
+    "width": 1796,
+    "height": 2560
   },
   "/Portfolio/Horizon/02D21377-BF31-4EE8-A944-32D9CD8E31A6_1_105_c.jpeg": {
     "width": 768,
@@ -55,10 +91,6 @@
     "width": 1586,
     "height": 1982
   },
-  "/Portfolio/Horizon/AD9C9907-21C0-4035-8A8F-A374F5447D18_1_105_c.jpeg": {
-    "width": 768,
-    "height": 1024
-  },
   "/Portfolio/Horizon/B935A41B-97C9-4C33-8D0D-9755A46EABE5_1_105_c.jpeg": {
     "width": 768,
     "height": 1024
@@ -99,6 +131,10 @@
     "width": 1310,
     "height": 1638
   },
+  "/Portfolio/Horizon/cover.jpeg": {
+    "width": 768,
+    "height": 1024
+  },
   "/Portfolio/Horizon/eeee.jpg": {
     "width": 1638,
     "height": 2048
@@ -126,10 +162,6 @@
   "/Portfolio/NIKITA/watch?v=BLn4uTtfIpU.jpg": {
     "width": 1677,
     "height": 938
-  },
-  "/Portfolio/NIKITA/watch?v=BLn4uTtfIpU.png": {
-    "width": 685,
-    "height": 383
   },
   "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_1.jpg": {
     "width": 1310,
@@ -415,14 +447,6 @@
     "width": 1638,
     "height": 1091
   },
-  "/Portfolio/Vali/spectacl 2026/FremtidensPuls28.jpg": {
-    "width": 2048,
-    "height": 1365
-  },
-  "/Portfolio/Vali/spectacl 2026/FremtidensPuls29.jpg": {
-    "width": 1638,
-    "height": 1091
-  },
   "/Portfolio/Vali/spectacl 2026/FremtidensPuls39.jpg": {
     "width": 2048,
     "height": 1365
@@ -443,10 +467,6 @@
     "width": 2048,
     "height": 1365
   },
-  "/Portfolio/Vali/spectacl 2026/FremtidensPuls48.jpg": {
-    "width": 1638,
-    "height": 1091
-  },
   "/Portfolio/Vali/spectacl 2026/FremtidensPuls50.jpg": {
     "width": 2048,
     "height": 1365
@@ -459,17 +479,9 @@
     "width": 1638,
     "height": 1091
   },
-  "/Portfolio/Vali/spectacl 2026/FremtidensPuls59.jpg": {
-    "width": 2048,
-    "height": 1365
-  },
   "/Portfolio/Vali/spectacl 2026/FremtidensPuls68.jpg": {
     "width": 1638,
     "height": 1091
-  },
-  "/Portfolio/Vali/spectacl 2026/FremtidensPuls69.jpg": {
-    "width": 2048,
-    "height": 1365
   },
   "/Portfolio/Vali/spectacl 2026/FremtidensPuls70.jpg": {
     "width": 2048,
@@ -491,10 +503,6 @@
     "width": 1920,
     "height": 2560
   },
-  "/Portfolio/Vali/workshops 2026/_NZ82151.jpg": {
-    "width": 1920,
-    "height": 2560
-  },
   "/Portfolio/Vali/workshops 2026/_NZ82184-2.jpg": {
     "width": 1536,
     "height": 2048
@@ -502,10 +510,6 @@
   "/Portfolio/Vali/workshops 2026/_NZ82244.jpg": {
     "width": 2048,
     "height": 1365
-  },
-  "/Portfolio/Vali/workshops 2026/_NZ82293.jpg": {
-    "width": 2560,
-    "height": 1706
   },
   "/Portfolio/Vali/workshops 2026/_NZ82309.jpg": {
     "width": 1920,
@@ -527,19 +531,11 @@
     "width": 2048,
     "height": 1365
   },
-  "/Portfolio/Vali/workshops 2026/_NZ82550.jpg": {
-    "width": 1536,
-    "height": 2048
-  },
   "/Portfolio/Vali/workshops 2026/_NZ82577.jpg": {
     "width": 2560,
     "height": 1706
   },
   "/Portfolio/Vali/workshops 2026/_NZ82597.jpg": {
-    "width": 1920,
-    "height": 2560
-  },
-  "/Portfolio/Vali/workshops 2026/_NZ82626.jpg": {
     "width": 1920,
     "height": 2560
   },

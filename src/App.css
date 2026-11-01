@@ -31,7 +31,7 @@ button {
   background-color: black;
 }
 
-.video-container video {
+.video-container > video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -43,29 +43,29 @@ button {
 }
 
 /* Hide native controls overlays in Safari / WebKit */
-.video-container video::-webkit-media-controls-panel,
-.video-container video::-webkit-media-controls-start-playback-button,
-.video-container video::-webkit-media-controls-play-button,
-.video-container video::-webkit-media-controls-volume-slider,
-.video-container video::-webkit-media-controls-timeline,
-.video-container video::-webkit-media-controls-fullscreen-button,
-.video-container video::-webkit-media-controls-overlay-play-button {
+.video-container > video::-webkit-media-controls-panel,
+.video-container > video::-webkit-media-controls-start-playback-button,
+.video-container > video::-webkit-media-controls-play-button,
+.video-container > video::-webkit-media-controls-volume-slider,
+.video-container > video::-webkit-media-controls-timeline,
+.video-container > video::-webkit-media-controls-fullscreen-button,
+.video-container > video::-webkit-media-controls-overlay-play-button {
   display: none !important;
   -webkit-appearance: none;
 }
 
 /* Fallback: hide any remaining WebKit controls */
-.video-container video::-webkit-media-controls-enclosure,
-.video-container video::-webkit-media-controls,
-.video-container video::-webkit-media-controls-volume-control-container,
-.video-container video::-webkit-media-controls-mute-button,
-.video-container video::-webkit-media-controls-seek-back-button,
-.video-container video::-webkit-media-controls-seek-forward-button,
-.video-container video::-webkit-media-controls-rewind-button,
-.video-container video::-webkit-media-controls-accelerate-button,
-.video-container video::-webkit-media-controls-toggle-closed-captions-button,
-.video-container video::-webkit-media-controls-current-time-display,
-.video-container video::-webkit-media-controls-time-remaining-display {
+.video-container > video::-webkit-media-controls-enclosure,
+.video-container > video::-webkit-media-controls,
+.video-container > video::-webkit-media-controls-volume-control-container,
+.video-container > video::-webkit-media-controls-mute-button,
+.video-container > video::-webkit-media-controls-seek-back-button,
+.video-container > video::-webkit-media-controls-seek-forward-button,
+.video-container > video::-webkit-media-controls-rewind-button,
+.video-container > video::-webkit-media-controls-accelerate-button,
+.video-container > video::-webkit-media-controls-toggle-closed-captions-button,
+.video-container > video::-webkit-media-controls-current-time-display,
+.video-container > video::-webkit-media-controls-time-remaining-display {
   display: none !important;
 }
 
@@ -240,3 +240,56 @@ button {
   }
 }
 
+
+/* Work and identity occupy the same space and crossfade together. */
+.logo-overlay { opacity: 1; transition: opacity 420ms ease 120ms; }
+.is-work-visible .logo-overlay { opacity: 0; transition: opacity 220ms ease-out; }
+.work-toggle { background: none; border: 0; padding: 0; color: white; font-size: 12px; font-weight: 700; cursor: pointer; }
+.work-panel { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: center; color: white; background: rgba(0,0,0,.90); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 350ms ease, visibility 0s linear 350ms; }
+.is-work-visible .work-panel { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 500ms ease 120ms, visibility 0s; }
+.work-heading { display: flex; justify-content: space-between; padding: 0 5vw 18px; }
+.work-slider { display: flex; gap: 24px; overflow-x: auto; padding: 0 5vw 18px; scrollbar-width: none; cursor: grab; touch-action: pan-x; user-select: none; overscroll-behavior-x: contain; }
+.work-slider::-webkit-scrollbar { display: none; }
+.work-slider.is-dragging, .work-slider.is-dragging a { cursor: grabbing; }
+.work-tile { flex: 0 0 40vw; min-width: 300px; height: var(--work-tile-height); box-sizing: border-box; }
+.work-intro { min-height: var(--work-tile-height); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.work-heading,
+.tile-eyebrow,
+.intro-footer,
+.tile-caption,
+.project-heading h1,
+.project-heading h1 span,
+.project-heading a {
+  font-size: 12px;
+  font-weight: 700;
+}
+.work-intro h1 { font-size: clamp(26px, 2.7vw, 44px); font-weight: 400; line-height: 1.08; letter-spacing: -.04em; margin: 24px 0 20px; }
+.work-intro .intro-services { margin-bottom: 16px; }
+.project-tile { color: white; text-decoration: none; display: flex; flex-direction: column; gap: 12px; }
+.project-tile img { width: 100%; height: calc(100% - 28px); object-fit: cover; pointer-events: none; }
+.tile-caption { display: flex; align-items: baseline; gap: 12px; line-height: 16px; }
+.project-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.project-heading h1 span { margin-left: 12px; }
+.project-heading a { color: white; text-decoration: none; }
+button:focus-visible, a:focus-visible, .work-slider:focus-visible { outline: 1px solid white; outline-offset: 5px; }
+@media (max-width: 600px) {
+  .controls-bar { gap: 12px; width: max-content; max-width: calc(100% - 24px); flex-wrap: wrap; justify-content: center; }
+  .work-tile { flex-basis: 78vw; min-width: 0; }
+  .work-slider { gap: 18px; }
+  .work-intro h1 { font-size: clamp(26px, 7vw, 38px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .App .logo-overlay, .App .work-panel { transition: none; }
+}
+
+.work-hide { background: transparent; border: 0; padding: 0; color: white; font-size: 12px; font-weight: 700; cursor: pointer; }
+
+.slider-arrows { display: flex; align-items: center; gap: 0; }
+
+.work-panel.is-project-open { background: rgba(0, 0, 0, .9); }
+
+.work-label-mobile { display: none; }
+@media (max-width: 600px) {
+  .work-label-mobile { display: inline; }
+  .work-label-desktop { display: none; }
+}

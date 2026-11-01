@@ -29,12 +29,12 @@ export const projects: WorkProject[] = [
     "title": "HORIZON FESTIVAL",
     "year": "2026",
     "cover": "/Portfolio/Horizon/cover.jpeg",
-    "story": "Horizon Festival needed a clear identity to introduce an electronic music festival outside the big cities. We handled brand direction, art direction, photography and a campaign film. The result was a consistent look across campaign materials and event communication, created with a limited budget.",
+    "story": "We gave Horizon’s electronic sound a visual presence through identity, photography and film. A distinct world beyond the big cities, built around the pull of gathering for music.",
     "media": [
       {
         "type": "text",
         "title": "Artists & atmosphere",
-        "body": "We photographed the artists during their sets, capturing performances and stage lighting. The series shows the music and energy at the centre of the festival."
+        "body": "Gestures at the decks, figures caught in light. Photographs that carry the presence of a set beyond its last track."
       },
       {
         "type": "image",
@@ -79,7 +79,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Inside the crowd",
-        "body": "We also photographed the audience, from dancing to conversations between sets. These images complete the event coverage by showing the people taking part."
+        "body": "Dancing, conversations and pauses between sets. The small encounters that turn a crowd into a shared memory."
       },
       {
         "type": "image",
@@ -100,11 +100,6 @@ export const projects: WorkProject[] = [
         "type": "image",
         "src": "/Portfolio/Horizon/B935A41B-97C9-4C33-8D0D-9755A46EABE5_1_105_c.jpeg",
         "alt": "Guest wearing sunglasses on the dance floor"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Horizon/AD9C9907-21C0-4035-8A8F-A374F5447D18_1_105_c.jpeg",
-        "alt": "Dancer raising an arm in golden stage light"
       },
       {
         "type": "image",
@@ -139,7 +134,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Brand & art direction",
-        "body": "The festival needed a consistent look across its materials. We developed the visual identity and applied it to campaign graphics, photography and event communication, keeping the work focused on what the available budget could support."
+        "body": "One visual language across posters, portraits and screens, giving Horizon a recognisable world of its own."
       },
       {
         "type": "image",
@@ -169,7 +164,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Introductory campaign",
-        "body": "We created a campaign film to introduce Horizon Festival. It brought the music, people and atmosphere together in a first introduction for audiences."
+        "body": "Sound, faces and atmosphere come together in a film that carries the anticipation of arriving at Horizon."
       },
       {
         "type": "youtube",
@@ -190,12 +185,12 @@ export const projects: WorkProject[] = [
     "title": "SEKTION",
     "year": "2025",
     "cover": "/Portfolio/Sektion/cover.jpg",
-    "story": "Sektion needed photography to document three events. We covered the artists, guests and spaces at each gathering. The result is three photo series that show the performances and the people who took part.",
+    "story": "Three gatherings, three rhythms. Through artists, crowds and shared spaces, our photographs trace the encounters that give Sektion’s scene its life.",
     "media": [
       {
         "type": "text",
         "title": "Event 01",
-        "body": "We photographed the performances, moments at the decks and guests in the crowd. The series documents the first event from both the artists’ and the audience’s perspective."
+        "body": "Between the decks and the crowd, a room responds. We photographed the exchange that makes a night feel collective."
       },
       {
         "type": "image",
@@ -245,7 +240,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Event 02",
-        "body": "We covered the gathering from daytime activities through to the evening. The photographs bring together the outdoor spaces, performances and time spent together."
+        "body": "From daylight to evening, music and unhurried moments together shape a portrait of the gathering."
       },
       {
         "type": "image",
@@ -320,7 +315,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Event 03",
-        "body": "We photographed the artists behind the booth and guests on the dance floor. The series records the performances and activity around the room."
+        "body": "Behind the booth and across the dance floor, we followed the gestures and encounters that gave the night its character."
       },
       {
         "type": "image",
@@ -347,12 +342,12 @@ export const projects: WorkProject[] = [
     "title": "VALI THEATER LAB",
     "year": "2025 to 2026",
     "cover": "/Portfolio/Vali/spectacl 2025/cover.jpg",
-    "story": "Vali Theater Lab needed a record of its performances and creative process across 2025 and 2026. We photographed the productions and workshops, documenting rehearsals, movement exercises and encounters with the audience. The photo series show both the preparation and the finished performances.",
+    "story": "Through Vali Theater Lab’s workshops and performances in 2025 and 2026, we photographed imagined worlds taking shape. Traces of movement, rehearsal and shared attention give the work a life beyond the stage.",
     "media": [
       {
         "type": "text",
         "title": "Performance 2025",
-        "body": "We photographed the 2025 production, recording the characters, costumes and key scenes. The series also shows how the performers and audience shared the space."
+        "body": "Light, costume and gesture carry the story. Our photographs preserve fragments of a world briefly shared by performers and audience."
       },
       {
         "type": "image",
@@ -437,17 +432,12 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Workshops 2026",
-        "body": "We documented the workshop process through photographs of exercises, discussions and rehearsals. The series shows participants developing ideas and working together before the performance."
+        "body": "Exercises, conversations and rehearsals reveal ideas still finding their form. A portrait of the collective work before the performance."
       },
       {
         "type": "image",
         "src": "/Portfolio/Vali/workshops 2026/_NZ82129.jpg",
         "alt": "Two participants standing before a projection"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Vali/workshops 2026/_NZ82151.jpg",
-        "alt": "Participant working at a keyboard during a workshop"
       },
       {
         "type": "image",
@@ -458,11 +448,6 @@ export const projects: WorkProject[] = [
         "type": "image",
         "src": "/Portfolio/Vali/workshops 2026/_NZ82244.jpg",
         "alt": "Workshop space with a table and standing participants"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Vali/workshops 2026/_NZ82293.jpg",
-        "alt": "Participants seated together along a studio wall"
       },
       {
         "type": "image",
@@ -491,11 +476,6 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/workshops 2026/_NZ82550.jpg",
-        "alt": "Participant in white raising their arms"
-      },
-      {
-        "type": "image",
         "src": "/Portfolio/Vali/workshops 2026/_NZ82577.jpg",
         "alt": "Costumed participants seated together during rehearsal"
       },
@@ -503,11 +483,6 @@ export const projects: WorkProject[] = [
         "type": "image",
         "src": "/Portfolio/Vali/workshops 2026/_NZ82597.jpg",
         "alt": "Participant framed by a small mirror"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Vali/workshops 2026/_NZ82626.jpg",
-        "alt": "Workshop group sharing a discussion"
       },
       {
         "type": "image",
@@ -537,7 +512,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Performance 2026",
-        "body": "We followed the 2026 production through rooms, corridors and outdoor spaces. The photographs record the scenes and the audience moving through the building with the performers."
+        "body": "Rooms, corridors and outdoor spaces become a stage. We followed performers and audience through a familiar building transformed by theatre."
       },
       {
         "type": "image",
@@ -548,16 +523,6 @@ export const projects: WorkProject[] = [
         "type": "image",
         "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls103.jpg",
         "alt": "Costumed ensemble facing the audience"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls28.jpg",
-        "alt": "Masked character behind a purple-lit counter"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls29.jpg",
-        "alt": "Two masked characters seated on a counter"
       },
       {
         "type": "image",
@@ -586,11 +551,6 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls48.jpg",
-        "alt": "Performers and audience outside the building"
-      },
-      {
-        "type": "image",
         "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls50.jpg",
         "alt": "Performer in a pink jacket gesturing on stage"
       },
@@ -606,18 +566,8 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls59.jpg",
-        "alt": "Performer in white seen past a foreground silhouette"
-      },
-      {
-        "type": "image",
         "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls68.jpg",
         "alt": "Audience gathered around an outdoor performance"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls69.jpg",
-        "alt": "Masked performer at an open window"
       },
       {
         "type": "image",
@@ -640,47 +590,142 @@ export const projects: WorkProject[] = [
     "title": "SONA",
     "year": "2026",
     "cover": "/Portfolio/Sona/cover.jpg",
-    "story": "Sona needed photos and film to document three music workshops. We photographed all three sessions and created a film of the first workshop. The result shows the activities, equipment and interaction between participants, with a separate photo series for each session.",
+    "story": "Hands on a mixer, ideas exchanged, music made together. Photography across three workshops and a film from the second bring Sona’s shared learning experience into view.",
     "media": [
       {
         "type": "text",
         "title": "Workshop 01",
-        "body": "We photographed and filmed the first workshop, covering participants at the decks and their interactions around the room. The photos and film document the session through both still images and moving footage."
+        "body": "Hands on the mixer, ears on the music. We photographed the small experiments that make learning together visible."
       },
       {
         "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_1_1.jpg",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_1.jpg",
         "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 1"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_1_2.jpg",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_2.jpg",
         "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 2"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_1_3.jpg",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_3.jpg",
         "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 3"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_1_4.jpg",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_4.jpg",
         "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 4"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_1_5.jpg",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_5.jpg",
         "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 5"
       },
       {
         "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_6.jpg",
+        "alt": "Sona Workshop 1: participants collaborating at the decks"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_7.jpg",
+        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 7"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_8.jpg",
+        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 8"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_9.jpg",
+        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 9"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_3_10.jpg",
+        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 10"
+      },
+      {
+        "type": "text",
+        "title": "Workshop 02",
+        "body": "At the decks and in the conversations around them, our photographs follow music becoming something shared."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_1_1.jpg",
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 1"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_1_2.jpg",
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 2"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_1_3.jpg",
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 3"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_1_4.jpg",
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 4"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_1_5.jpg",
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 5"
+      },
+      {
+        "type": "image",
         "src": "/Portfolio/Sona/SONA_Workshop_1_6.jpg",
-        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 6"
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 6"
       },
       {
         "type": "image",
         "src": "/Portfolio/Sona/SONA_Workshop_1_7.jpg",
-        "alt": "Sona Workshop 1: participants, music and the atmosphere of the session, photograph 7"
+        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 7"
+      },
+      {
+        "type": "text",
+        "title": "Workshop 03",
+        "body": "Watching, questioning, trying again. We followed the exchanges through which the workshop’s learning took shape."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_2_1.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 1"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_2_2.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 2"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_2_3.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 3"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_2_4.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 4"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_2_5.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 5"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sona/SONA_Workshop_2_6.jpg",
+        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 6"
+      },
+      {
+        "type": "text",
+        "title": "Campaign",
+        "body": "A film from the second workshop draws viewers into Sona through music, shared attention and the people at the decks."
       },
       {
         "type": "video",
@@ -690,96 +735,6 @@ export const projects: WorkProject[] = [
         "sizeBytes": 54200435,
         "aspectRatio": 1.7777777777777777,
         "hasAudio": true
-      },
-      {
-        "type": "text",
-        "title": "Workshop 02",
-        "body": "We photographed demonstrations, discussions and participants using the equipment. The series shows how the session was led and how participants took part."
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_2_1.jpg",
-        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 1"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_2_2.jpg",
-        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 2"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_2_3.jpg",
-        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 3"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_2_4.jpg",
-        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 4"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_2_5.jpg",
-        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 5"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_2_6.jpg",
-        "alt": "Sona Workshop 2: participants, music and the atmosphere of the session, photograph 6"
-      },
-      {
-        "type": "text",
-        "title": "Workshop 03",
-        "body": "We photographed participants using the mixer, playing music and trying ideas together. The series records the practical activities and collaboration throughout the session."
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_3_1.jpg",
-        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 1"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_3_2.jpg",
-        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 2"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_3_3.jpg",
-        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 3"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_3_4.jpg",
-        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 4"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_3_5.jpg",
-        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 5"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_3_6.jpg",
-        "alt": "Sona Workshop 3: participants collaborating at the decks"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_3_7.jpg",
-        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 7"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_3_8.jpg",
-        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 8"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_3_9.jpg",
-        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 9"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sona/SONA_Workshop_3_10.jpg",
-        "alt": "Sona Workshop 3: participants, music and the atmosphere of the session, photograph 10"
       }
     ],
     "tags": [
@@ -792,12 +747,12 @@ export const projects: WorkProject[] = [
     "title": "FREEWHEELIN",
     "year": "2026",
     "cover": "/Portfolio/Wh/cover.jpg",
-    "story": "Freewheelin needed photographs to show its shop, team and daily work. We photographed the interior, customer interactions and order preparation. The result is a collection of images that introduces the business from the stockroom to the shop floor.",
+    "story": "From stockroom rituals to conversations across the counter, our photographs reveal the people and everyday care that give Freewheelin its character.",
     "media": [
       {
         "type": "text",
         "title": "The shop",
-        "body": "We photographed the entrance, layout and product displays. These images give customers a clear view of the shop before their first visit."
+        "body": "Colour, objects and winding aisles form an invitation to explore. A first feel for Freewheelin before stepping inside."
       },
       {
         "type": "image",
@@ -837,7 +792,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Behind the counter",
-        "body": "We documented staff organising stock, preparing orders and packing parcels. The photographs show the daily work behind the business."
+        "body": "Selecting, sorting, packing. We brought the care behind each order into the shop’s visible story."
       },
       {
         "type": "image",
@@ -882,7 +837,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "The people & atmosphere",
-        "body": "We photographed staff, customer conversations and details around the counter. The series shows the people and everyday interactions that give the shop its character."
+        "body": "A conversation, a smile, movement through the aisles. Everyday encounters bring the shop’s character into focus."
       },
       {
         "type": "image",
@@ -934,7 +889,7 @@ export const projects: WorkProject[] = [
     "title": "FASHION SHOW 2025",
     "year": "2025",
     "cover": "/Portfolio/FASHION SHOW/watch?v=pepfv6cDHf8.jpg",
-    "story": "The 2025 fashion show needed to be captured on film. We filmed the runway looks, movement and atmosphere of the event. The finished film is available to watch on YouTube.",
+    "story": "Silhouette, pace and atmosphere. Our film of the 2025 fashion show carries the designs beyond the runway, preserving their expression in motion.",
     "media": [],
     "tags": [
       "VIDEO"
@@ -945,11 +900,63 @@ export const projects: WorkProject[] = [
     "title": "NIKITA",
     "year": "2026",
     "cover": "/Portfolio/NIKITA/watch?v=BLn4uTtfIpU.jpg",
-    "story": "Nikita’s performance needed to be captured on film. We filmed the performance as it unfolded, recording the movement and atmosphere. The finished performance film is available to watch on YouTube.",
+    "story": "We filmed Nikita’s performance through its gestures, movement and atmosphere, giving a fleeting presence lasting form and another space to be encountered.",
     "tags": [
       "VIDEO"
     ],
     "media": []
+  },
+  {
+    "slug": "herning-rocker",
+    "title": "HERNING ROCKER",
+    "year": "2025",
+    "cover": "/Portfolio/Herning Rocker/cover.jpg",
+    "story": "Raised hands, stage smoke, singers sharing the light. Our photographs of Herning Rocker hold the physical intensity of live music after the stage falls quiet.",
+    "tags": [
+      "PHOTO"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ80794-2.jpg",
+        "alt": "Singer at a microphone surrounded by pink stage smoke"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ81271.jpg",
+        "alt": "Singer in sunglasses moving across a white stage"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ81532.jpg",
+        "alt": "Singer holding a microphone under white stage lights"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ82153.jpg",
+        "alt": "Performer in a white jacket singing under pink lights"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ82207.jpg",
+        "alt": "Two performers in white jackets on the stage steps"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ82596.jpg",
+        "alt": "Two singers performing under blue stage lights"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ83230.jpg",
+        "alt": "Singer raising a hand with a drummer behind him"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ83352.jpg",
+        "alt": "Singer at a microphone under blue and orange stage lights"
+      }
+    ]
   }
 ];
 
