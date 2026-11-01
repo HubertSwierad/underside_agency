@@ -20,7 +20,7 @@ test('renders project story, additional photographs and playable videos', () => 
     ],
   }} />);
   expect(screen.getByText('A story about this project.')).toBeVisible();
-  expect(screen.getByRole('list', { name: 'Work delivered' })).toHaveTextContent('PHOTOVIDEO');
+  expect(screen.getByRole('list', { name: 'Project details' })).toHaveTextContent('2026PHOTOVIDEO');
   expect(screen.getByAltText('Behind the scenes')).toHaveAttribute('src', '/detail.jpg');
   expect(screen.getByAltText('Behind the scenes')).toHaveAttribute('loading', 'lazy');
   expect(screen.getByAltText('Behind the scenes')).toHaveAttribute('decoding', 'async');

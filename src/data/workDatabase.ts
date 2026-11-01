@@ -27,7 +27,7 @@ export const projects: WorkProject[] = [
   {
     "slug": "horizon-festival",
     "title": "HORIZON FESTIVAL",
-    "year": "2026",
+    "year": "2025/2026",
     "cover": "/Portfolio/Horizon/cover.jpeg",
     "story": "We gave Horizon’s electronic sound a visual presence through identity, photography and film. A distinct world beyond the big cities, built around the pull of gathering for music.",
     "media": [
@@ -340,7 +340,7 @@ export const projects: WorkProject[] = [
   {
     "slug": "vali-theater-lab",
     "title": "VALI THEATER LAB",
-    "year": "2025 to 2026",
+    "year": "2025/2026",
     "cover": "/Portfolio/Vali/spectacl 2025/cover.jpg",
     "story": "Through Vali Theater Lab’s workshops and performances in 2025 and 2026, we photographed imagined worlds taking shape. Traces of movement, rehearsal and shared attention give the work a life beyond the stage.",
     "media": [

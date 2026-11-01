@@ -77,8 +77,9 @@ export default function WorkPage({ project, onBack }: WorkPageProps) {
         <section className="project-slide project-text-slide project-introduction">
           <h2>{project.title}</h2>
           {project.story && <p>{project.story}</p>}
-          {Boolean(project.tags?.length) && (
-            <ul className="project-tags" aria-label="Work delivered">
+          {Boolean(project.year || project.tags?.length) && (
+            <ul className="project-tags" aria-label="Project details">
+              {project.year && <li>{project.year}</li>}
               {project.tags?.map(tag => <li key={tag}>{tag}</li>)}
             </ul>
           )}
