@@ -181,163 +181,6 @@ export const projects: WorkProject[] = [
     ]
   },
   {
-    "slug": "sektion",
-    "title": "SEKTION",
-    "year": "2025",
-    "cover": "/Portfolio/Sektion/cover.jpg",
-    "story": "Three gatherings, three rhythms. Through artists, crowds and shared spaces, our photographs trace the encounters that give Sektion’s scene its life.",
-    "media": [
-      {
-        "type": "text",
-        "title": "Event 01",
-        "body": "Between the decks and the crowd, a room responds. We photographed the exchange that makes a night feel collective."
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_1.jpg",
-        "alt": "Sektion Event 1 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_2.jpeg",
-        "alt": "Sektion Event 1 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_3.jpeg",
-        "alt": "Sektion Event 1 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_4.jpeg",
-        "alt": "Sektion Event 1 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_5.jpg",
-        "alt": "Sektion Event 1 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_6.jpg",
-        "alt": "Sektion Event 1 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_7.jpg",
-        "alt": "Sektion Event 1 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_8.jpg",
-        "alt": "Sektion Event 1 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_9.jpg",
-        "alt": "Sektion Event 1 live atmosphere"
-      },
-      {
-        "type": "text",
-        "title": "Event 02",
-        "body": "From daylight to evening, music and unhurried moments together shape a portrait of the gathering."
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_1.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_10.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_11.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_12.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_13.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_14.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_2.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_3.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_4.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_5.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_6.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_7.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_8.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_9.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "text",
-        "title": "Event 03",
-        "body": "Behind the booth and across the dance floor, we followed the gestures and encounters that gave the night its character."
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_03/_NZ80892.jpg",
-        "alt": "Sektion Event 3: artists, guests and live atmosphere, photograph 1"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_03/_NZ81527-Edit.jpg",
-        "alt": "Sektion Event 3: artists, guests and live atmosphere, photograph 4"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_03/_NZ81742.jpg",
-        "alt": "Guest in sunglasses under red and green lighting at Sektion Event 03"
-      }
-    ],
-    "tags": [
-      "PHOTO"
-    ]
-  },
-  {
     "slug": "vali-theater-lab",
     "title": "VALI THEATER LAB",
     "year": "2025/2026",
@@ -586,6 +429,368 @@ export const projects: WorkProject[] = [
     ]
   },
   {
+    "slug": "fashion-show",
+    "title": "FASHION SHOW",
+    "year": "2025",
+    "cover": "/Portfolio/FASHION SHOW/watch?v=pepfv6cDHf8.jpg",
+    "story": "Silhouette, pace and atmosphere. Our film of the 2025 fashion show carries the designs beyond the runway, preserving their expression in motion.",
+    "media": [],
+    "tags": [
+      "VIDEO"
+    ]
+  },
+  {
+    "slug": "freewheelin",
+    "title": "FREEWHEELIN",
+    "year": "2026",
+    "cover": "/Portfolio/Wh/cover.jpg",
+    "story": "From stockroom rituals to conversations across the counter, our photographs reveal the people and everyday care that give Freewheelin its character.",
+    "media": [
+      {
+        "type": "text",
+        "title": "The people & atmosphere",
+        "body": "A conversation, a smile, movement through the aisles. Everyday encounters bring the shop’s character into focus."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88608.jpg",
+        "alt": "Counter framed by colourful display objects"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88662.jpg",
+        "alt": "Conversation across the shop counter"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88695.jpg",
+        "alt": "Staff member smiling behind the counter"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88722.jpg",
+        "alt": "Staff member arranging clothing by the shop window"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88726.jpg",
+        "alt": "Staff member hanging a T-shirt on a clothing rail"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88747.jpg",
+        "alt": "Staff member seen through display cabinets"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88795.jpg",
+        "alt": "Customer standing near the shop displays"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ89006.jpg",
+        "alt": "Movement through the colourful shop interior"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88910.jpg",
+        "alt": "Staff member selecting stock"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88955.jpg",
+        "alt": "Close view of a parcel being sealed"
+      },
+      {
+        "type": "text",
+        "title": "The shop",
+        "body": "Colour, objects and winding aisles form an invitation to explore. A first feel for Freewheelin before stepping inside."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88191.jpg",
+        "alt": "Staff member outside the Freewheelin entrance"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88646.jpg",
+        "alt": "Shop entrance with colourful artwork and clothing"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88644.jpg",
+        "alt": "View along the shop floor and display cabinets"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88648.jpg",
+        "alt": "Shelves and glass display cases inside Freewheelin"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88709.jpg",
+        "alt": "Clothing and glass cabinets along the shop aisle"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88782.jpg",
+        "alt": "Wide view of the shop interior"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ89013.jpg",
+        "alt": "View across the Freewheelin counter"
+      },
+      {
+        "type": "text",
+        "title": "Behind the counter",
+        "body": "Selecting, sorting, packing. We brought the care behind each order into the shop’s visible story."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88433.jpg",
+        "alt": "Staff member carrying boxes in the stockroom"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88331.jpg",
+        "alt": "Staff packing an order together"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88447.jpg",
+        "alt": "Overhead view of an order being packed"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88510.jpg",
+        "alt": "Staff selecting products from the stockroom shelves"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88560.jpg",
+        "alt": "Staff member working between stocked shelves"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Wh/_NZ88888.jpg",
+        "alt": "Shipping label being prepared for an order"
+      }
+    ],
+    "tags": [
+      "PHOTO"
+    ]
+  },
+  {
+    "slug": "sektion",
+    "title": "SEKTION",
+    "year": "2025",
+    "cover": "/Portfolio/Sektion/cover.jpg",
+    "story": "Three gatherings, three rhythms. Through artists, crowds and shared spaces, our photographs trace the encounters that give Sektion’s scene its life.",
+    "media": [
+      {
+        "type": "text",
+        "title": "Event 01",
+        "body": "Between the decks and the crowd, a room responds. We photographed the exchange that makes a night feel collective."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_1.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_2.jpeg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_3.jpeg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_4.jpeg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_5.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_6.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_7.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_8.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_9.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "text",
+        "title": "Event 02",
+        "body": "From daylight to evening, music and unhurried moments together shape a portrait of the gathering."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_1.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_10.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_11.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_12.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_13.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_14.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_2.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_3.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_4.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_5.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_6.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_7.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_8.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_9.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "text",
+        "title": "Event 03",
+        "body": "Behind the booth and across the dance floor, we followed the gestures and encounters that gave the night its character."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ80892.jpg",
+        "alt": "Sektion Event 3: artists, guests and live atmosphere, photograph 1"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ81527-Edit.jpg",
+        "alt": "Sektion Event 3: artists, guests and live atmosphere, photograph 4"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ81742.jpg",
+        "alt": "Guest in sunglasses under red and green lighting at Sektion Event 03"
+      }
+    ],
+    "tags": [
+      "PHOTO"
+    ]
+  },
+  {
+    "slug": "herning-rocker",
+    "title": "HERNING ROCKER",
+    "year": "2025",
+    "cover": "/Portfolio/Herning Rocker/cover.jpg",
+    "story": "Raised hands, stage smoke, singers sharing the light. Our photographs of Herning Rocker hold the physical intensity of live music after the stage falls quiet.",
+    "tags": [
+      "PHOTO"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ80794-2.jpg",
+        "alt": "Singer at a microphone surrounded by pink stage smoke"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ81271.jpg",
+        "alt": "Singer in sunglasses moving across a white stage"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ81532.jpg",
+        "alt": "Singer holding a microphone under white stage lights"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ82153.jpg",
+        "alt": "Performer in a white jacket singing under pink lights"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ82207.jpg",
+        "alt": "Two performers in white jackets on the stage steps"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ82596.jpg",
+        "alt": "Two singers performing under blue stage lights"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ83230.jpg",
+        "alt": "Singer raising a hand with a drummer behind him"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Herning Rocker/_NZ83352.jpg",
+        "alt": "Singer at a microphone under blue and orange stage lights"
+      }
+    ]
+  },
+  {
     "slug": "sona",
     "title": "SONA",
     "year": "2026",
@@ -743,159 +948,6 @@ export const projects: WorkProject[] = [
     ]
   },
   {
-    "slug": "freewheelin",
-    "title": "FREEWHEELIN",
-    "year": "2026",
-    "cover": "/Portfolio/Wh/cover.jpg",
-    "story": "From stockroom rituals to conversations across the counter, our photographs reveal the people and everyday care that give Freewheelin its character.",
-    "media": [
-      {
-        "type": "text",
-        "title": "The shop",
-        "body": "Colour, objects and winding aisles form an invitation to explore. A first feel for Freewheelin before stepping inside."
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88191.jpg",
-        "alt": "Staff member outside the Freewheelin entrance"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88646.jpg",
-        "alt": "Shop entrance with colourful artwork and clothing"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88644.jpg",
-        "alt": "View along the shop floor and display cabinets"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88648.jpg",
-        "alt": "Shelves and glass display cases inside Freewheelin"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88709.jpg",
-        "alt": "Clothing and glass cabinets along the shop aisle"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88782.jpg",
-        "alt": "Wide view of the shop interior"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ89013.jpg",
-        "alt": "View across the Freewheelin counter"
-      },
-      {
-        "type": "text",
-        "title": "Behind the counter",
-        "body": "Selecting, sorting, packing. We brought the care behind each order into the shop’s visible story."
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88433.jpg",
-        "alt": "Staff member carrying boxes in the stockroom"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88331.jpg",
-        "alt": "Staff packing an order together"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88447.jpg",
-        "alt": "Overhead view of an order being packed"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88510.jpg",
-        "alt": "Staff selecting products from the stockroom shelves"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88560.jpg",
-        "alt": "Staff member working between stocked shelves"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88888.jpg",
-        "alt": "Shipping label being prepared for an order"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88910.jpg",
-        "alt": "Staff member selecting stock"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88955.jpg",
-        "alt": "Close view of a parcel being sealed"
-      },
-      {
-        "type": "text",
-        "title": "The people & atmosphere",
-        "body": "A conversation, a smile, movement through the aisles. Everyday encounters bring the shop’s character into focus."
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88608.jpg",
-        "alt": "Counter framed by colourful display objects"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88662.jpg",
-        "alt": "Conversation across the shop counter"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88695.jpg",
-        "alt": "Staff member smiling behind the counter"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88722.jpg",
-        "alt": "Staff member arranging clothing by the shop window"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88726.jpg",
-        "alt": "Staff member hanging a T-shirt on a clothing rail"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88747.jpg",
-        "alt": "Staff member seen through display cabinets"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ88795.jpg",
-        "alt": "Customer standing near the shop displays"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Wh/_NZ89006.jpg",
-        "alt": "Movement through the colourful shop interior"
-      }
-    ],
-    "tags": [
-      "PHOTO"
-    ]
-  },
-  {
-    "slug": "fashion-show",
-    "title": "FASHION SHOW",
-    "year": "2025",
-    "cover": "/Portfolio/FASHION SHOW/watch?v=pepfv6cDHf8.jpg",
-    "story": "Silhouette, pace and atmosphere. Our film of the 2025 fashion show carries the designs beyond the runway, preserving their expression in motion.",
-    "media": [],
-    "tags": [
-      "VIDEO"
-    ]
-  },
-  {
     "slug": "nikita",
     "title": "NIKITA",
     "year": "2026",
@@ -905,58 +957,6 @@ export const projects: WorkProject[] = [
       "VIDEO"
     ],
     "media": []
-  },
-  {
-    "slug": "herning-rocker",
-    "title": "HERNING ROCKER",
-    "year": "2025",
-    "cover": "/Portfolio/Herning Rocker/cover.jpg",
-    "story": "Raised hands, stage smoke, singers sharing the light. Our photographs of Herning Rocker hold the physical intensity of live music after the stage falls quiet.",
-    "tags": [
-      "PHOTO"
-    ],
-    "media": [
-      {
-        "type": "image",
-        "src": "/Portfolio/Herning Rocker/_NZ80794-2.jpg",
-        "alt": "Singer at a microphone surrounded by pink stage smoke"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Herning Rocker/_NZ81271.jpg",
-        "alt": "Singer in sunglasses moving across a white stage"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Herning Rocker/_NZ81532.jpg",
-        "alt": "Singer holding a microphone under white stage lights"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Herning Rocker/_NZ82153.jpg",
-        "alt": "Performer in a white jacket singing under pink lights"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Herning Rocker/_NZ82207.jpg",
-        "alt": "Two performers in white jackets on the stage steps"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Herning Rocker/_NZ82596.jpg",
-        "alt": "Two singers performing under blue stage lights"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Herning Rocker/_NZ83230.jpg",
-        "alt": "Singer raising a hand with a drummer behind him"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Herning Rocker/_NZ83352.jpg",
-        "alt": "Singer at a microphone under blue and orange stage lights"
-      }
-    ]
   }
 ];
 
