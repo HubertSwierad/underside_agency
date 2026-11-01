@@ -234,6 +234,11 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ84982.jpg",
+        "alt": "Top-hatted performer with an audience behind"
+      },
+      {
+        "type": "image",
         "src": "/Portfolio/Vali/spectacl 2025/_NZ84878.jpg",
         "alt": "Performer seated at a table in purple light"
       },
@@ -244,13 +249,13 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2025/_NZ84982.jpg",
-        "alt": "Top-hatted performer with an audience behind"
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ85131.jpg",
+        "alt": "Performer leaning forward in a tall bright doorway"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2025/_NZ85131.jpg",
-        "alt": "Performer leaning forward in a tall bright doorway"
+        "src": "/Portfolio/Vali/spectacl 2025/_NZ85084.jpg",
+        "alt": "Costumed performer on a red-curtained stage during the 2025 performance"
       },
       {
         "type": "image",
@@ -268,24 +273,14 @@ export const projects: WorkProject[] = [
         "alt": "Audience gathered before a blue-lit stage"
       },
       {
-        "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2025/_NZ85084.jpg",
-        "alt": "Costumed performer on a red-curtained stage during the 2025 performance"
-      },
-      {
         "type": "text",
         "title": "Workshops 2026",
         "body": "Exercises, conversations and rehearsals reveal ideas still finding their form. A portrait of the collective work before the performance."
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/workshops 2026/_NZ82129.jpg",
-        "alt": "Two participants standing before a projection"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Vali/workshops 2026/_NZ82184-2.jpg",
-        "alt": "Participants collaborating closely in a movement exercise"
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82952.jpg",
+        "alt": "Workshop group gathered in a classroom"
       },
       {
         "type": "image",
@@ -294,18 +289,28 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82129.jpg",
+        "alt": "Two participants standing before a projection"
+      },
+      {
+        "type": "image",
         "src": "/Portfolio/Vali/workshops 2026/_NZ82309.jpg",
         "alt": "Participants moving together through the studio"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/workshops 2026/_NZ82336.jpg",
-        "alt": "Participant reaching outward during an exercise"
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82355.jpg",
+        "alt": "Group exploring movement in pairs"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/workshops 2026/_NZ82355.jpg",
-        "alt": "Group exploring movement in pairs"
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82184-2.jpg",
+        "alt": "Participants collaborating closely in a movement exercise"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/workshops 2026/_NZ82336.jpg",
+        "alt": "Participant reaching outward during an exercise"
       },
       {
         "type": "image",
@@ -348,24 +353,14 @@ export const projects: WorkProject[] = [
         "alt": "Participants working around a lit table"
       },
       {
-        "type": "image",
-        "src": "/Portfolio/Vali/workshops 2026/_NZ82952.jpg",
-        "alt": "Workshop group gathered in a classroom"
-      },
-      {
         "type": "text",
         "title": "Performance 2026",
         "body": "Rooms, corridors and outdoor spaces become a stage. We followed performers and audience through a familiar building transformed by theatre."
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls100.jpg",
-        "alt": "Performer standing beside a lit display"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls103.jpg",
-        "alt": "Costumed ensemble facing the audience"
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls46.jpg",
+        "alt": "Audience standing together inside the venue"
       },
       {
         "type": "image",
@@ -379,18 +374,28 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls47.jpg",
+        "alt": "Audience watching a performance through a doorway"
+      },
+      {
+        "type": "image",
         "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls43.jpg",
         "alt": "Performer on a staircase viewed from below"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls46.jpg",
-        "alt": "Audience standing together inside the venue"
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls68.jpg",
+        "alt": "Audience gathered around an outdoor performance"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls47.jpg",
-        "alt": "Audience watching a performance through a doorway"
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls70.jpg",
+        "alt": "Two masked performers leaning through a window"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls74.jpg",
+        "alt": "Masked figure standing in a magenta-lit corridor"
       },
       {
         "type": "image",
@@ -409,18 +414,13 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls68.jpg",
-        "alt": "Audience gathered around an outdoor performance"
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls100.jpg",
+        "alt": "Performer standing beside a lit display"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls70.jpg",
-        "alt": "Two masked performers leaning through a window"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls74.jpg",
-        "alt": "Masked figure standing in a magenta-lit corridor"
+        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls103.jpg",
+        "alt": "Costumed ensemble facing the audience"
       }
     ],
     "tags": [
@@ -429,8 +429,8 @@ export const projects: WorkProject[] = [
     ]
   },
   {
-    "slug": "fashion-show",
-    "title": "FASHION SHOW",
+    "slug": "via-fashion-show",
+    "title": "VIA FASHION SHOW",
     "year": "2025",
     "cover": "/Portfolio/FASHION SHOW/watch?v=pepfv6cDHf8.jpg",
     "story": "Silhouette, pace and atmosphere. Our film of the 2025 fashion show carries the designs beyond the runway, preserving their expression in motion.",
