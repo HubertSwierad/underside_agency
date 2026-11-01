@@ -189,6 +189,23 @@ export const projects: WorkProject[] = [
     "media": [
       {
         "type": "text",
+        "title": "Campaign films",
+        "body": "We created campaign films to showcase Vali Theater Lab’s work, bringing their creative process, performances and collective spirit to a wider audience."
+      },
+      {
+        "type": "youtube",
+        "src": "/Portfolio/Vali/watch?v=kSmcqsy7MTA.png",
+        "url": "https://www.youtube.com/watch?v=kSmcqsy7MTA",
+        "title": "Vali Theater Lab campaign film 1"
+      },
+      {
+        "type": "youtube",
+        "src": "/Portfolio/Vali/watch?v=SWup9xsqNM4.png",
+        "url": "https://www.youtube.com/watch?v=SWup9xsqNM4",
+        "title": "Vali Theater Lab campaign film 2"
+      },
+      {
+        "type": "text",
         "title": "Performance 2025",
         "body": "Light, costume and gesture carry the story. Our photographs preserve fragments of a world briefly shared by performers and audience."
       },
@@ -206,11 +223,6 @@ export const projects: WorkProject[] = [
         "type": "image",
         "src": "/Portfolio/Vali/spectacl 2025/_NZ83432-Edit.jpg",
         "alt": "Two performers beneath a projected heartbeat"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2025/_NZ83439-Edit.jpg",
-        "alt": "Performer raising both arms in a bright doorway"
       },
       {
         "type": "image",
@@ -259,11 +271,6 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2025/_NZ85230.jpg",
-        "alt": "Performer moving across an orange-lit stage"
-      },
-      {
-        "type": "image",
         "src": "/Portfolio/Vali/spectacl 2025/_NZ85254.jpg",
         "alt": "Performer seated before blue curtains"
       },
@@ -279,11 +286,6 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/workshops 2026/_NZ82952.jpg",
-        "alt": "Workshop group gathered in a classroom"
-      },
-      {
-        "type": "image",
         "src": "/Portfolio/Vali/workshops 2026/_NZ82244.jpg",
         "alt": "Workshop space with a table and standing participants"
       },
@@ -291,11 +293,6 @@ export const projects: WorkProject[] = [
         "type": "image",
         "src": "/Portfolio/Vali/workshops 2026/_NZ82129.jpg",
         "alt": "Two participants standing before a projection"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Vali/workshops 2026/_NZ82309.jpg",
-        "alt": "Participants moving together through the studio"
       },
       {
         "type": "image",
@@ -329,11 +326,6 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/workshops 2026/_NZ82597.jpg",
-        "alt": "Participant framed by a small mirror"
-      },
-      {
-        "type": "image",
         "src": "/Portfolio/Vali/workshops 2026/_NZ82637.jpg",
         "alt": "Participant watching through a partially open door"
       },
@@ -356,11 +348,6 @@ export const projects: WorkProject[] = [
         "type": "text",
         "title": "Performance 2026",
         "body": "Rooms, corridors and outdoor spaces become a stage. We followed performers and audience through a familiar building transformed by theatre."
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls46.jpg",
-        "alt": "Audience standing together inside the venue"
       },
       {
         "type": "image",
@@ -394,11 +381,6 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
-        "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls74.jpg",
-        "alt": "Masked figure standing in a magenta-lit corridor"
-      },
-      {
-        "type": "image",
         "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls50.jpg",
         "alt": "Performer in a pink jacket gesturing on stage"
       },
@@ -421,6 +403,38 @@ export const projects: WorkProject[] = [
         "type": "image",
         "src": "/Portfolio/Vali/spectacl 2026/FremtidensPuls103.jpg",
         "alt": "Costumed ensemble facing the audience"
+      },
+      {
+        "type": "text",
+        "title": "Reels",
+        "body": "Short films capturing the movement, characters and atmosphere of Vali Theater Lab."
+      },
+      {
+        "type": "video",
+        "src": "/Portfolio/Vali/reels/reel_vali_1.mp4",
+        "title": "Vali Theater Lab reel 1",
+        "poster": "/Portfolio/Vali/reels/reel_vali_1-poster.jpg",
+        "sizeBytes": 9382136,
+        "aspectRatio": 0.5625,
+        "hasAudio": true
+      },
+      {
+        "type": "video",
+        "src": "/Portfolio/Vali/reels/reel_vali_2.mp4",
+        "title": "Vali Theater Lab reel 2",
+        "poster": "/Portfolio/Vali/reels/reel_vali_2-poster.jpg",
+        "sizeBytes": 19973523,
+        "aspectRatio": 0.5625,
+        "hasAudio": true
+      },
+      {
+        "type": "video",
+        "src": "/Portfolio/Vali/reels/reel_vali_glowup.mp4",
+        "title": "Vali Theater Lab Glowup reel",
+        "poster": "/Portfolio/Vali/reels/reel_vali_glowup-poster.jpg",
+        "sizeBytes": 24126800,
+        "aspectRatio": 0.5625,
+        "hasAudio": true
       }
     ],
     "tags": [

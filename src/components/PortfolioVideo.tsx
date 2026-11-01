@@ -68,12 +68,18 @@ export default function PortfolioVideo({ src, title, poster, aspectRatio, hasAud
       onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setFocused(false); }}>
 
       <video ref={videoRef} src={enabled ? src : undefined} poster={poster} aria-label={title}
-        preload="none" controls={false} loop playsInline disablePictureInPicture disableRemotePlayback
+        preload="none" controls={false} playsInline disablePictureInPicture disableRemotePlayback
         onLoadedMetadata={event => {
           const video = event.currentTarget;
           if (video.videoWidth && video.videoHeight) setRatio(video.videoWidth / video.videoHeight);
         }}
         onVolumeChange={event => setAudible(!event.currentTarget.muted && event.currentTarget.volume > 0)}
+        onPlay={event => {
+          const activeVideo = event.currentTarget;
+          document.querySelectorAll<HTMLVideoElement>('.portfolio-video video').forEach(video => {
+            if (video !== activeVideo && !video.paused) video.pause();
+          });
+        }}
         onPlaying={() => { setLoading(false); setPlaying(true); }}
         onWaiting={() => { if (requested) setLoading(true); }}
         onPause={() => { setPlaying(false); setLoading(false); setRequested(false); }}
