@@ -7,6 +7,7 @@ beforeEach(() => {
   jest.spyOn(HTMLElement.prototype, 'scrollWidth', 'get').mockReturnValue(1800);
   window.history.replaceState(null, '', '/');
   jest.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined);
+  jest.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
 });
 afterEach(() => jest.restoreAllMocks());
 
@@ -188,8 +189,8 @@ function mockMobileViewport(matches: boolean) {
   };
 }
 
-test('pauses only the background video while mobile Work is open and resumes on close', async () => {
-  const viewport = mockMobileViewport(true);
+test.each([true, false])('pauses the background video while Work is open and resumes on close (mobile: %s)', async (mobile) => {
+  const viewport = mockMobileViewport(mobile);
   const pause = jest.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
   const play = HTMLMediaElement.prototype.play as jest.Mock;
   try {
@@ -214,7 +215,7 @@ test('pauses only the background video while mobile Work is open and resumes on 
   } finally { viewport.restore(); }
 });
 
-test('direct mobile project links stay paused, including canplay, and respond to viewport changes', async () => {
+test('direct project links stay paused through canplay and viewport changes', async () => {
   const viewport = mockMobileViewport(true);
   const pause = jest.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
   const play = HTMLMediaElement.prototype.play as jest.Mock;
@@ -226,20 +227,26 @@ test('direct mobile project links stay paused, including canplay, and respond to
     expect(play).not.toHaveBeenCalled();
     expect(pause.mock.instances).toEqual([video]);
     await act(async () => { viewport.resize(false); });
-    expect(play.mock.instances).toEqual([video]);
+    expect(play).not.toHaveBeenCalled();
     await act(async () => { viewport.resize(true); });
-    expect(pause.mock.instances).toEqual([video, video]);
+    expect(play).not.toHaveBeenCalled();
+    expect(pause.mock.instances).toEqual([video]);
   } finally { viewport.restore(); }
 });
 
-test('desktop background continues playing when Work opens', async () => {
+test('desktop background remains paused during navigation within Work', async () => {
   const viewport = mockMobileViewport(false);
   const pause = jest.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
   try {
     const { container } = await act(async () => render(<App />));
     fireEvent.click(screen.getByRole('button', { name: 'SHOW WORK' }));
-    expect(pause).not.toHaveBeenCalled();
-    expect(container.querySelector('.video-container > video')).toHaveAttribute('autoplay');
+    const play = HTMLMediaElement.prototype.play as jest.Mock;
+    play.mockClear();
+    fireEvent.click(screen.getByRole('link', { name: /HORIZON FESTIVAL portfolio HORIZON FESTIVAL/ }));
+    fireEvent.click(screen.getByRole('link', { name: 'BACK' }));
+    expect(pause).toHaveBeenCalledTimes(1);
+    expect(play).not.toHaveBeenCalled();
+    expect(container.querySelector('.video-container > video')).not.toHaveAttribute('autoplay');
     expect(container.querySelector('.logo-overlay')).toHaveAttribute('fetchpriority', 'high');
   } finally { viewport.restore(); }
 });

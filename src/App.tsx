@@ -85,16 +85,7 @@ function App() {
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [isMobile, setIsMobile] = useState(() => Boolean(window.matchMedia?.('(max-width: 600px)').matches));
-  const backgroundPaused = isMobile && workVisible;
-
-  useEffect(() => {
-    const media = window.matchMedia?.('(max-width: 600px)');
-    if (!media) return;
-    const onChange = () => setIsMobile(media.matches);
-    media.addEventListener('change', onChange);
-    return () => media.removeEventListener('change', onChange);
-  }, []);
+  const backgroundPaused = workVisible;
 
   const [showPlayButton, setShowPlayButton] = useState(false);
   const [isMusicOn, setIsMusicOn] = useState(false);
