@@ -11,9 +11,7 @@ interface PortfolioVideoProps {
   hasAudio?: boolean;
 }
 
-const PRELOAD_LIMIT = 5_000_000;
-
-export default function PortfolioVideo({ src, title, poster, sizeBytes, aspectRatio, hasAudio }: PortfolioVideoProps) {
+export default function PortfolioVideo({ src, title, poster, aspectRatio, hasAudio }: PortfolioVideoProps) {
   const reportPlayback = useContext(PortfolioPlaybackContext);
   const playerId = useId();
   const [hovered, setHovered] = useState(false);
@@ -21,7 +19,7 @@ export default function PortfolioVideo({ src, title, poster, sizeBytes, aspectRa
   const [focused, setFocused] = useState(false);
   const [audible, setAudible] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [enabled, setEnabled] = useState(sizeBytes !== undefined && sizeBytes < PRELOAD_LIMIT);
+  const [enabled, setEnabled] = useState(false);
   const [requested, setRequested] = useState(false);
   const [loading, setLoading] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -38,19 +36,6 @@ export default function PortfolioVideo({ src, title, poster, sizeBytes, aspectRa
     const timer = window.setTimeout(() => setTapped(false), 3000);
     return () => window.clearTimeout(timer);
   }, [tapped]);
-
-  useEffect(() => {
-    if (sizeBytes !== undefined) return;
-    const controller = new AbortController();
-    // HEAD checks the size without downloading the video itself.
-    fetch(src, { method: 'HEAD', signal: controller.signal })
-      .then(response => {
-        const length = Number(response.headers.get('content-length'));
-        if (response.ok && length > 0 && length < PRELOAD_LIMIT) setEnabled(true);
-      })
-      .catch(() => { /* Unknown sizes stay on demand. */ });
-    return () => controller.abort();
-  }, [src, sizeBytes]);
 
   useEffect(() => {
     if (!requested || !enabled) return;
@@ -83,7 +68,7 @@ export default function PortfolioVideo({ src, title, poster, sizeBytes, aspectRa
       onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setFocused(false); }}>
 
       <video ref={videoRef} src={enabled ? src : undefined} poster={poster} aria-label={title}
-        preload={enabled ? 'auto' : 'none'} controls={false} loop playsInline disablePictureInPicture disableRemotePlayback
+        preload="none" controls={false} loop playsInline disablePictureInPicture disableRemotePlayback
         onLoadedMetadata={event => {
           const video = event.currentTarget;
           if (video.videoWidth && video.videoHeight) setRatio(video.videoWidth / video.videoHeight);

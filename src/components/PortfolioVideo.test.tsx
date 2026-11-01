@@ -5,12 +5,12 @@ import PortfolioVideo from './PortfolioVideo';
 
 afterEach(() => jest.restoreAllMocks());
 
-test('preloads small videos but does not autoplay', () => {
+test('does not download even small videos before Play', () => {
   const play = jest.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined);
   render(<PortfolioVideo src="/small.mp4" title="Small film" sizeBytes={4_999_999} />);
   const video = screen.getByLabelText('Small film');
-  expect(video).toHaveAttribute('src', '/small.mp4');
-  expect(video).toHaveAttribute('preload', 'auto');
+  expect(video).not.toHaveAttribute('src');
+  expect(video).toHaveAttribute('preload', 'none');
   expect(play).not.toHaveBeenCalled();
 });
 
@@ -35,13 +35,13 @@ test('waits for Play at the size boundary, then shows loading until playback sta
   expect(screen.getByRole('button', { name: 'Retry Large film' })).toBeVisible();
 });
 
-test('checks only headers before preloading a small video of unknown size', async () => {
+test('does not probe or download videos of unknown size before Play', async () => {
   const originalFetch = global.fetch;
   global.fetch = jest.fn().mockResolvedValue({ ok: true, headers: { get: () => '123456' } });
   try {
     await act(async () => { render(<PortfolioVideo src="/check.mp4" title="Checked film" />); });
-    expect(global.fetch).toHaveBeenCalledWith('/check.mp4', expect.objectContaining({ method: 'HEAD' }));
-    expect(screen.getByLabelText('Checked film')).toHaveAttribute('src', '/check.mp4');
+    expect(global.fetch).not.toHaveBeenCalled();
+    expect(screen.getByLabelText('Checked film')).not.toHaveAttribute('src');
   } finally { global.fetch = originalFetch; }
 });
 

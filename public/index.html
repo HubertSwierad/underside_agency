@@ -11,7 +11,14 @@
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- fetchpriority is standard HTML; retained for early image delivery. -->
+    <!--suppress HtmlUnknownAttribute -->
+    <link rel="preload" as="image" href="%PUBLIC_URL%/Logo_reverse.png" fetchpriority="high" />
+    <!--suppress HtmlUnknownAttribute -->
+    <link rel="preload" as="image" href="%PUBLIC_URL%/BackgroundVideo-poster-v1.jpg" fetchpriority="high" />
     <title>UNDERSIDE AGENCY</title>
+    <!-- Analytics is intentionally hosted remotely, not a local JavaScript library. -->
+    <!--suppress JSUnresolvedLibrary -->
     <script defer src="https://stats.underside.dk/script.js" data-website-id="a78591d9-3d22-4deb-87a5-a2f98d1b5b56"></script>
   </head>
   <body>

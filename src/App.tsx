@@ -39,6 +39,9 @@ function App() {
   const selectedProject = projects.find(project => project.slug === projectSlug);
   const workVisible = path === '/work' || path === '/work/' || Boolean(selectedProject);
 
+  const [workHasOpened, setWorkHasOpened] = useState(workVisible);
+  useEffect(() => { if (workVisible) setWorkHasOpened(true); }, [workVisible]);
+
   const { sliderRef, canSlideLeft, canSlideRight, updateNavigation } = useSliderNavigation(`${workVisible}-${projectSlug}`);
   const workScrollLeft = useRef(0);
   const resetWorkAfterHide = useRef(false);
@@ -82,26 +85,38 @@ function App() {
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [isMobile, setIsMobile] = useState(() => Boolean(window.matchMedia?.('(max-width: 600px)').matches));
+  const backgroundPaused = isMobile && workVisible;
+
+  useEffect(() => {
+    const media = window.matchMedia?.('(max-width: 600px)');
+    if (!media) return;
+    const onChange = () => setIsMobile(media.matches);
+    media.addEventListener('change', onChange);
+    return () => media.removeEventListener('change', onChange);
+  }, []);
+
   const [showPlayButton, setShowPlayButton] = useState(false);
   const [isMusicOn, setIsMusicOn] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (video) {
-      video.muted = true; // 👈 required by Safari
-      video
-        .play()
-        .then(() => setShowPlayButton(false))
-        .catch(err => {
-          console.warn("Autoplay blocked:", err);
-          setShowPlayButton(true);
-        });
+    if (!video) return;
+    if (backgroundPaused) {
+      video.pause();
+      return;
     }
-  }, []);
+    let cancelled = false;
+    video.muted = true;
+    video.play()
+      .then(() => { if (!cancelled) setShowPlayButton(false); })
+      .catch(() => { if (!cancelled) setShowPlayButton(true); });
+    return () => { cancelled = true; };
+  }, [backgroundPaused]);
 
   const ensureVideoPlaying = async () => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || backgroundPaused) return;
     try {
       await video.play();
       setShowPlayButton(false);
@@ -135,7 +150,7 @@ function App() {
       <div className="video-container">
         <video
           ref={videoRef}
-          autoPlay
+          autoPlay={!backgroundPaused}
           loop
           playsInline
           muted
@@ -144,15 +159,15 @@ function App() {
           disablePictureInPicture
           disableRemotePlayback
           x-webkit-airplay="deny"
-          preload="auto"
-          onPlay={() => setShowPlayButton(false)}
-          onCanPlay={() => {
-            const video = videoRef.current;
-            if (video) {
-              video.play().then(() => setShowPlayButton(false)).catch(() => setShowPlayButton(true));
-            }
+          poster="/BackgroundVideo-poster-v1.jpg"
+          preload="metadata"
+          onPlay={event => {
+            if (backgroundPaused) event.currentTarget.pause();
+            else setShowPlayButton(false);
           }}
+          onCanPlay={ensureVideoPlaying}
           onPause={() => {
+            if (backgroundPaused) return;
             setShowPlayButton(true);
             const audio = audioRef.current;
             if (audio) {
@@ -167,12 +182,12 @@ function App() {
             }
           }}
         >
-          <source src="/BackgroundVideo.mp4" type="video/mp4" />
+          <source src="/BackgroundVideo-compressed-v1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* Hidden audio element for background music; file should be placed in /public as Music.mp3 */}
-        <audio muted={audibleVideos.length > 0} ref={audioRef} src="/Music.mp3" preload="auto" loop />
-        {showPlayButton && (
+        <audio muted={audibleVideos.length > 0} ref={audioRef} src="/Music.mp3" preload="none" loop />
+        {showPlayButton && !backgroundPaused && (
           <img
             className="wait-overlay"
             src="/Wait.png"
@@ -181,7 +196,7 @@ function App() {
           />
         )}
         <div className="controls-bar" aria-hidden={false}>
-          {showPlayButton && (
+          {showPlayButton && !backgroundPaused && (
               <button
                   type="button"
                   className="play-overlay"
@@ -270,7 +285,7 @@ function App() {
               hideWork();
             }
           }}>
-          {selectedProject ? (
+          {(workVisible || workHasOpened) && (selectedProject ? (
             <WorkPage key={selectedProject.slug} project={selectedProject} onBack={() => navigate('/work')} />
           ) : (
             <div className="work-view">
@@ -335,10 +350,11 @@ function App() {
                 ))}
               </div>
             </div>
-          )}
+          ))}
         </section>
         <img
             className="logo-overlay"
+            fetchPriority="high"
             src="/Logo_reverse.png"
             alt="Logo"
             aria-hidden="true"

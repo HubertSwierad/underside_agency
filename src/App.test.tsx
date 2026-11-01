@@ -16,7 +16,7 @@ test('shows and hides work with a service introduction and linked project covers
   expect(toggle).toHaveAttribute('aria-expanded', 'false');
   fireEvent.click(toggle);
   expect(screen.getByRole('button', { name: 'HIDE WORK' })).toHaveAttribute('aria-expanded', 'true');
-  expect(screen.getByRole('heading', { name: /visual direction for artists, live moments, and more./i })).toBeVisible();
+  expect(screen.getByRole('heading', { name: /visual direction for artists and live moments./i })).toBeVisible();
   expect(screen.getByRole('link', { name: /HORIZON FESTIVAL portfolio HORIZON FESTIVAL/ })).toHaveAttribute('href', '/work/horizon-festival');
   expect(screen.getByRole('link', { name: /SEKTION portfolio SEKTION/ })).toHaveAttribute('href', '/work/sektion');
   fireEvent.click(toggle);
@@ -34,7 +34,7 @@ test('opens a project directly from its portfolio address', async () => {
 test('keeps work open inside the slider and closes it when the backdrop is clicked', async () => {
   await act(async () => { render(<App />); });
   fireEvent.click(screen.getByRole('button', { name: 'SHOW WORK' }));
-  fireEvent.click(screen.getByRole('heading', { name: /visual direction for artists, live moments, and more./i }));
+  fireEvent.click(screen.getByRole('heading', { name: /visual direction for artists and live moments./i }));
   expect(screen.getByRole('button', { name: 'HIDE WORK' })).toHaveAttribute('aria-expanded', 'true');
   fireEvent.click(screen.getByRole('region', { name: 'Portfolio slider' }));
   expect(screen.getByRole('button', { name: 'HIDE WORK' })).toBeInTheDocument();
@@ -160,4 +160,86 @@ test('resets before a quick reopen without waiting for the closing transition', 
   expect(slider.scrollLeft).toBe(725);
   fireEvent.click(screen.getByRole('button', { name: 'SHOW WORK' }));
   expect(slider.scrollLeft).toBe(0);
+});
+
+
+test('defers portfolio images until Work opens and music until playback', async () => {
+  const { container } = await act(async () => render(<App />));
+  expect(container.querySelector('#work-panel img')).toBeNull();
+  expect(container.querySelector('audio')).toHaveAttribute('preload', 'none');
+  expect(container.querySelector('.video-container > video')).toHaveAttribute('poster', '/BackgroundVideo-poster-v1.jpg');
+  expect(container.querySelector('.video-container > video source')).toHaveAttribute('src', '/BackgroundVideo-compressed-v1.mp4');
+  fireEvent.click(screen.getByRole('button', { name: 'SHOW WORK' }));
+  expect(container.querySelector('#work-panel img')).not.toBeNull();
+});
+
+function mockMobileViewport(matches: boolean) {
+  const listeners = new Set<() => void>();
+  const media = {
+    matches,
+    addEventListener: (_: string, listener: () => void) => listeners.add(listener),
+    removeEventListener: (_: string, listener: () => void) => listeners.delete(listener),
+  };
+  const original = window.matchMedia;
+  window.matchMedia = jest.fn().mockReturnValue(media);
+  return {
+    resize: (mobile: boolean) => { media.matches = mobile; listeners.forEach(listener => listener()); },
+    restore: () => { window.matchMedia = original; },
+  };
+}
+
+test('pauses only the background video while mobile Work is open and resumes on close', async () => {
+  const viewport = mockMobileViewport(true);
+  const pause = jest.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
+  const play = HTMLMediaElement.prototype.play as jest.Mock;
+  try {
+    const { container } = await act(async () => render(<App />));
+    const video = container.querySelector('.video-container > video')!;
+    const audio = container.querySelector('audio')!;
+    play.mockClear();
+    fireEvent.click(screen.getByRole('button', { name: 'SHOW WORK' }));
+    expect(pause).toHaveBeenCalledTimes(1);
+    expect(pause.mock.instances[0]).toBe(video);
+    expect(video).not.toHaveAttribute('autoplay');
+    fireEvent.pause(video);
+    fireEvent.canPlay(video);
+    expect(screen.queryByRole('button', { name: 'PLAY' })).not.toBeInTheDocument();
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Włącz muzykę' })); });
+    expect(play.mock.instances).toEqual([audio]);
+    expect(pause).toHaveBeenCalledTimes(1);
+    play.mockClear();
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'HIDE WORK' })); });
+    expect(play.mock.instances).toEqual([video]);
+    expect(video).toHaveAttribute('autoplay');
+  } finally { viewport.restore(); }
+});
+
+test('direct mobile project links stay paused, including canplay, and respond to viewport changes', async () => {
+  const viewport = mockMobileViewport(true);
+  const pause = jest.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
+  const play = HTMLMediaElement.prototype.play as jest.Mock;
+  window.history.replaceState(null, '', '/work/sona');
+  try {
+    const { container } = await act(async () => render(<App />));
+    const video = container.querySelector('.video-container > video')!;
+    fireEvent.canPlay(video);
+    expect(play).not.toHaveBeenCalled();
+    expect(pause.mock.instances).toEqual([video]);
+    await act(async () => { viewport.resize(false); });
+    expect(play.mock.instances).toEqual([video]);
+    await act(async () => { viewport.resize(true); });
+    expect(pause.mock.instances).toEqual([video, video]);
+  } finally { viewport.restore(); }
+});
+
+test('desktop background continues playing when Work opens', async () => {
+  const viewport = mockMobileViewport(false);
+  const pause = jest.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
+  try {
+    const { container } = await act(async () => render(<App />));
+    fireEvent.click(screen.getByRole('button', { name: 'SHOW WORK' }));
+    expect(pause).not.toHaveBeenCalled();
+    expect(container.querySelector('.video-container > video')).toHaveAttribute('autoplay');
+    expect(container.querySelector('.logo-overlay')).toHaveAttribute('fetchpriority', 'high');
+  } finally { viewport.restore(); }
 });
