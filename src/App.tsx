@@ -12,6 +12,11 @@ import WorkPage from './components/WorkPage';
 
 
 function readPath() {
+  const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
+  if (navigation?.type === 'reload') {
+    window.history.replaceState(null, '', '/');
+    return '/';
+  }
   const legacyPath = window.location.hash.slice(1);
   if (legacyPath === '/work' || legacyPath.startsWith('/work/')) {
     window.history.replaceState(null, '', legacyPath);
@@ -20,6 +25,15 @@ function readPath() {
 }
 
 function App() {
+  const [introStage, setIntroStage] = useState<'revealing' | 'exiting' | 'done'>('revealing');
+  useEffect(() => {
+    const revealTimer = window.setTimeout(() => setIntroStage('exiting'), 1700);
+    const removeTimer = window.setTimeout(() => setIntroStage('done'), 2000);
+    return () => {
+      window.clearTimeout(revealTimer);
+      window.clearTimeout(removeTimer);
+    };
+  }, []);
   const [audibleVideos, setAudibleVideos] = useState<string[]>([]);
   const reportVideoPlayback = useCallback((id: string, audible: boolean) => {
     setAudibleVideos(current => audible
@@ -86,6 +100,17 @@ function App() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const backgroundPaused = workVisible;
+  const [reducedMotion, setReducedMotion] = useState(() =>
+    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
+  );
+
+  useEffect(() => {
+    const preference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
+    if (!preference) return;
+    const updatePreference = (event: MediaQueryListEvent) => setReducedMotion(event.matches);
+    preference.addEventListener('change', updatePreference);
+    return () => preference.removeEventListener('change', updatePreference);
+  }, []);
 
   const [showPlayButton, setShowPlayButton] = useState(false);
   const [isMusicOn, setIsMusicOn] = useState(false);
@@ -93,8 +118,9 @@ function App() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    if (backgroundPaused) {
+    if (backgroundPaused || reducedMotion) {
       video.pause();
+      setShowPlayButton(!backgroundPaused && reducedMotion);
       return;
     }
     let cancelled = false;
@@ -103,7 +129,7 @@ function App() {
       .then(() => { if (!cancelled) setShowPlayButton(false); })
       .catch(() => { if (!cancelled) setShowPlayButton(true); });
     return () => { cancelled = true; };
-  }, [backgroundPaused]);
+  }, [backgroundPaused, reducedMotion]);
 
   const ensureVideoPlaying = async () => {
     const video = videoRef.current;
@@ -120,7 +146,7 @@ function App() {
     const audio = audioRef.current;
     if (!audio) return;
     // Always try to start the video whenever the music button is pressed
-    await ensureVideoPlaying();
+    if (!reducedMotion) await ensureVideoPlaying();
     if (isMusicOn) {
       audio.pause();
       setIsMusicOn(false);
@@ -138,10 +164,15 @@ function App() {
   return (
     <PortfolioPlaybackContext.Provider value={reportVideoPlayback}>
     <div className={`App${workVisible ? ' is-work-visible' : ''}`}>
+      {introStage !== 'done' && (
+        <div className={`intro-screen${introStage === 'exiting' ? ' is-exiting' : ''}`} aria-hidden="true">
+          <img className="intro-logo" src="/Logo_reverse.png" alt="" />
+        </div>
+      )}
       <div className="video-container">
         <video
           ref={videoRef}
-          autoPlay={!backgroundPaused}
+          autoPlay={!backgroundPaused && !reducedMotion}
           loop
           playsInline
           muted
@@ -151,14 +182,14 @@ function App() {
           disableRemotePlayback
           x-webkit-airplay="deny"
           poster="/BackgroundVideo-poster-v1.jpg"
-          preload="metadata"
+          preload="auto"
           onPlay={event => {
             if (backgroundPaused) event.currentTarget.pause();
             else setShowPlayButton(false);
           }}
-          onCanPlay={ensureVideoPlaying}
+          onCanPlay={() => { if (!reducedMotion) void ensureVideoPlaying(); }}
           onPause={() => {
-            if (backgroundPaused) return;
+            if (backgroundPaused || reducedMotion) return;
             setShowPlayButton(true);
             const audio = audioRef.current;
             if (audio) {
@@ -177,8 +208,8 @@ function App() {
           Your browser does not support the video tag.
         </video>
         {/* Hidden audio element for background music; file should be placed in /public as Music.mp3 */}
-        <audio muted={audibleVideos.length > 0} ref={audioRef} src="/Music.mp3" preload="none" loop />
-        {showPlayButton && !backgroundPaused && (
+        <audio muted={audibleVideos.length > 0} ref={audioRef} src="/Music.mp3" preload="auto" loop />
+        {showPlayButton && !backgroundPaused && !reducedMotion && (
           <img
             className="wait-overlay"
             src="/Wait.png"
@@ -272,9 +303,11 @@ function App() {
                  }}
                  onClick={event => {
                    const target = event.target as HTMLElement;
-            if (!target.closest('.work-slider, .project-view, .project-heading')) {
-              hideWork();
+            if (selectedProject) {
+              if (!target.closest('.project-slider, .project-heading')) navigate('/work');
+              return;
             }
+            if (!target.closest('.work-slider, .project-heading')) hideWork();
           }}>
           {(workVisible || workHasOpened) && (selectedProject ? (
             <WorkPage key={selectedProject.slug} project={selectedProject} onBack={() => navigate('/work')} />

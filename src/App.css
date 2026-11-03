@@ -42,6 +42,40 @@ button {
   pointer-events: none; /* block user interaction with native controls */
 }
 
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #000;
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+.intro-screen.is-exiting {
+  opacity: 0;
+}
+
+.intro-logo {
+  display: block;
+  width: min(40vh, 72vw);
+  max-height: 40vh;
+  object-fit: contain;
+  clip-path: inset(0 100% 0 0);
+  animation: intro-logo-reveal 1.7s cubic-bezier(.65, 0, .35, 1) forwards;
+}
+
+@keyframes intro-logo-reveal {
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-logo { animation-duration: 0.01ms; }
+  .intro-screen { transition-duration: 0.01ms; }
+}
+
 /* Hide native controls overlays in Safari / WebKit */
 .video-container > video::-webkit-media-controls-panel,
 .video-container > video::-webkit-media-controls-start-playback-button,
