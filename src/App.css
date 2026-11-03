@@ -61,6 +61,7 @@ button {
 .intro-logo {
   display: block;
   width: min(40vh, 72vw);
+  height: auto;
   max-height: 40vh;
   object-fit: contain;
   clip-path: inset(0 100% 0 0);
@@ -108,9 +109,8 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 40vh;
+  width: min(40vh, 72vw);
   max-height: 40vh;
-  width: auto;
   height: auto;
   object-fit: contain;
   z-index: 2;
