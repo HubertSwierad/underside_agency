@@ -12,7 +12,10 @@ import WorkPage from './components/WorkPage';
 
 
 function readPath() {
-  const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
+  const navigationEntries = typeof performance.getEntriesByType === 'function'
+    ? performance.getEntriesByType('navigation')
+    : [];
+  const navigation = navigationEntries[0] as PerformanceNavigationTiming | undefined;
   if (navigation?.type === 'reload') {
     window.history.replaceState(null, '', '/');
     return '/';
@@ -100,27 +103,14 @@ function App() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const backgroundPaused = workVisible;
-  const [reducedMotion, setReducedMotion] = useState(() =>
-    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
-  );
-
-  useEffect(() => {
-    const preference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
-    if (!preference) return;
-    const updatePreference = (event: MediaQueryListEvent) => setReducedMotion(event.matches);
-    preference.addEventListener('change', updatePreference);
-    return () => preference.removeEventListener('change', updatePreference);
-  }, []);
-
   const [showPlayButton, setShowPlayButton] = useState(false);
   const [isMusicOn, setIsMusicOn] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    if (backgroundPaused || reducedMotion) {
+    if (backgroundPaused) {
       video.pause();
-      setShowPlayButton(!backgroundPaused && reducedMotion);
       return;
     }
     let cancelled = false;
@@ -129,7 +119,7 @@ function App() {
       .then(() => { if (!cancelled) setShowPlayButton(false); })
       .catch(() => { if (!cancelled) setShowPlayButton(true); });
     return () => { cancelled = true; };
-  }, [backgroundPaused, reducedMotion]);
+  }, [backgroundPaused]);
 
   const ensureVideoPlaying = async () => {
     const video = videoRef.current;
@@ -146,7 +136,7 @@ function App() {
     const audio = audioRef.current;
     if (!audio) return;
     // Always try to start the video whenever the music button is pressed
-    if (!reducedMotion) await ensureVideoPlaying();
+    await ensureVideoPlaying();
     if (isMusicOn) {
       audio.pause();
       setIsMusicOn(false);
@@ -172,7 +162,7 @@ function App() {
       <div className="video-container">
         <video
           ref={videoRef}
-          autoPlay={!backgroundPaused && !reducedMotion}
+          autoPlay={!backgroundPaused}
           loop
           playsInline
           muted
@@ -187,9 +177,9 @@ function App() {
             if (backgroundPaused) event.currentTarget.pause();
             else setShowPlayButton(false);
           }}
-          onCanPlay={() => { if (!reducedMotion) void ensureVideoPlaying(); }}
+          onCanPlay={ensureVideoPlaying}
           onPause={() => {
-            if (backgroundPaused || reducedMotion) return;
+            if (backgroundPaused) return;
             setShowPlayButton(true);
             const audio = audioRef.current;
             if (audio) {
@@ -209,7 +199,7 @@ function App() {
         </video>
         {/* Hidden audio element for background music; file should be placed in /public as Music.mp3 */}
         <audio muted={audibleVideos.length > 0} ref={audioRef} src="/Music.mp3" preload="auto" loop />
-        {showPlayButton && !backgroundPaused && !reducedMotion && (
+        {showPlayButton && !backgroundPaused && (
           <img
             className="wait-overlay"
             src="/Wait.png"

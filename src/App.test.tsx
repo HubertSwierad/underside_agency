@@ -29,6 +29,8 @@ test('opens a project directly from its portfolio address', async () => {
   await act(async () => { render(<App />); });
   expect(screen.getByRole('heading', { name: 'HORIZON FESTIVAL' })).toBeVisible();
   expect(screen.getByRole('link', { name: 'BACK' })).toHaveAttribute('href', '/work');
+  fireEvent.click(screen.getByRole('region', { name: 'Selected work' }));
+  expect(screen.getByRole('heading', { name: /visual direction for artists and live moments./i })).toBeVisible();
 });
 
 
@@ -164,10 +166,10 @@ test('resets before a quick reopen without waiting for the closing transition', 
 });
 
 
-test('defers portfolio images until Work opens and music until playback', async () => {
+test('defers portfolio images until Work opens and preloads music during the intro', async () => {
   const { container } = await act(async () => render(<App />));
   expect(container.querySelector('#work-panel img')).toBeNull();
-  expect(container.querySelector('audio')).toHaveAttribute('preload', 'none');
+  expect(container.querySelector('audio')).toHaveAttribute('preload', 'auto');
   expect(container.querySelector('.video-container > video')).toHaveAttribute('poster', '/BackgroundVideo-poster-v1.jpg');
   expect(container.querySelector('.video-container > video source')).toHaveAttribute('src', '/BackgroundVideo-compressed-v1.mp4');
   fireEvent.click(screen.getByRole('button', { name: 'SHOW WORK' }));
