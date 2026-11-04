@@ -443,8 +443,8 @@ export const projects: WorkProject[] = [
     ]
   },
   {
-    "slug": "camila-landing",
-    "title": "CAMILA LANDING",
+    "slug": "camila-lading",
+    "title": "CAMILA LADING",
     "year": "2026",
     "cover": "/Portfolio/Camila Lading/_NZ83345.jpg",
     "story": "An editorial fashion campaign for Camila Landing. Portraits trace the collection’s sculptural knitwear, reconstructed denim and the quiet confidence of the people wearing them.",
