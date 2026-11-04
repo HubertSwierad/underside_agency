@@ -1,7 +1,7 @@
 /* Both work views share one frame, navigation row and tile height. */
 .work-view {
   --work-tile-height: min(55svh, 590px);
-  --work-text-width: max(230px, 20vw);
+  --work-text-width: max(320px, 20vw);
   height: 100%;
   width: 100%;
   box-sizing: border-box;
@@ -24,7 +24,7 @@
   box-sizing: border-box;
 }
 @media (max-width: 600px) {
-  .work-view { --work-tile-height: min(68svh, calc(100svh - 188px)); --work-text-width: 78vw; }
+  .work-view { --work-tile-height: min(68svh, calc(100svh - 188px)); --work-text-width: max(320px, 78vw); }
 }
 
 .work-intro,
@@ -64,4 +64,8 @@
   box-sizing: border-box;
   padding: 0;
   overflow-y: auto;
+  scrollbar-width: none;
+  justify-content: safe center;
 }
+.work-view .work-tile-description::-webkit-scrollbar,
+.work-view .project-slide.project-text-slide::-webkit-scrollbar { display: none; }

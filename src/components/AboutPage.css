@@ -4,6 +4,12 @@
   text-underline-offset: 3px;
 }
 
+.about-view .project-media-slide figcaption {
+  max-width: min(52vw, 520px);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 .about-contact-slide a[href^="mailto:"] {
   font-size: 18px;
   font-weight: 700;
