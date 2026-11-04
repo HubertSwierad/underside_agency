@@ -35,7 +35,7 @@
 
 /* iPad Safari can stretch the flex child from its aspect-ratio alone. */
 .about-view .project-media-slide:has(.portfolio-video) .portfolio-video {
-  width: calc((var(--work-tile-height) - 28px) * 0.5625);
+  width: auto;
   min-width: 0;
   flex: 0 0 auto;
 }

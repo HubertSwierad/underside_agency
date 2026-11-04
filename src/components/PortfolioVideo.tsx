@@ -17,9 +17,10 @@ export default function PortfolioVideo({ src, title, poster, aspectRatio, hasAud
   const [hovered, setHovered] = useState(false);
   const [tapped, setTapped] = useState(false);
   const [focused, setFocused] = useState(false);
-  const [audible, setAudible] = useState(true);
+  const [audible, setAudible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [enabled, setEnabled] = useState(false);
+  const [autoStart, setAutoStart] = useState(false);
   const [requested, setRequested] = useState(false);
   const [loading, setLoading] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -47,6 +48,29 @@ export default function PortfolioVideo({ src, title, poster, aspectRatio, hasAud
     });
   }, [requested, enabled]);
 
+  useEffect(() => {
+    if (hasAudio !== false) return;
+    const player = videoRef.current?.parentElement;
+    if (!player || typeof IntersectionObserver === 'undefined') return;
+    const slider = player.closest('.project-slider');
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      setAutoStart(true);
+      setEnabled(true);
+      observer.disconnect();
+    }, { root: slider, rootMargin: '0px 100% 0px 100%' });
+    observer.observe(player);
+    return () => observer.disconnect();
+  }, [hasAudio]);
+
+  useEffect(() => {
+    if (!autoStart || !enabled) return;
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.play().catch(() => setError(true));
+  }, [autoStart, enabled]);
+
   const play = () => {
     setError(false);
     setTapped(false);
@@ -68,7 +92,7 @@ export default function PortfolioVideo({ src, title, poster, aspectRatio, hasAud
       onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setFocused(false); }}>
 
       <video ref={videoRef} src={enabled ? src : undefined} poster={poster} aria-label={title}
-        preload="none" controls={false} playsInline disablePictureInPicture disableRemotePlayback
+        muted={hasAudio === false} loop={autoStart} preload={enabled ? 'auto' : 'none'} controls={false} playsInline disablePictureInPicture disableRemotePlayback
         onLoadedMetadata={event => {
           const video = event.currentTarget;
           if (video.videoWidth && video.videoHeight) setRatio(video.videoWidth / video.videoHeight);

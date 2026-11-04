@@ -108,7 +108,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
           if (tile.type === 'localVideo') {
             return (
               <figure className="project-slide project-media-slide" key={`video-${index}`}>
-                <PortfolioVideo src={tile.src} poster={tile.poster} title={tile.title} sizeBytes={tile.sizeBytes} aspectRatio={tile.aspectRatio} hasAudio />
+                <PortfolioVideo src={tile.src} poster={tile.poster} title={tile.title} sizeBytes={tile.sizeBytes} aspectRatio={tile.aspectRatio} hasAudio={tile.hasAudio} />
                 <figcaption>{tile.caption}</figcaption>
               </figure>
             );
