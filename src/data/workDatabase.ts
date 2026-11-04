@@ -443,6 +443,65 @@ export const projects: WorkProject[] = [
     ]
   },
   {
+    "slug": "camila-landing",
+    "title": "CAMILA LANDING",
+    "year": "2026",
+    "cover": "/Portfolio/Camila Lading/_NZ83345.jpg",
+    "story": "An editorial fashion campaign for Camila Landing. Portraits trace the collection’s sculptural knitwear, reconstructed denim and the quiet confidence of the people wearing them.",
+    "media": [
+      {
+        "type": "text",
+        "title": "Collection portraits",
+        "body": "Expressive styling, tactile layers and direct gazes bring the collection’s character into focus."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Camila Lading/_NZ82834.jpg",
+        "alt": "Model in a sculptural burgundy knit and reconstructed denim"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Camila Lading/_NZ82881.jpg",
+        "alt": "Two models wearing layered Camila Landing looks"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Camila Lading/_NZ83289.jpg",
+        "alt": "Model in a plaid crop top, reconstructed denim and red boots against a wooden wall"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Camila Lading/Edit14.jpg",
+        "alt": "Close portrait of two models wearing layered Camila Landing looks"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Camila Lading/_NZ82991.jpg",
+        "alt": "Model in a burgundy knit and patchwork denim, photographed from above"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Camila Lading/_NZ83007.jpg",
+        "alt": "Model in a layered green and plaid look"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Camila Lading/_NZ83154.jpg",
+        "alt": "Two models in sculptural layered fashion against a bright backdrop"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Camila Lading/_NZ83354.jpg",
+        "alt": "Full length portraits of two models wearing the collection"
+      }
+    ],
+    "tags": [
+      "FASHION",
+      "CAMPAIGN",
+      "PHOTO"
+    ]
+  },
+  {
     "slug": "via-fashion-show",
     "title": "VIA FASHION SHOW",
     "year": "2025",

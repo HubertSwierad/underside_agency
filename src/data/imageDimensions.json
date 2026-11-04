@@ -1,4 +1,48 @@
 {
+  "/Portfolio/Camila Lading/Edit14.jpg": {
+    "width": 1228,
+    "height": 1638
+  },
+  "/Portfolio/Camila Lading/_NZ82834.jpg": {
+    "width": 1310,
+    "height": 1638
+  },
+  "/Portfolio/Camila Lading/_NZ82881.jpg": {
+    "width": 1310,
+    "height": 1638
+  },
+  "/Portfolio/Camila Lading/_NZ82983.jpg": {
+    "width": 1310,
+    "height": 1638
+  },
+  "/Portfolio/Camila Lading/_NZ82991.jpg": {
+    "width": 1228,
+    "height": 1638
+  },
+  "/Portfolio/Camila Lading/_NZ83007.jpg": {
+    "width": 1228,
+    "height": 1638
+  },
+  "/Portfolio/Camila Lading/_NZ83154.jpg": {
+    "width": 1228,
+    "height": 1638
+  },
+  "/Portfolio/Camila Lading/_NZ83289.jpg": {
+    "width": 1310,
+    "height": 1638
+  },
+  "/Portfolio/Camila Lading/_NZ83302.jpg": {
+    "width": 1310,
+    "height": 1638
+  },
+  "/Portfolio/Camila Lading/_NZ83345.jpg": {
+    "width": 1310,
+    "height": 1638
+  },
+  "/Portfolio/Camila Lading/_NZ83354.jpg": {
+    "width": 1310,
+    "height": 1638
+  },
   "/Portfolio/FASHION SHOW/watch?v=pepfv6cDHf8.jpg": {
     "width": 1677,
     "height": 938
@@ -147,17 +191,9 @@
     "width": 800,
     "height": 1000
   },
-  "/Portfolio/Horizon/web/lineup.jpg": {
-    "width": 800,
-    "height": 1000
-  },
   "/Portfolio/Horizon/web/poster.jpg": {
     "width": 800,
     "height": 600
-  },
-  "/Portfolio/Horizon/web/website.jpg": {
-    "width": 800,
-    "height": 1000
   },
   "/Portfolio/NIKITA/watch?v=BLn4uTtfIpU.jpg": {
     "width": 1677,
@@ -638,5 +674,9 @@
   "/Portfolio/Wh/cover.jpg": {
     "width": 2048,
     "height": 1365
+  },
+  "/About/creative-direction-cover.jpg": {
+    "width": 1024,
+    "height": 1536
   }
 }

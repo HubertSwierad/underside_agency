@@ -39,8 +39,9 @@ export default function WorkPage({ project, onBack }: WorkPageProps) {
             slideByTile(event.currentTarget, event.key === 'ArrowRight' ? 1 : -1);
           }
         }}
+        onDragStart={event => event.preventDefault()}
         onPointerDown={event => {
-          if (event.pointerType !== 'mouse' || event.button !== 0 || (event.target as HTMLElement).closest('video, button, a, .portfolio-video')) return;
+          if (event.pointerType !== 'mouse' || event.button !== 0) return;
           drag.current = { active: true, startX: event.clientX, scrollLeft: event.currentTarget.scrollLeft, moved: false };
         }}
         onPointerMove={event => {

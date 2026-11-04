@@ -1,0 +1,28 @@
+.about-view .project-text-slide a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.about-contact-slide a[href^="mailto:"] {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+.about-contact-slide .about-legal-details {
+  margin-top: 40px;
+  max-width: 52ch;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.about-contact-slide .about-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0 0 24px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}

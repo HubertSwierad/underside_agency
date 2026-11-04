@@ -29,6 +29,8 @@ button {
   height: 100%;
   position: relative;
   background-color: black;
+  background-position: center;
+  background-size: cover;
 }
 
 .video-container > video {
@@ -40,6 +42,11 @@ button {
   left: 0;
   background-color: black;
   pointer-events: none; /* block user interaction with native controls */
+}
+
+/* Remove Safari's native paused-video overlay while the About or Work panel is open. */
+.is-work-visible .video-container > video {
+  display: none;
 }
 
 .intro-screen {

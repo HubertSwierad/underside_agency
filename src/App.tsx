@@ -8,6 +8,7 @@ import './components/WorkLayout.css';
 import { slideByTile } from './utils/slideByTile';
 import { projects } from './data/workDatabase';
 import WorkPage from './components/WorkPage';
+import AboutPage from './components/AboutPage';
 
 
 
@@ -55,6 +56,7 @@ function App() {
   const drag = useRef({ active: false, startX: 0, scrollLeft: 0, moved: false });
   const selectedProject = projects.find(project => project.slug === projectSlug);
   const workVisible = path === '/work' || path === '/work/' || Boolean(selectedProject);
+  const aboutVisible = path === '/about';
 
   const [workHasOpened, setWorkHasOpened] = useState(workVisible);
   useEffect(() => { if (workVisible) setWorkHasOpened(true); }, [workVisible]);
@@ -99,10 +101,18 @@ function App() {
     navigate('/');
   };
   const toggleWork = () => workVisible ? hideWork() : navigate('/work');
+  const closeAbout = () => {
+    setWorkHasOpened(false);
+    navigate('/');
+  };
+  const toggleAbout = () => {
+    setWorkHasOpened(false);
+    navigate(aboutVisible ? '/' : '/about');
+  };
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const backgroundPaused = workVisible;
+  const backgroundPaused = workVisible || aboutVisible;
   const [showPlayButton, setShowPlayButton] = useState(false);
   const [isMusicOn, setIsMusicOn] = useState(false);
 
@@ -153,13 +163,13 @@ function App() {
 
   return (
     <PortfolioPlaybackContext.Provider value={reportVideoPlayback}>
-    <div className={`App${workVisible ? ' is-work-visible' : ''}`}>
+    <div className={`App${workVisible || aboutVisible ? ' is-work-visible' : ''}`}>
       {introStage !== 'done' && (
         <div className={`intro-screen${introStage === 'exiting' ? ' is-exiting' : ''}`} aria-hidden="true">
           <img className="intro-logo" src="/Logo_reverse.png" alt="" />
         </div>
       )}
-      <div className="video-container">
+      <div className="video-container" style={{ backgroundImage: "url('/BackgroundVideo-poster-v1.jpg')" }}>
         <video
           ref={videoRef}
           autoPlay={!backgroundPaused}
@@ -232,10 +242,12 @@ function App() {
           >
             {isMusicOn ? 'SOUND: ON' : 'SOUND: OFF'}
           </button>
-          <button type="button" className="work-toggle" aria-label={workVisible ? 'HIDE WORK' : 'SHOW WORK'} aria-expanded={workVisible}
+          <button type="button" className="work-toggle about-toggle" aria-label="ABOUT" aria-expanded={aboutVisible}
+                  aria-controls="work-panel" onClick={toggleAbout}>ABOUT</button>
+          <button type="button" className="work-toggle" aria-label="WORK" aria-expanded={workVisible}
                   aria-controls="work-panel" onClick={toggleWork}>
             <span className="work-label-mobile" aria-hidden="true">WORK</span>
-            <span className="work-label-desktop" aria-hidden="true">{workVisible ? 'HIDE WORK' : 'SHOW WORK'}</span>
+            <span className="work-label-desktop" aria-hidden="true">WORK</span>
           </button>
           <a
               className="social-button"
@@ -284,8 +296,8 @@ function App() {
             <span className="long-label">YOUTUBE</span>
           </a>
         </div>
-        <section id="work-panel" className={`work-panel${selectedProject ? ' is-project-open' : ''}`} aria-label="Selected work" aria-hidden={!workVisible}
-                 inert={!workVisible}
+        <section id="work-panel" className={`work-panel${selectedProject ? ' is-project-open' : ''}`} aria-label={aboutVisible ? 'About Underside' : 'Selected work'} aria-hidden={!workVisible && !aboutVisible}
+                 inert={!workVisible && !aboutVisible}
                  onTransitionEnd={event => {
                    if (event.target === event.currentTarget && event.propertyName === 'opacity' && !workVisible && resetWorkAfterHide.current) {
                      resetWorkPosition();
@@ -297,9 +309,15 @@ function App() {
               if (!target.closest('.project-slider, .project-heading')) navigate('/work');
               return;
             }
+            if (aboutVisible) {
+              if (!target.closest('.about-slider, .project-heading')) closeAbout();
+              return;
+            }
             if (!target.closest('.work-slider, .project-heading')) hideWork();
           }}>
-          {(workVisible || workHasOpened) && (selectedProject ? (
+          {aboutVisible ? (
+            <AboutPage onBack={closeAbout} />
+          ) : (workVisible || workHasOpened) && (selectedProject ? (
             <WorkPage key={selectedProject.slug} project={selectedProject} onBack={() => navigate('/work')} />
           ) : (
             <div className="work-view">
@@ -320,6 +338,7 @@ function App() {
                     slideByTile(event.currentTarget, event.key === 'ArrowRight' ? 1 : -1);
                   }
                 }}
+                onDragStart={event => event.preventDefault()}
                 onPointerDown={event => {
                   if (event.pointerType !== 'mouse' || event.button !== 0) return;
                   drag.current = { active: true, startX: event.clientX, scrollLeft: event.currentTarget.scrollLeft, moved: false };
