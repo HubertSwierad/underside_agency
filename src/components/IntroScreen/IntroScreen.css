@@ -21,7 +21,7 @@
   max-height: 40vh;
   object-fit: contain;
   clip-path: inset(0 100% 0 0);
-  animation: intro-logo-reveal 2s ease-out forwards;
+  animation: intro-logo-reveal 1500ms ease-out forwards;
 }
 
 @keyframes intro-logo-reveal {
