@@ -17,7 +17,6 @@ export default function PortfolioVideo({ src, title, poster, aspectRatio, hasAud
   const [hovered, setHovered] = useState(false);
   const [tapped, setTapped] = useState(false);
   const [focused, setFocused] = useState(false);
-  const [audible, setAudible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [enabled, setEnabled] = useState(false);
   const [autoStart, setAutoStart] = useState(false);
@@ -28,9 +27,9 @@ export default function PortfolioVideo({ src, title, poster, aspectRatio, hasAud
   const [ratio, setRatio] = useState(aspectRatio ?? 16 / 9);
 
   useEffect(() => {
-    reportPlayback(playerId, playing && audible && hasAudio !== false);
+    reportPlayback(playerId, playing && hasAudio !== false);
     return () => reportPlayback(playerId, false);
-  }, [reportPlayback, playerId, playing, audible, hasAudio]);
+  }, [reportPlayback, playerId, playing, hasAudio]);
 
   useEffect(() => {
     if (!tapped) return;
@@ -97,7 +96,6 @@ export default function PortfolioVideo({ src, title, poster, aspectRatio, hasAud
           const video = event.currentTarget;
           if (video.videoWidth && video.videoHeight) setRatio(video.videoWidth / video.videoHeight);
         }}
-        onVolumeChange={event => setAudible(!event.currentTarget.muted && event.currentTarget.volume > 0)}
         onPlay={event => {
           const activeVideo = event.currentTarget;
           document.querySelectorAll<HTMLVideoElement>('.portfolio-video video').forEach(video => {

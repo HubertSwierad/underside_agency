@@ -117,6 +117,16 @@ function App() {
   const [isMusicOn, setIsMusicOn] = useState(false);
 
   useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (audibleVideos.length > 0) {
+      audio.pause();
+      return;
+    }
+    if (isMusicOn) audio.play().catch(() => setIsMusicOn(false));
+  }, [audibleVideos, isMusicOn]);
+
+  useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
     if (backgroundPaused) {
@@ -208,7 +218,7 @@ function App() {
           Your browser does not support the video tag.
         </video>
         {/* Hidden audio element for background music; file should be placed in /public as Music.mp3 */}
-        <audio muted={audibleVideos.length > 0} ref={audioRef} src="/Music.mp3" preload="auto" loop />
+        <audio ref={audioRef} src="/Music.mp3" preload="auto" loop />
         {showPlayButton && !backgroundPaused && (
           <img
             className="wait-overlay"
