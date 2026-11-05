@@ -218,11 +218,21 @@ function App() {
                   type="button"
                   className="play-overlay"
                   aria-label="PLAY"
-                  onClick={() => {
+                  onClick={async () => {
                     const video = videoRef.current;
+                    const audio = audioRef.current;
                     if (video) {
                       video.muted = true;
                       video.play().then(() => setShowPlayButton(false)).catch(() => setShowPlayButton(true));
+                    }
+                    if (audio) {
+                      try {
+                        await audio.play();
+                        setIsMusicOn(true);
+                      } catch (err) {
+                        console.warn('Audio play failed:', err);
+                        setIsMusicOn(false);
+                      }
                     }
                   }}
               >
