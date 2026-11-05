@@ -98,8 +98,9 @@ export default function PortfolioVideo({ src, title, poster, aspectRatio, hasAud
         }}
         onPlay={event => {
           const activeVideo = event.currentTarget;
+          if (activeVideo.muted) return;
           document.querySelectorAll<HTMLVideoElement>('.portfolio-video video').forEach(video => {
-            if (video !== activeVideo && !video.paused) video.pause();
+            if (video !== activeVideo && !video.paused && !video.muted) video.pause();
           });
         }}
         onPlaying={() => { setLoading(false); setPlaying(true); }}
