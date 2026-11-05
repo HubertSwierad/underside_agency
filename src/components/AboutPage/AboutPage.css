@@ -1,0 +1,229 @@
+.about-view {
+  --about-tile-height: min(55svh, 590px);
+  --about-media-height: calc(var(--about-tile-height) - 28px);
+  --about-text-width: max(320px, 20vw);
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex: 0 0 80px;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 24px 5vw;
+}
+
+.about-heading a {
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.about-slider {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 24px;
+  height: calc(var(--about-tile-height) + 18px);
+  box-sizing: border-box;
+  padding: 0 5vw 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
+  cursor: grab;
+  user-select: none;
+}
+
+.about-slider::-webkit-scrollbar,
+.about-slide::-webkit-scrollbar {
+  display: none;
+}
+
+.about-slider.is-dragging {
+  cursor: grabbing;
+}
+
+.about-slider:focus-visible {
+  outline: 1px solid white;
+  outline-offset: -2px;
+}
+
+.about-slide {
+  flex: 0 0 auto;
+  min-width: 0;
+  height: var(--about-tile-height);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.about-text-slide {
+  flex-basis: var(--about-text-width);
+  width: var(--about-text-width);
+  min-width: var(--about-text-width);
+  max-width: var(--about-text-width);
+  min-height: var(--about-tile-height);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: safe center;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.about-text-slide h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  margin: .83em 0;
+  overflow-wrap: anywhere;
+}
+
+.about-text-slide p {
+  max-width: 38ch;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-line;
+  margin: 0 0 24px;
+}
+
+.about-text-slide a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.about-media-slide {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.about-media-slide img {
+  display: block;
+  width: auto;
+  height: var(--about-media-height);
+  max-width: none;
+  flex: none;
+  object-fit: contain;
+}
+
+.about-media-slide figcaption {
+  /* Size the tile from its media, then wrap captions within that width. */
+  width: 0;
+  min-width: 100%;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.about-media-slide + .about-text-slide {
+  margin-left: 64px;
+}
+
+/* About owns its media height; the player derives its width from the film ratio. */
+
+.about-media-slide .portfolio-video {
+  --portfolio-video-height: var(--about-media-height);
+}
+
+.about-youtube-tile {
+  position: relative;
+  display: block;
+  flex: none;
+  color: white;
+  text-decoration: none;
+}
+
+.about-youtube-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px 20px;
+  white-space: nowrap;
+  border: 1px solid white;
+  background: white;
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+  pointer-events: auto;
+}
+
+.about-youtube-tile:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 4px;
+}
+
+.about-youtube-tile:focus-visible .about-youtube-play {
+  background: transparent;
+  color: white;
+}
+
+.about-contact-slide a[href^="mailto:"] {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.about-contact-slide .about-legal-details {
+  margin-top: 40px;
+  max-width: 52ch;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.about-contact-slide .about-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0 0 24px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .about-view {
+    --about-tile-height: min(68svh, calc(100svh - 188px));
+    --about-text-width: max(320px, 78vw);
+  }
+  .about-slider {
+    gap: 18px;
+  }
+  .about-media-slide + .about-text-slide {
+    margin-left: 32px;
+  }
+}
+
+@media (hover: hover) {
+  .about-youtube-play:hover {
+    background: transparent;
+    color: white;
+  }
+}
+
+.about-text-slide .tile-eyebrow {
+  font-weight: 700;
+}

@@ -1,0 +1,205 @@
+/* Both work views share one frame, navigation row and tile height. */
+
+.work-view {
+  --work-tile-height: min(55svh, 590px);
+  --work-text-width: max(320px, 20vw);
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.work-view > .project-heading {
+  flex: 0 0 80px;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 24px 5vw;
+}
+
+.work-view > .work-slider,
+.work-view > .project-slider {
+  flex: 0 0 auto;
+  height: calc(var(--work-tile-height) + 18px);
+  overflow-y: hidden;
+  touch-action: pan-x pan-y;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .work-view {
+    --work-tile-height: min(68svh, calc(100svh - 188px));
+    --work-text-width: max(320px, 78vw);
+  }
+}
+
+.work-intro,
+.project-text-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.work-intro h2,
+.project-text-slide h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  margin: .83em 0;
+  overflow-wrap: anywhere;
+}
+
+.work-intro p,
+.project-text-slide p {
+  max-width: 38ch;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-line;
+  margin: 0 0 24px;
+}
+
+.work-view .work-tile-description,
+.work-view .project-slide.project-text-slide {
+  flex: 0 0 var(--work-text-width);
+  width: var(--work-text-width);
+  min-width: var(--work-text-width);
+  max-width: var(--work-text-width);
+  height: var(--work-tile-height);
+  min-height: var(--work-tile-height);
+  box-sizing: border-box;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  justify-content: safe center;
+}
+
+.work-view .work-tile-description::-webkit-scrollbar,
+.work-view .project-slide.project-text-slide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Vertical overflow belongs to individual tiles, never the horizontal track. */
+
+.work-view .work-tile,
+.work-view .work-tile-description,
+.work-view .project-slide {
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+}
+
+.work-view .work-tile::-webkit-scrollbar,
+.work-view .project-slide::-webkit-scrollbar {
+  display: none;
+}
+
+.project-media-slide figcaption {
+  flex-shrink: 0;
+}
+
+.work-slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 0 5vw 18px;
+  scrollbar-width: none;
+  cursor: grab;
+  touch-action: pan-x;
+  user-select: none;
+  overscroll-behavior-x: contain;
+}
+
+.work-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.work-slider.is-dragging,
+.work-slider.is-dragging a {
+  cursor: grabbing;
+}
+
+.work-tile {
+  flex: 0 0 40vw;
+  min-width: 300px;
+  height: var(--work-tile-height);
+  box-sizing: border-box;
+}
+
+.tile-caption,
+.project-heading a {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.project-tile {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-tile img {
+  width: 100%;
+  height: calc(100% - 28px);
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.tile-caption {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  line-height: 16px;
+}
+
+.project-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.project-heading a {
+  color: white;
+  text-decoration: none;
+}
+
+.work-slider:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 5px;
+}
+
+.work-hide {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .project-tile:hover img {
+    outline: 1px solid white;
+    outline-offset: -1px;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-tile {
+    flex-basis: 78vw;
+    min-width: 0;
+  }
+  .work-slider {
+    gap: 18px;
+  }
+}

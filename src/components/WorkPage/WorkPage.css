@@ -1,0 +1,138 @@
+.project-slider {
+  display: flex;
+  gap: 24px;
+  padding: 0 5vw 18px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  cursor: grab;
+  user-select: none;
+}
+
+.project-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.project-slider.is-dragging {
+  cursor: grabbing;
+}
+
+.project-slider:focus-visible {
+  outline: 1px solid white;
+  outline-offset: -2px;
+}
+
+.project-slide {
+  flex: 0 0 52vw;
+  min-width: 0;
+  height: var(--work-tile-height);
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.project-media-slide {
+  flex: 0 0 auto;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.project-media-slide img {
+  display: block;
+  position: static;
+  width: auto;
+  height: var(--work-tile-height);
+  max-width: none;
+  flex: none;
+  object-fit: contain;
+}
+
+.project-media-slide:has(figcaption) img {
+  height: calc(var(--work-tile-height) - 28px);
+}
+
+.project-media-slide figcaption {
+  width: 0;
+  min-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .project-slider {
+    gap: 18px;
+  }
+}
+
+.project-media-slide + .project-text-slide {
+  margin-left: 64px;
+}
+
+@media (max-width: 600px) {
+  .project-media-slide + .project-text-slide {
+    margin-left: 32px;
+  }
+}
+
+.youtube-tile {
+  position: relative;
+  display: block;
+  flex: none;
+  color: white;
+  text-decoration: none;
+}
+
+.youtube-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px 20px;
+  white-space: nowrap;
+  border: 1px solid white;
+  background: white;
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+  pointer-events: auto;
+}
+
+.youtube-tile:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 4px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.project-tags li {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+@media (hover: hover) {
+  .youtube-play:hover {
+    background: transparent;
+    color: white;
+  }
+}
+
+.youtube-tile:focus-visible .youtube-play {
+  background: transparent;
+  color: white;
+}

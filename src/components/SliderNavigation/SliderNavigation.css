@@ -1,0 +1,68 @@
+.project-hint {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 1;
+}
+
+button.project-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 32px;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.slider-arrows {
+  position: relative;
+  width: 52px;
+  height: 32px;
+  flex: 0 0 52px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.slider-arrows .project-hint {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 200ms ease, transform 280ms cubic-bezier(.22, 1, .36, 1), visibility 0s;
+}
+
+.slider-arrows .slider-previous {
+  right: 26px;
+  transform: translateX(0);
+}
+
+.slider-arrows .slider-next {
+  right: 0;
+  transform: translateX(0);
+}
+
+.slider-arrows.is-at-end .slider-previous {
+  transform: translateX(26px);
+}
+
+.slider-arrows .is-unavailable {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 280ms cubic-bezier(.22, 1, .36, 1), visibility 0s linear 160ms;
+}
+
+.slider-arrows .slider-next.is-unavailable {
+  transform: translateX(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider-arrows .project-hint {
+    transition: none;
+  }
+}
