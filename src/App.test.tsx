@@ -1,4 +1,3 @@
-import React from 'react';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
@@ -267,4 +266,26 @@ test('desktop background remains paused during navigation within Work', async ()
     expect(container.querySelector('.video-container > video')).not.toHaveAttribute('autoplay');
     expect(container.querySelector('.logo-overlay')).toHaveAttribute('fetchpriority', 'high');
   } finally { viewport.restore(); }
+});
+
+test('keeps the intro visible until the background video actually starts playing', async () => {
+  jest.useFakeTimers();
+  try {
+    const { container } = await act(async () => render(<App />));
+    act(() => { jest.advanceTimersByTime(2000); });
+    expect(container.querySelector('.intro-screen')).not.toHaveClass('is-exiting');
+    fireEvent.playing(container.querySelector('.video-container > video')!);
+    expect(container.querySelector('.intro-screen')).toHaveClass('is-finishing');
+    expect(container.querySelector('.intro-screen')).not.toHaveClass('is-exiting');
+    const revealEnd = new Event('animationend', { bubbles: true });
+    Object.defineProperty(revealEnd, 'animationName', { value: 'intro-logo-finish' });
+    fireEvent(container.querySelector('.intro-logo')!, revealEnd);
+    expect(container.querySelector('.intro-screen')).toHaveClass('is-revealed');
+    act(() => { jest.advanceTimersByTime(120); });
+    expect(container.querySelector('.intro-screen')).toHaveClass('is-exiting');
+    act(() => { jest.advanceTimersByTime(300); });
+    expect(container.querySelector('.intro-screen')).toBeNull();
+  } finally {
+    jest.useRealTimers();
+  }
 });

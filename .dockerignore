@@ -6,3 +6,8 @@ Dockerfile*
 .dockerignore
 .env
 .env.local
+.image-originals
+originals
+original-assets
+__pycache__
+*.py[cod]

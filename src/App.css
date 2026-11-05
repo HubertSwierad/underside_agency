@@ -41,50 +41,18 @@ button {
   top: 0;
   left: 0;
   background-color: black;
-  pointer-events: none; /* block user interaction with native controls */
+  pointer-events: none;
+  /* block user interaction with native controls */
 }
 
 /* Remove Safari's native paused-video overlay while the About or Work panel is open. */
+
 .is-work-visible .video-container > video {
   display: none;
 }
 
-.intro-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  background: #000;
-  opacity: 1;
-  transition: opacity 300ms ease;
-}
-
-.intro-screen.is-exiting {
-  opacity: 0;
-}
-
-.intro-logo {
-  display: block;
-  width: min(40vh, 72vw);
-  height: auto;
-  max-height: 40vh;
-  object-fit: contain;
-  clip-path: inset(0 100% 0 0);
-  animation: intro-logo-reveal 1.7s cubic-bezier(.65, 0, .35, 1) forwards;
-}
-
-@keyframes intro-logo-reveal {
-  to { clip-path: inset(0 0 0 0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .intro-logo { animation-duration: 0.01ms; }
-  .intro-screen { transition-duration: 0.01ms; }
-}
-
 /* Hide native controls overlays in Safari / WebKit */
+
 .video-container > video::-webkit-media-controls-panel,
 .video-container > video::-webkit-media-controls-start-playback-button,
 .video-container > video::-webkit-media-controls-play-button,
@@ -97,6 +65,7 @@ button {
 }
 
 /* Fallback: hide any remaining WebKit controls */
+
 .video-container > video::-webkit-media-controls-enclosure,
 .video-container > video::-webkit-media-controls,
 .video-container > video::-webkit-media-controls-volume-control-container,
@@ -122,6 +91,8 @@ button {
   object-fit: contain;
   z-index: 2;
   pointer-events: none;
+  opacity: 1;
+  transition: opacity 420ms ease 120ms;
 }
 
 .controls-bar {
@@ -148,12 +119,6 @@ button {
   font-weight: 700;
 }
 
-.social-button .icon {
-  width: auto;
-  height: 28px;
-}
-
-
 .play-overlay {
   position: relative;
   width: auto;
@@ -170,12 +135,6 @@ button {
   padding: 0;
   font-weight: 700;
 }
-
-.play-overlay .icon {
-  width: auto;
-  height: 28px;
-}
-
 
 .music-overlay {
   font-weight: 700;
@@ -194,30 +153,6 @@ button {
   padding: 0;
 }
 
-.pause-overlay {
-  position: relative;
-  width: auto;
-  height: auto;
-  border: none;
-  background: transparent;
-  color: #ffffff;
-  font-size: 12px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0;
-  font-weight: 500;
-}
-
-
-.music-overlay .icon {
-  width: auto;
-  height: 28px;
-  font-weight: 500;
-}
-
 .wait-overlay {
   position: absolute;
   inset: 0;
@@ -228,50 +163,18 @@ button {
   pointer-events: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* Default: mobile */
+
 .short-label {
   display: inline;
 }
+
 .long-label {
   display: none;
 }
 
 /* Desktop: wider than 600px */
+
 @media (min-width: 600px) {
   .short-label {
     display: none;
@@ -281,59 +184,64 @@ button {
   }
 }
 
-
 /* Work and identity occupy the same space and crossfade together. */
-.logo-overlay { opacity: 1; transition: opacity 420ms ease 120ms; }
-.is-work-visible .logo-overlay { opacity: 0; transition: opacity 220ms ease-out; }
-.work-toggle { background: none; border: 0; padding: 0; color: white; font-size: 12px; font-weight: 700; cursor: pointer; }
-.work-panel { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: center; color: white; background: rgba(0,0,0,.80); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 350ms ease, visibility 0s linear 350ms; }
-.is-work-visible .work-panel { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 500ms ease 120ms, visibility 0s; }
-.work-heading { display: flex; justify-content: space-between; padding: 0 5vw 18px; }
-.work-slider { display: flex; gap: 24px; overflow-x: auto; padding: 0 5vw 18px; scrollbar-width: none; cursor: grab; touch-action: pan-x; user-select: none; overscroll-behavior-x: contain; }
-.work-slider::-webkit-scrollbar { display: none; }
-.work-slider.is-dragging, .work-slider.is-dragging a { cursor: grabbing; }
-.work-tile { flex: 0 0 40vw; min-width: 300px; height: var(--work-tile-height); box-sizing: border-box; }
-.work-intro { min-height: var(--work-tile-height); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
-.work-heading,
-.tile-eyebrow,
-.intro-footer,
-.tile-caption,
-.project-heading h1,
-.project-heading h1 span,
-.project-heading a {
+
+.is-work-visible .logo-overlay {
+  opacity: 0;
+  transition: opacity 220ms ease-out;
+}
+
+.work-toggle {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: white;
   font-size: 12px;
   font-weight: 700;
+  cursor: pointer;
 }
-.work-intro h1 { font-size: clamp(26px, 2.7vw, 44px); font-weight: 400; line-height: 1.08; letter-spacing: -.04em; margin: 24px 0 20px; }
-.work-intro .intro-services { margin-bottom: 16px; }
-.project-tile { color: white; text-decoration: none; display: flex; flex-direction: column; gap: 12px; }
-.project-tile img { width: 100%; height: calc(100% - 28px); object-fit: cover; pointer-events: none; }
-@media (hover: hover) {
-  .project-tile:hover img { outline: 1px solid white; outline-offset: -1px; }
+
+.work-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  background: rgba(0,0,0,.80);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 350ms ease, visibility 0s linear 350ms;
 }
-.tile-caption { display: flex; align-items: baseline; gap: 12px; line-height: 16px; }
-.project-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.project-heading h1 span { margin-left: 12px; }
-.project-heading a { color: white; text-decoration: none; }
-button:focus-visible, a:focus-visible, .work-slider:focus-visible { outline: 1px solid white; outline-offset: 5px; }
+
+.is-work-visible .work-panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 500ms ease 120ms, visibility 0s;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 5px;
+}
+
 @media (max-width: 600px) {
-  .controls-bar { gap: 12px; width: max-content; max-width: calc(100% - 24px); flex-wrap: wrap; justify-content: center; }
-  .work-tile { flex-basis: 78vw; min-width: 0; }
-  .work-slider { gap: 18px; }
-  .work-intro h1 { font-size: clamp(26px, 7vw, 38px); }
+  .controls-bar {
+    gap: 12px;
+    width: max-content;
+    max-width: calc(100% - 24px);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .App .logo-overlay, .App .work-panel { transition: none; }
-}
-
-.work-hide { background: transparent; border: 0; padding: 0; color: white; font-size: 12px; font-weight: 700; cursor: pointer; }
-
-.slider-arrows { display: flex; align-items: center; gap: 0; }
-
-.work-panel.is-project-open { background: rgba(0, 0, 0, .8); }
-
-.work-label-mobile { display: none; }
-@media (max-width: 600px) {
-  .work-label-mobile { display: inline; }
-  .work-label-desktop { display: none; }
+  .App .logo-overlay,
+  .App .work-panel {
+    transition: none;
+  }
 }

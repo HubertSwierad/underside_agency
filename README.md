@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# Underside Agency
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React and TypeScript portfolio with About, a Work overview, and individual project sliders.
 
-## Available Scripts
+## Development
 
-In the project directory, you can run:
+- `npm ci` — install the locked dependencies.
+- `npm start` — run the development server at http://localhost:3000.
+- `npm test -- --watchAll=false` — run the tests once.
+- `npm run build` — prepare images and create a production build in `build/`.
 
-### `npm start`
+## Source layout
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- `src/components/<Name>/` — component implementation, its CSS, tests, and public `index.ts` export. Components without dedicated styles do not need an empty CSS file.
+- `src/components/WorkPage/WorkLayout.css` — layout shared by the Work overview and project pages.
+- `src/contexts/` — shared playback state.
+- `src/hooks/` — reusable React hooks.
+- `src/utils/` — slider helpers and their tests.
+- `src/data/` — About content, Work projects, image dimensions, and discovered YouTube covers.
+- `src/App.tsx` and `src/App.css` — navigation, background video, and the application shell.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+About owns its layout styles independently from Work. Shared video and slider navigation styles live with their components.
 
-### `npm test`
+## Media preparation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Published media lives in `public/About/` and `public/Portfolio/`. Edit the data files to change tile content and order.
 
-### `npm run build`
+- `npm run images:optimize` — optimize portfolio photos and update image dimensions. Requires Python and macOS image tools.
+- `npm run images:check` — check that portfolio photos stay within 500 KB.
+- YouTube covers named `watch?v=VIDEO_ID.jpg` (or PNG/WebP) are discovered automatically before development and production builds.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Image optimization keeps originals in the ignored `.image-originals/` directory. Optional source assets belong in `originals/` or `original-assets/`, outside the published `public/` directory.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The Dockerfile builds the site and serves it through Nginx. `nginx.conf` provides the fallback routing for project URLs.

@@ -28,3 +28,7 @@ yarn-error.log*
 # Optional local source-photo folders (never place originals under public/)
 /originals/
 /original-assets/
+
+# Python cache files
+__pycache__/
+*.py[cod]

@@ -4,7 +4,7 @@ export type WorkMedia =
   | { type: 'text'; title: string; body: string }
   | { type: 'image'; src: string; alt: string; caption?: string }
   | { type: 'youtube'; src: string; url: string; title: string; caption?: string }
-  | { type: 'video'; src: string; title: string; poster?: string; sizeBytes?: number; aspectRatio?: number; hasAudio?: boolean; caption?: string };
+  | { type: 'video'; src: string; title: string; poster?: string; aspectRatio?: number; hasAudio?: boolean; caption?: string };
 
 export interface WorkProject {
   slug: string;
@@ -21,7 +21,6 @@ export interface WorkProject {
 // Text: { type: 'text', title: 'Photoshoot & atmosphere', body: 'Your section description.' }
 // Image: { type: 'image', src: '/Portfolio/Project/photo.jpg', alt: 'Describe the photo' }
 // YouTube: { type: 'youtube', src: '/Portfolio/Project/film-cover.jpg', url: 'https://www.youtube.com/watch?v=VIDEO_ID', title: 'Full project film' }
-// Optional sizeBytes skips the size check; unknown sizes load only on Play if the check fails.
 // Video: { type: 'video', src: '/Portfolio/Project/film.mp4', title: 'Project film', poster: '/Portfolio/Project/poster.jpg' }
 export const projects: WorkProject[] = [
   {
@@ -141,7 +140,6 @@ export const projects: WorkProject[] = [
         "src": "/About/horizon_logo.mp4",
         "poster": "/Portfolio/Horizon/web/identity.jpg",
         "title": "Horizon visual identity",
-        "sizeBytes": 12378815,
         "aspectRatio": 4 / 5,
         "hasAudio": false
       },
@@ -415,7 +413,6 @@ export const projects: WorkProject[] = [
         "src": "/Portfolio/Vali/reels/reel_vali_1.mp4",
         "title": "Vali Theater Lab reel 1",
         "poster": "/Portfolio/Vali/reels/reel_vali_1-poster.jpg",
-        "sizeBytes": 9382136,
         "aspectRatio": 0.5625,
         "hasAudio": true
       },
@@ -424,7 +421,6 @@ export const projects: WorkProject[] = [
         "src": "/Portfolio/Vali/reels/reel_vali_2.mp4",
         "title": "Vali Theater Lab reel 2",
         "poster": "/Portfolio/Vali/reels/reel_vali_2-poster.jpg",
-        "sizeBytes": 19973523,
         "aspectRatio": 0.5625,
         "hasAudio": true
       },
@@ -433,7 +429,6 @@ export const projects: WorkProject[] = [
         "src": "/Portfolio/Vali/reels/reel_vali_glowup.mp4",
         "title": "Vali Theater Lab Glowup reel",
         "poster": "/Portfolio/Vali/reels/reel_vali_glowup-poster.jpg",
-        "sizeBytes": 24126800,
         "aspectRatio": 0.5625,
         "hasAudio": true
       }
@@ -1061,7 +1056,6 @@ export const projects: WorkProject[] = [
         "src": "/Portfolio/Sona/web/workshop-01.mp4",
         "poster": "/Portfolio/Sona/web/workshop-01.jpg",
         "title": "Sona Workshop 01 film",
-        "sizeBytes": 54200435,
         "aspectRatio": 1.7777777777777777,
         "hasAudio": true
       }

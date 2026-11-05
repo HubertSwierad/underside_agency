@@ -1,16 +1,15 @@
 import { useSliderNavigation } from './hooks/useSliderNavigation';
-import { PortfolioPlaybackContext } from './components/PortfolioPlaybackContext';
+import { PortfolioPlaybackContext } from './contexts/PortfolioPlaybackContext';
 import PortfolioImage from './components/PortfolioImage';
 import SliderNavigation from './components/SliderNavigation';
-import React, { useRef, useEffect, useLayoutEffect, useState, useCallback } from 'react';
+import { useRef, useEffect, useLayoutEffect, useState, useCallback } from 'react';
 import './App.css';
-import './components/WorkLayout.css';
+import './components/WorkPage/WorkLayout.css';
 import { slideByTile } from './utils/slideByTile';
 import { projects } from './data/workDatabase';
 import WorkPage from './components/WorkPage';
 import AboutPage from './components/AboutPage';
-
-
+import IntroScreen from './components/IntroScreen';
 
 function readPath() {
   const navigationEntries = typeof performance.getEntriesByType === 'function'
@@ -29,15 +28,6 @@ function readPath() {
 }
 
 function App() {
-  const [introStage, setIntroStage] = useState<'revealing' | 'exiting' | 'done'>('revealing');
-  useEffect(() => {
-    const revealTimer = window.setTimeout(() => setIntroStage('exiting'), 1700);
-    const removeTimer = window.setTimeout(() => setIntroStage('done'), 2000);
-    return () => {
-      window.clearTimeout(revealTimer);
-      window.clearTimeout(removeTimer);
-    };
-  }, []);
   const [audibleVideos, setAudibleVideos] = useState<string[]>([]);
   const reportVideoPlayback = useCallback((id: string, audible: boolean) => {
     setAudibleVideos(current => audible
@@ -85,7 +75,6 @@ function App() {
     }
   }, [workVisible, resetWorkPosition]);
 
-
   useEffect(() => {
     const onLocationChange = () => setPath(readPath());
     window.addEventListener('popstate', onLocationChange);
@@ -113,6 +102,7 @@ function App() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const backgroundPaused = workVisible || aboutVisible;
+  const [backgroundReady, setBackgroundReady] = useState(false);
   const [showPlayButton, setShowPlayButton] = useState(false);
   const [isMusicOn, setIsMusicOn] = useState(false);
 
@@ -147,7 +137,7 @@ function App() {
     try {
       await video.play();
       setShowPlayButton(false);
-    } catch (err) {
+    } catch {
       setShowPlayButton(true);
     }
   };
@@ -174,11 +164,7 @@ function App() {
   return (
     <PortfolioPlaybackContext.Provider value={reportVideoPlayback}>
     <div className={`App${workVisible || aboutVisible ? ' is-work-visible' : ''}`}>
-      {introStage !== 'done' && (
-        <div className={`intro-screen${introStage === 'exiting' ? ' is-exiting' : ''}`} aria-hidden="true">
-          <img className="intro-logo" src="/Logo_reverse.png" alt="" />
-        </div>
-      )}
+      <IntroScreen ready={backgroundReady || showPlayButton || backgroundPaused} />
       <div className="video-container" style={{ backgroundImage: "url('/BackgroundVideo-poster-v1.jpg')" }}>
         <video
           ref={videoRef}
@@ -198,6 +184,8 @@ function App() {
             else setShowPlayButton(false);
           }}
           onCanPlay={ensureVideoPlaying}
+          onPlaying={() => setBackgroundReady(true)}
+          onError={() => setShowPlayButton(true)}
           onPause={() => {
             if (backgroundPaused) return;
             setShowPlayButton(true);
@@ -217,7 +205,6 @@ function App() {
           <source src="/BackgroundVideo-compressed-v1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        {/* Hidden audio element for background music; file should be placed in /public as Music.mp3 */}
         <audio ref={audioRef} src="/Music.mp3" preload="auto" loop />
         {showPlayButton && !backgroundPaused && (
           <img
@@ -252,12 +239,11 @@ function App() {
           >
             {isMusicOn ? 'SOUND: ON' : 'SOUND: OFF'}
           </button>
-          <button type="button" className="work-toggle about-toggle" aria-label="ABOUT" aria-expanded={aboutVisible}
+          <button type="button" className="work-toggle" aria-label="ABOUT" aria-expanded={aboutVisible}
                   aria-controls="work-panel" onClick={toggleAbout}>ABOUT</button>
           <button type="button" className="work-toggle" aria-label="WORK" aria-expanded={workVisible}
                   aria-controls="work-panel" onClick={toggleWork}>
-            <span className="work-label-mobile" aria-hidden="true">WORK</span>
-            <span className="work-label-desktop" aria-hidden="true">WORK</span>
+            WORK
           </button>
           <a
               className="social-button"
@@ -266,15 +252,6 @@ function App() {
           >
             MAIL
           </a>
-          {/*<a*/}
-          {/*    className="social-button"*/}
-          {/*    href="https://underside.online"*/}
-          {/*    aria-label="Underside Magazine"*/}
-          {/*    target="_blank"*/}
-          {/*    rel="noopener noreferrer"*/}
-          {/*>*/}
-          {/* MAGAZINE*/}
-          {/*</a>*/}
           <a
               className="social-button"
               href="https://www.instagram.com/underside.agency/"
@@ -306,7 +283,7 @@ function App() {
             <span className="long-label">YOUTUBE</span>
           </a>
         </div>
-        <section id="work-panel" className={`work-panel${selectedProject ? ' is-project-open' : ''}`} aria-label={aboutVisible ? 'About Underside' : 'Selected work'} aria-hidden={!workVisible && !aboutVisible}
+        <section id="work-panel" className="work-panel" aria-label={aboutVisible ? 'About Underside' : 'Selected work'} aria-hidden={!workVisible && !aboutVisible}
                  inert={!workVisible && !aboutVisible}
                  onTransitionEnd={event => {
                    if (event.target === event.currentTarget && event.propertyName === 'opacity' && !workVisible && resetWorkAfterHide.current) {
