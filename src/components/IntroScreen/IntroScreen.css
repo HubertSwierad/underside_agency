@@ -1,0 +1,64 @@
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #000;
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+.intro-screen.is-exiting {
+  opacity: 0;
+}
+
+.intro-logo {
+  display: block;
+  width: min(40vh, 72vw);
+  height: auto;
+  max-height: 40vh;
+  object-fit: contain;
+  clip-path: inset(0 100% 0 0);
+  animation: intro-logo-reveal 8s ease-out forwards;
+}
+
+.intro-screen.is-finishing .intro-logo {
+  animation: intro-logo-finish 300ms ease-out forwards;
+}
+
+.intro-screen.is-revealed .intro-logo,
+.intro-screen.is-exiting .intro-logo {
+  animation: none;
+  clip-path: inset(0 0 0 0);
+}
+
+@keyframes intro-logo-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes intro-logo-finish {
+  from {
+    clip-path: var(--intro-reveal-start);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-logo,
+  .intro-screen.is-finishing .intro-logo {
+    animation: none;
+    clip-path: inset(0 0 0 0);
+  }
+  .intro-screen {
+    transition-duration: 0.01ms;
+  }
+}
