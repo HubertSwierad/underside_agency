@@ -1,3 +1,10 @@
+.project-hint {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 1;
+}
+button.project-hint { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 32px; background: transparent; border: 0; color: inherit; padding: 4px; cursor: pointer; }
 .slider-arrows { position: relative; width: 52px; height: 32px; flex: 0 0 52px; }
 .slider-arrows .project-hint { position: absolute; top: 0; opacity: 1; visibility: visible; transition: opacity 200ms ease, transform 280ms cubic-bezier(.22, 1, .36, 1), visibility 0s; }
 .slider-arrows .slider-previous { right: 26px; transform: translateX(0); }

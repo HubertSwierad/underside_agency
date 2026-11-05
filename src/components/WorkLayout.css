@@ -21,6 +21,8 @@
 .work-view > .project-slider {
   flex: 0 0 auto;
   height: calc(var(--work-tile-height) + 18px);
+  overflow-y: hidden;
+  touch-action: pan-x pan-y;
   box-sizing: border-box;
 }
 @media (max-width: 600px) {
@@ -69,3 +71,17 @@
 }
 .work-view .work-tile-description::-webkit-scrollbar,
 .work-view .project-slide.project-text-slide::-webkit-scrollbar { display: none; }
+
+/* Vertical overflow belongs to individual tiles, never the horizontal track. */
+.work-view .work-tile,
+.work-view .work-tile-description,
+.work-view .project-slide {
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+}
+.work-view .work-tile::-webkit-scrollbar,
+.work-view .project-slide::-webkit-scrollbar { display: none; }
+
+.project-media-slide figcaption { flex-shrink: 0; }

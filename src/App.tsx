@@ -320,7 +320,7 @@ function App() {
               return;
             }
             if (aboutVisible) {
-              if (!target.closest('.about-slider, .project-heading')) closeAbout();
+              if (!target.closest('.about-slider, .about-heading')) closeAbout();
               return;
             }
             if (!target.closest('.work-slider, .project-heading')) hideWork();

@@ -5,7 +5,6 @@ import { slideByTile } from '../utils/slideByTile';
 import PortfolioImage from './PortfolioImage';
 import PortfolioVideo from './PortfolioVideo';
 import SliderNavigation from './SliderNavigation';
-import './WorkLayout.css';
 import './AboutPage.css';
 
 interface AboutPageProps {
@@ -24,8 +23,8 @@ export default function AboutPage({ onBack }: AboutPageProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <article className="about-view work-view" aria-label="About Underside">
-      <div className="project-heading">
+    <article className="about-view" aria-label="About Underside">
+      <div className="about-heading">
         <a href="/" onClick={event => {
           if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
             event.preventDefault();
@@ -37,7 +36,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
           onNext={() => { if (sliderRef.current) slideByTile(sliderRef.current); }} />
       </div>
       <div ref={sliderRef} onScroll={updateNavigation} onLoadCapture={updateNavigation}
-        className="project-slider about-slider" role="region" aria-label="About slides" tabIndex={0}
+        className="about-slider" role="region" aria-label="About slides" tabIndex={0}
         onKeyDown={event => {
           if (event.target !== event.currentTarget) return;
           if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
@@ -80,7 +79,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
         {aboutTiles.map((tile, index) => {
           if (tile.type === 'text') {
             return (
-              <section className={`project-slide project-text-slide${tile.className ? ` ${tile.className}` : ''}`} key={`text-${index}`}>
+              <section className={`about-slide about-text-slide${tile.className ? ` ${tile.className}` : ''}`} key={`text-${index}`}>
                 {tile.eyebrow && <p className="tile-eyebrow">{tile.eyebrow}</p>}
                 <h2>{renderTextWithBreaks(tile.title)}</h2>
                 {tile.body && <p>{renderTextWithBreaks(tile.body)}</p>}
@@ -99,7 +98,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
           }
           if (tile.type === 'image') {
             return (
-              <figure className="project-slide project-media-slide" key={`image-${index}`}>
+              <figure className="about-slide about-media-slide" key={`image-${index}`}>
                 <PortfolioImage src={tile.src} alt={tile.alt} />
                 <figcaption>{tile.caption}</figcaption>
               </figure>
@@ -107,17 +106,17 @@ export default function AboutPage({ onBack }: AboutPageProps) {
           }
           if (tile.type === 'localVideo') {
             return (
-              <figure className="project-slide project-media-slide" key={`video-${index}`}>
+              <figure className="about-slide about-media-slide" key={`video-${index}`}>
                 <PortfolioVideo src={tile.src} poster={tile.poster} title={tile.title} sizeBytes={tile.sizeBytes} aspectRatio={tile.aspectRatio} hasAudio={tile.hasAudio} />
                 <figcaption>{tile.caption}</figcaption>
               </figure>
             );
           }
           return (
-            <figure className="project-slide project-media-slide" key={`youtube-${index}`}>
-              <a className="youtube-tile" href={tile.url} target="_blank" rel="noopener noreferrer" draggable={false} aria-label={`${tile.title} (opens in a new tab)`}>
+            <figure className="about-slide about-media-slide" key={`youtube-${index}`}>
+              <a className="about-youtube-tile" href={tile.url} target="_blank" rel="noopener noreferrer" draggable={false} aria-label={`${tile.title} (opens in a new tab)`}>
                 <PortfolioImage src={tile.src} alt={tile.title} />
-                <span className="youtube-play">{tile.linkLabel}</span>
+                <span className="about-youtube-play">{tile.linkLabel}</span>
               </a>
               <figcaption>{tile.caption}</figcaption>
             </figure>

@@ -51,7 +51,7 @@ export default function PortfolioVideo({ src, title, poster, aspectRatio, hasAud
     if (hasAudio !== false) return;
     const player = videoRef.current?.parentElement;
     if (!player || typeof IntersectionObserver === 'undefined') return;
-    const slider = player.closest('.project-slider');
+    const slider = player.closest('.project-slider, .about-slider');
     const observer = new IntersectionObserver(entries => {
       if (!entries.some(entry => entry.isIntersecting)) return;
       setAutoStart(true);
@@ -80,7 +80,7 @@ export default function PortfolioVideo({ src, title, poster, aspectRatio, hasAud
   };
 
   return (
-    <div className="portfolio-video" style={{ aspectRatio: String(ratio) }} aria-busy={loading}
+    <div className="portfolio-video" style={{ '--portfolio-video-ratio': ratio } as React.CSSProperties} aria-busy={loading}
       tabIndex={playing ? 0 : -1} role="group" aria-label={`${title} playback`}
       onPointerEnter={event => { if (event.pointerType === 'mouse') setHovered(true); }}
       onPointerLeave={() => setHovered(false)}
