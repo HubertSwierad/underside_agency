@@ -137,15 +137,16 @@ export const projects: WorkProject[] = [
         "body": "One visual language across posters, portraits and screens, giving Horizon a recognisable world of its own."
       },
       {
-        "type": "image",
-        "src": "/Portfolio/Horizon/FF33FE58-5928-480F-9349-EF6F1F75BE77_1_102_o.jpeg",
-        "alt": "Horizon Festival identity over a blue-lit artist portrait"
+        "type": "video",
+        "src": "/About/horizon_logo.mp4",
+        "poster": "/Portfolio/Horizon/web/identity.jpg",
+        "title": "Horizon visual identity",
+        "sizeBytes": 12378815,
+        "aspectRatio": 4 / 5,
+        "hasAudio": false
       },
-      {
-        "type": "image",
-        "src": "/Portfolio/Horizon/8C5CB8D0-53B7-46D9-BFF4-D0E3817AE1C5_1_105_c.jpeg",
-        "alt": "Horizon campaign poster against a concrete wall"
-      },
+      { type: 'image', src: '/About/creative-direction-campaign-design.jpg', alt: 'Creative direction and campaign design artwork'},
+
       {
         "type": "image",
         "src": "/Portfolio/Horizon/eeee.jpg",
