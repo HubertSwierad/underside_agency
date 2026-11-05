@@ -203,6 +203,10 @@
     "width": 1310,
     "height": 1638
   },
+  "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_1a.jpg": {
+    "width": 2048,
+    "height": 2560
+  },
   "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_2.jpeg": {
     "width": 1586,
     "height": 1982
@@ -291,15 +295,51 @@
     "width": 1310,
     "height": 1638
   },
-  "/Portfolio/Sektion/EVENT_03/_NZ80892.jpg": {
+  "/Portfolio/Sektion/EVENT_03/_NZ89745.jpg": {
+    "width": 2560,
+    "height": 1440
+  },
+  "/Portfolio/Sektion/EVENT_03/_NZ89773.jpg": {
+    "width": 2048,
+    "height": 1152
+  },
+  "/Portfolio/Sektion/EVENT_03/_NZ89862.jpg": {
+    "width": 2560,
+    "height": 1440
+  },
+  "/Portfolio/Sektion/EVENT_03/_NZ89867.jpg": {
+    "width": 2560,
+    "height": 1440
+  },
+  "/Portfolio/Sektion/EVENT_03/_NZ89885.jpg": {
+    "width": 2560,
+    "height": 1440
+  },
+  "/Portfolio/Sektion/EVENT_03/_NZ89896.jpg": {
+    "width": 2560,
+    "height": 1440
+  },
+  "/Portfolio/Sektion/EVENT_03/_NZ89924.jpg": {
+    "width": 2048,
+    "height": 1152
+  },
+  "/Portfolio/Sektion/EVENT_03/_NZ89972.jpg": {
+    "width": 2560,
+    "height": 1440
+  },
+  "/Portfolio/Sektion/EVENT_03/_NZ89997.jpg": {
+    "width": 2560,
+    "height": 1440
+  },
+  "/Portfolio/Sektion/EXTRA/_NZ80892.jpg": {
     "width": 1638,
     "height": 2048
   },
-  "/Portfolio/Sektion/EVENT_03/_NZ81527-Edit.jpg": {
+  "/Portfolio/Sektion/EXTRA/_NZ81527-Edit.jpg": {
     "width": 1638,
     "height": 2048
   },
-  "/Portfolio/Sektion/EVENT_03/_NZ81742.jpg": {
+  "/Portfolio/Sektion/EXTRA/_NZ81742.jpg": {
     "width": 1638,
     "height": 2048
   },
@@ -674,9 +714,5 @@
   "/Portfolio/Wh/cover.jpg": {
     "width": 2048,
     "height": 1365
-  },
-  "/About/creative-direction-cover.jpg": {
-    "width": 1024,
-    "height": 1536
   }
 }

@@ -674,6 +674,11 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_1a.jpg",
+        "alt": "Sektion Event 1 live atmosphere"
+      },
+      {
+        "type": "image",
         "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_2.jpeg",
         "alt": "Sektion Event 1 live atmosphere"
       },
@@ -705,11 +710,6 @@ export const projects: WorkProject[] = [
       {
         "type": "image",
         "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_8.jpg",
-        "alt": "Sektion Event 1 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_01/Sektion_Event_01_9.jpg",
         "alt": "Sektion Event 1 live atmosphere"
       },
       {
@@ -794,18 +794,68 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_03/_NZ80892.jpg",
-        "alt": "Sektion Event 3: artists, guests and live atmosphere, photograph 1"
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ89972.jpg",
+        "alt": "Sektion Event 03 live atmosphere"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_03/_NZ81527-Edit.jpg",
-        "alt": "Sektion Event 3: artists, guests and live atmosphere, photograph 4"
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ89745.jpg",
+        "alt": "Sektion Event 03 live atmosphere"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_03/_NZ81742.jpg",
-        "alt": "Guest in sunglasses under red and green lighting at Sektion Event 03"
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ89773.jpg",
+        "alt": "Sektion Event 03 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ89862.jpg",
+        "alt": "Sektion Event 03 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ89867.jpg",
+        "alt": "Sektion Event 03 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ89885.jpg",
+        "alt": "Sektion Event 03 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ89896.jpg",
+        "alt": "Sektion Event 03 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ89924.jpg",
+        "alt": "Sektion Event 03 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_03/_NZ89997.jpg",
+        "alt": "Sektion Event 03 live atmosphere"
+      },
+      {
+        "type": "text",
+        "title": "More Moments",
+        "body": "A few more moments from a Sektion night, captured in the music, movement, and energy of the crowd."
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EXTRA/_NZ80892.jpg",
+        "alt": "Sektion event crowd and live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EXTRA/_NZ81527-Edit.jpg",
+        "alt": "Sektion event portrait in the venue"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EXTRA/_NZ81742.jpg",
+        "alt": "Guest in sunglasses under red and green lighting at Sektion"
       }
     ],
     "tags": [
