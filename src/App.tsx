@@ -1,6 +1,7 @@
 import { useSliderNavigation } from './hooks/useSliderNavigation';
 import { PortfolioPlaybackContext } from './contexts/PortfolioPlaybackContext';
 import PortfolioImage from './components/PortfolioImage';
+import IntroScreen from './components/IntroScreen';
 import SliderNavigation from './components/SliderNavigation';
 import { useRef, useEffect, useLayoutEffect, useState, useCallback } from 'react';
 import './App.css';
@@ -9,7 +10,6 @@ import { slideByTile } from './utils/slideByTile';
 import { projects } from './data/workDatabase';
 import WorkPage from './components/WorkPage';
 import AboutPage from './components/AboutPage';
-import IntroScreen from './components/IntroScreen';
 
 function readPath() {
   const navigationEntries = typeof performance.getEntriesByType === 'function'
@@ -102,7 +102,6 @@ function App() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const backgroundPaused = workVisible || aboutVisible;
-  const [backgroundReady, setBackgroundReady] = useState(false);
   const [showPlayButton, setShowPlayButton] = useState(false);
   const [isMusicOn, setIsMusicOn] = useState(false);
 
@@ -164,7 +163,7 @@ function App() {
   return (
     <PortfolioPlaybackContext.Provider value={reportVideoPlayback}>
     <div className={`App${workVisible || aboutVisible ? ' is-work-visible' : ''}`}>
-      <IntroScreen ready={backgroundReady || showPlayButton || backgroundPaused} />
+      <IntroScreen />
       <div className="video-container" style={{ backgroundImage: "url('/BackgroundVideo-poster-v1.jpg')" }}>
         <video
           ref={videoRef}
@@ -184,7 +183,6 @@ function App() {
             else setShowPlayButton(false);
           }}
           onCanPlay={ensureVideoPlaying}
-          onPlaying={() => setBackgroundReady(true)}
           onError={() => setShowPlayButton(true)}
           onPause={() => {
             if (backgroundPaused) return;
@@ -357,14 +355,14 @@ function App() {
                   <h2>VISUAL DIRECTION <br/> FOR ARTISTS AND <br/> LIVE MOMENTS.</h2>
                   <p>Photography, film and brand direction. From artists and live performances to independent projects, we turn the moment into visuals that stay under your skin.</p>
                 </div>
-                {projects.map((project) => (
+                {projects.map((project, index) => (
                   <a className="work-tile project-tile" href={`/work/${encodeURIComponent(project.slug)}`} onClick={event => {
                     if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
                       event.preventDefault();
                       navigate(`/work/${encodeURIComponent(project.slug)}`);
                     }
                   }} key={project.slug} draggable={false}>
-                    <PortfolioImage src={project.cover} alt={`${project.title} portfolio`} />
+                    <PortfolioImage src={project.cover} alt={`${project.title} portfolio`} eager={index === 0} />
                     <div className="tile-caption"><span>{project.title}</span></div>
                   </a>
                 ))}

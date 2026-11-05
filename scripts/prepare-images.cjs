@@ -1,10 +1,8 @@
 require('./discover-youtube.cjs');
 const { spawnSync } = require('child_process');
-// Originals stay in the ignored .image-originals directory outside public/.
-if (process.platform === 'darwin') {
-  const result = spawnSync('python3', ['scripts/optimize_images.py'], { stdio: 'inherit' });
-  if (result.error) throw result.error;
-  if (result.status !== 0) process.exit(result.status ?? 1);
-}
-// Also enforce the limit on non-macOS deployment hosts.
+// Responsive variants are generated locally in the build filesystem, then
+// copied into the static site artifact. Originals remain untouched.
+const variants = spawnSync('python3', ['scripts/generate-image-variants.py'], { stdio: 'inherit' });
+if (variants.error) throw variants.error;
+if (variants.status !== 0) process.exit(variants.status ?? 1);
 require('./check-images.cjs');

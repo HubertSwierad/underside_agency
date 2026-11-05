@@ -25,6 +25,11 @@ yarn-error.log*
 # Full-resolution backups created by the image optimizer
 /.image-originals/
 
+# Responsive WebP renditions generated locally or during the deployment build
+*-800w.webp
+*-1600w.webp
+*-2200w.webp
+
 # Optional local source-photo folders (never place originals under public/)
 /originals/
 /original-assets/

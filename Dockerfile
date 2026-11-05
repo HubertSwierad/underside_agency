@@ -1,5 +1,6 @@
 FROM node:18-alpine AS builder
 WORKDIR /app
+RUN apk add --no-cache python3 libwebp-tools
 
 COPY package.json package-lock.json ./
 RUN npm ci
