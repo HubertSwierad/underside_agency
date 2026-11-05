@@ -729,6 +729,11 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_9.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
         "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_11.jpg",
         "alt": "Sektion Event 2 live atmosphere"
       },
@@ -745,16 +750,6 @@ export const projects: WorkProject[] = [
       {
         "type": "image",
         "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_14.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_2.jpg",
-        "alt": "Sektion Event 2 live atmosphere"
-      },
-      {
-        "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_3.jpg",
         "alt": "Sektion Event 2 live atmosphere"
       },
       {
@@ -779,12 +774,17 @@ export const projects: WorkProject[] = [
       },
       {
         "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_8.jpg",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_2.jpg",
         "alt": "Sektion Event 2 live atmosphere"
       },
       {
         "type": "image",
-        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_9.jpg",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_3.jpg",
+        "alt": "Sektion Event 2 live atmosphere"
+      },
+      {
+        "type": "image",
+        "src": "/Portfolio/Sektion/EVENT_02/Sektion_Event_02_8.jpg",
         "alt": "Sektion Event 2 live atmosphere"
       },
       {
