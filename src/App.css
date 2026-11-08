@@ -45,10 +45,23 @@ button {
   /* block user interaction with native controls */
 }
 
-/* Remove Safari's native paused-video overlay while the About or Work panel is open. */
-
-.is-work-visible .video-container > video {
+.use-poster-background .video-container > video {
   display: none;
+}
+
+.video-frame-fallback,
+.video-frame-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.video-frame-overlay {
+  z-index: 2;
 }
 
 /* Hide native controls overlays in Safari / WebKit */
@@ -151,16 +164,6 @@ button {
   justify-content: center;
   cursor: pointer;
   padding: 0;
-}
-
-.wait-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  pointer-events: none;
 }
 
 /* Default: mobile */

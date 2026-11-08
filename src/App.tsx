@@ -100,10 +100,45 @@ function App() {
   };
 
   const videoRef = useRef<HTMLVideoElement>(null);
+  const frameOverlayRef = useRef<HTMLCanvasElement>(null);
+  const lastBackgroundFrame = useRef<number | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const backgroundPaused = workVisible || aboutVisible;
   const [showPlayButton, setShowPlayButton] = useState(false);
   const [isMusicOn, setIsMusicOn] = useState(false);
+  const [hasVideoPlayed, setHasVideoPlayed] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const canvas = frameOverlayRef.current;
+    if (!showPlayButton || backgroundPaused || !video || !canvas) return;
+
+    const captureFrame = () => {
+      if (!Number.isFinite(video.duration) || video.duration <= 1 || !video.videoWidth || !video.videoHeight) return;
+      const range = Math.max(0, video.duration - 0.5);
+      let frameTime = Math.random() * range;
+      if (lastBackgroundFrame.current !== null && range > 1) {
+        while (Math.abs(frameTime - lastBackgroundFrame.current) < 1) frameTime = Math.random() * range;
+      }
+      lastBackgroundFrame.current = frameTime;
+      const drawFrame = () => {
+        const scale = Math.min(1, 1280 / video.videoWidth);
+        canvas.width = Math.round(video.videoWidth * scale);
+        canvas.height = Math.round(video.videoHeight * scale);
+        const context = canvas.getContext('2d');
+        if (context) context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      };
+      video.addEventListener('seeked', drawFrame, { once: true });
+      video.currentTime = frameTime;
+    };
+
+    if (video.readyState >= 1) captureFrame();
+    else video.addEventListener('loadedmetadata', captureFrame, { once: true });
+
+    return () => {
+      video.removeEventListener('loadedmetadata', captureFrame);
+    };
+  }, [showPlayButton, backgroundPaused]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -120,7 +155,22 @@ function App() {
     if (!video) return;
     if (backgroundPaused) {
       video.pause();
-      return;
+      if (!hasVideoPlayed) return;
+      const selectRandomFrame = () => {
+        if (!Number.isFinite(video.duration) || video.duration <= 1) return;
+        const lastTime = Math.max(0, video.duration - 0.5);
+        let nextTime = Math.random() * lastTime;
+        if (lastBackgroundFrame.current !== null && lastTime > 1) {
+          while (Math.abs(nextTime - lastBackgroundFrame.current) < 1) {
+            nextTime = Math.random() * lastTime;
+          }
+        }
+        lastBackgroundFrame.current = nextTime;
+        video.currentTime = nextTime;
+      };
+      if (video.readyState >= 1) selectRandomFrame();
+      else video.addEventListener('loadedmetadata', selectRandomFrame, { once: true });
+      return () => video.removeEventListener('loadedmetadata', selectRandomFrame);
     }
     let cancelled = false;
     video.muted = true;
@@ -128,7 +178,7 @@ function App() {
       .then(() => { if (!cancelled) setShowPlayButton(false); })
       .catch(() => { if (!cancelled) setShowPlayButton(true); });
     return () => { cancelled = true; };
-  }, [backgroundPaused]);
+  }, [backgroundPaused, path, hasVideoPlayed]);
 
   const ensureVideoPlaying = async () => {
     const video = videoRef.current;
@@ -162,7 +212,7 @@ function App() {
 
   return (
     <PortfolioPlaybackContext.Provider value={reportVideoPlayback}>
-    <div className={`App${workVisible || aboutVisible ? ' is-work-visible' : ''}`}>
+    <div className={`App${workVisible || aboutVisible ? ' is-work-visible' : ''}${backgroundPaused && !hasVideoPlayed ? ' use-poster-background' : ''}`}>
       <IntroScreen />
       <div className="video-container" style={{ backgroundImage: "url('/BackgroundVideo-poster-v1.jpg')" }}>
         <video
@@ -180,7 +230,10 @@ function App() {
           preload="auto"
           onPlay={event => {
             if (backgroundPaused) event.currentTarget.pause();
-            else setShowPlayButton(false);
+            else {
+              setHasVideoPlayed(true);
+              setShowPlayButton(false);
+            }
           }}
           onCanPlay={ensureVideoPlaying}
           onError={() => setShowPlayButton(true)}
@@ -203,15 +256,13 @@ function App() {
           <source src="/BackgroundVideo-compressed-v1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <audio ref={audioRef} src="/Music.mp3" preload="auto" loop />
         {showPlayButton && !backgroundPaused && (
-          <img
-            className="wait-overlay"
-            src="/Wait.png"
-            alt="Waiting placeholder"
-            aria-hidden="true"
-          />
+          <>
+            <img className="video-frame-fallback" src="/BackgroundVideo-poster-v1.jpg" alt="" aria-hidden="true" />
+            <canvas ref={frameOverlayRef} className="video-frame-overlay" aria-hidden="true" />
+          </>
         )}
+        <audio ref={audioRef} src="/Music.mp3" preload="auto" loop />
         <div className="controls-bar" aria-hidden={false}>
           {showPlayButton && !backgroundPaused && (
               <button
