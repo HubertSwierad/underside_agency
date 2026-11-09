@@ -413,8 +413,8 @@ function App() {
                   if (drag.current.moved) { event.preventDefault(); event.stopPropagation(); drag.current.moved = false; }
                 }}>
                 <div className="work-intro work-tile-description">
-                  <h2>SELECTED WORK <br/> FOR MUSIC, CULTURE <br/> AND INDEPENDENT BRANDS.</h2>
-                  <p>Visual identity, photography and film shaped by the people, places and ideas behind each project.</p>
+                  <h2>PHOTOGRAPHY, <br/> FILM AND DESIGN.</h2>
+                  <p>Selected projects for music, culture and independent brands, shaped by the people, places and ideas behind them.</p>
                 </div>
                 {projects.map((project, index) => (
                   <a className="work-tile project-tile" href={`/work/${encodeURIComponent(project.slug)}`} onClick={event => {
