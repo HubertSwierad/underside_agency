@@ -16,7 +16,7 @@ test('shows and hides work with a service introduction and linked project covers
   expect(toggle).toHaveAttribute('aria-expanded', 'false');
   fireEvent.click(toggle);
   expect(screen.getByRole('button', { name: 'WORK' })).toHaveAttribute('aria-expanded', 'true');
-  expect(screen.getByRole('heading', { name: /visual direction for artists and live moments./i })).toBeVisible();
+  expect(screen.getByRole('heading', { name: /selected work for music, culture and independent brands./i })).toBeVisible();
   expect(screen.getByRole('link', { name: /HORIZON FESTIVAL portfolio HORIZON FESTIVAL/ })).toHaveAttribute('href', '/work/horizon-festival');
   expect(screen.getByRole('link', { name: /SEKTION portfolio SEKTION/ })).toHaveAttribute('href', '/work/sektion');
   fireEvent.click(toggle);
@@ -29,14 +29,14 @@ test('opens a project directly from its portfolio address', async () => {
   expect(screen.getByRole('heading', { name: 'HORIZON FESTIVAL' })).toBeVisible();
   expect(screen.getByRole('link', { name: 'BACK' })).toHaveAttribute('href', '/work');
   fireEvent.click(screen.getByRole('region', { name: 'Selected work' }));
-  expect(screen.getByRole('heading', { name: /visual direction for artists and live moments./i })).toBeVisible();
+  expect(screen.getByRole('heading', { name: /selected work for music, culture and independent brands./i })).toBeVisible();
 });
 
 
 test('keeps work open inside the slider and closes it when the backdrop is clicked', async () => {
   await act(async () => { render(<App />); });
   fireEvent.click(screen.getByRole('button', { name: 'WORK' }));
-  fireEvent.click(screen.getByRole('heading', { name: /visual direction for artists and live moments./i }));
+  fireEvent.click(screen.getByRole('heading', { name: /selected work for music, culture and independent brands./i }));
   expect(screen.getByRole('button', { name: 'WORK' })).toHaveAttribute('aria-expanded', 'true');
   fireEvent.click(screen.getByRole('region', { name: 'Portfolio slider' }));
   expect(screen.getByRole('button', { name: 'WORK' })).toBeInTheDocument();
@@ -222,7 +222,7 @@ test.each([true, false])('pauses the background video while Work is open and res
     fireEvent.pause(video);
     fireEvent.canPlay(video);
     expect(screen.queryByRole('button', { name: 'PLAY' })).not.toBeInTheDocument();
-    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Włącz muzykę' })); });
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Turn music on' })); });
     expect(play.mock.instances).toEqual([audio]);
     expect(pause).toHaveBeenCalledTimes(1);
     play.mockClear();

@@ -293,7 +293,7 @@ function App() {
           <button
               type="button"
               className="music-overlay"
-              aria-label={isMusicOn ? 'Wyłącz muzykę' : 'Włącz muzykę'}
+              aria-label={isMusicOn ? 'Turn music off' : 'Turn music on'}
               onClick={toggleMusic}
           >
             {isMusicOn ? 'SOUND: ON' : 'SOUND: OFF'}
@@ -413,8 +413,8 @@ function App() {
                   if (drag.current.moved) { event.preventDefault(); event.stopPropagation(); drag.current.moved = false; }
                 }}>
                 <div className="work-intro work-tile-description">
-                  <h2>VISUAL DIRECTION <br/> FOR ARTISTS AND <br/> LIVE MOMENTS.</h2>
-                  <p>Photography, film and brand direction. From artists and live performances to independent projects, we turn the moment into visuals that stay under your skin.</p>
+                  <h2>SELECTED WORK <br/> FOR MUSIC, CULTURE <br/> AND INDEPENDENT BRANDS.</h2>
+                  <p>Visual identity, photography and film shaped by the people, places and ideas behind each project.</p>
                 </div>
                 {projects.map((project, index) => (
                   <a className="work-tile project-tile" href={`/work/${encodeURIComponent(project.slug)}`} onClick={event => {
