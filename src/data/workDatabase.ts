@@ -28,7 +28,7 @@ export const projects: WorkProject[] = [
     "title": "HORIZON FESTIVAL",
     "year": "2025/2026",
     "cover": "/Portfolio/Horizon/cover.jpeg",
-    "story": "We gave Horizon’s electronic sound a visual presence through identity, photography and film. A distinct world beyond the big cities, built around the pull of gathering for music.",
+    "story": "Horizon Festival is an electronic music gathering in Herning. The project spans its visual identity and art direction, event photography, and an introductory campaign film.",
     "media": [
       {
         "type": "text",
@@ -173,10 +173,10 @@ export const projects: WorkProject[] = [
       }
     ],
     "tags": [
-      "PHOTO",
-      "BRAND DIRECTION",
+      "EVENT PHOTOGRAPHY",
+      "VISUAL IDENTITY",
       "ART DIRECTION",
-      "VIDEO"
+      "CAMPAIGN FILM"
     ]
   },
   {
@@ -184,12 +184,12 @@ export const projects: WorkProject[] = [
     "title": "VALI THEATER LAB",
     "year": "2025/2026",
     "cover": "/Portfolio/Vali/spectacl 2025/cover.jpg",
-    "story": "Through Vali Theater Lab’s workshops and performances in 2025 and 2026, we photographed imagined worlds taking shape. Traces of movement, rehearsal and shared attention give the work a life beyond the stage.",
+    "story": "Vali Theater Lab’s 2025–26 programme combined workshops and stage performances. The work covered event photography and campaign films documenting the creative process and public performances.",
     "media": [
       {
         "type": "text",
         "title": "Campaign films",
-        "body": "We created campaign films to showcase Vali Theater Lab’s work, bringing their creative process, performances and collective spirit to a wider audience."
+        "body": "Campaign films bring Vali Theater Lab’s creative process and performances to a wider audience, carrying the energy of the collective beyond the room."
       },
       {
         "type": "youtube",
@@ -206,7 +206,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Performance 2025",
-        "body": "Light, costume and gesture carry the story. Our photographs preserve fragments of a world briefly shared by performers and audience."
+        "body": "Light, costume and gesture carry the story. Photographs preserve fragments of a world briefly shared by performers and audience."
       },
       {
         "type": "image",
@@ -346,7 +346,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Performance 2026",
-        "body": "Rooms, corridors and outdoor spaces become a stage. We followed performers and audience through a familiar building transformed by theatre."
+        "body": "Rooms, corridors and outdoor spaces become a stage as performers and audience move through a familiar building transformed by theatre."
       },
       {
         "type": "image",
@@ -434,8 +434,8 @@ export const projects: WorkProject[] = [
       }
     ],
     "tags": [
-      "PHOTO",
-      "VIDEO"
+      "EVENT PHOTOGRAPHY",
+      "CAMPAIGN FILM"
     ]
   },
   {
@@ -443,7 +443,7 @@ export const projects: WorkProject[] = [
     "title": "CAMILA LADING",
     "year": "2026",
     "cover": "/Portfolio/Camila Lading/_NZ83345.jpg",
-    "story": "An editorial fashion campaign for Camila Landing. Portraits trace the collection’s sculptural knitwear, reconstructed denim and the quiet confidence of the people wearing them.",
+    "story": "A fashion campaign for Camila Lading, presenting its sculptural knitwear and reconstructed denim through editorial photography.",
     "media": [
       {
         "type": "text",
@@ -458,7 +458,7 @@ export const projects: WorkProject[] = [
       {
         "type": "image",
         "src": "/Portfolio/Camila Lading/_NZ82881.jpg",
-        "alt": "Two models wearing layered Camila Landing looks"
+        "alt": "Two models wearing layered Camila Lading looks"
       },
       {
         "type": "image",
@@ -468,7 +468,7 @@ export const projects: WorkProject[] = [
       {
         "type": "image",
         "src": "/Portfolio/Camila Lading/Edit14.jpg",
-        "alt": "Close portrait of two models wearing layered Camila Landing looks"
+        "alt": "Close portrait of two models wearing layered Camila Lading looks"
       },
       {
         "type": "image",
@@ -492,9 +492,7 @@ export const projects: WorkProject[] = [
       }
     ],
     "tags": [
-      "FASHION",
-      "CAMPAIGN",
-      "PHOTO"
+      "CAMPAIGN PHOTOGRAPHY"
     ]
   },
   {
@@ -502,10 +500,10 @@ export const projects: WorkProject[] = [
     "title": "VIA FASHION SHOW",
     "year": "2025",
     "cover": "/Portfolio/FASHION SHOW/watch?v=pepfv6cDHf8.jpg",
-    "story": "Silhouette, pace and atmosphere. Our film of the 2025 fashion show carries the designs beyond the runway, preserving their expression in motion.",
+    "story": "Film coverage of VIA’s 2025 fashion show, capturing the runway presentation and carrying the collection beyond the event.",
     "media": [],
     "tags": [
-      "VIDEO"
+      "EVENT FILM"
     ]
   },
   {
@@ -513,7 +511,7 @@ export const projects: WorkProject[] = [
     "title": "FREEWHEELIN",
     "year": "2026",
     "cover": "/Portfolio/Wh/cover.jpg",
-    "story": "From stockroom rituals to conversations across the counter, our photographs reveal the people and everyday care that give Freewheelin its character.",
+    "story": "Freewheelin is an independent bike shop. Commercial photography covers its retail space, staff and order-preparation process, showing the people and daily work behind the brand.",
     "media": [
       {
         "type": "text",
@@ -613,7 +611,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Behind the counter",
-        "body": "Selecting, sorting, packing. We brought the care behind each order into the shop’s visible story."
+        "body": "Selecting, sorting, packing. The details reveal the care behind each order."
       },
       {
         "type": "image",
@@ -647,7 +645,7 @@ export const projects: WorkProject[] = [
       }
     ],
     "tags": [
-      "PHOTO"
+      "COMMERCIAL PHOTOGRAPHY"
     ]
   },
   {
@@ -655,12 +653,12 @@ export const projects: WorkProject[] = [
     "title": "SEKTION",
     "year": "2025",
     "cover": "/Portfolio/Sektion/cover.jpg",
-    "story": "Three gatherings, three rhythms. Through artists, crowds and shared spaces, our photographs trace the encounters that give Sektion’s scene its life.",
+    "story": "Event photography for three Sektion music gatherings in 2025, documenting the artists, audience and exchanges across each night.",
     "media": [
       {
         "type": "text",
         "title": "Event 01",
-        "body": "Between the decks and the crowd, a room responds. We photographed the exchange that makes a night feel collective."
+        "body": "Between the decks and the crowd, a room responds. The exchange makes a night feel collective."
       },
       {
         "type": "image",
@@ -785,7 +783,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Event 03",
-        "body": "Behind the booth and across the dance floor, we followed the gestures and encounters that gave the night its character."
+        "body": "Behind the booth and across the dance floor, gestures and encounters give the night its character."
       },
       {
         "type": "image",
@@ -854,7 +852,7 @@ export const projects: WorkProject[] = [
       }
     ],
     "tags": [
-      "PHOTO"
+      "EVENT PHOTOGRAPHY"
     ]
   },
   {
@@ -862,9 +860,9 @@ export const projects: WorkProject[] = [
     "title": "HERNING ROCKER",
     "year": "2025",
     "cover": "/Portfolio/Herning Rocker/cover.jpg",
-    "story": "Raised hands, stage smoke, singers sharing the light. Our photographs of Herning Rocker hold the physical intensity of live music after the stage falls quiet.",
+    "story": "Live music photography for Herning Rocker, documenting the artists, audience and energy of its performances.",
     "tags": [
-      "PHOTO"
+      "EVENT PHOTOGRAPHY"
     ],
     "media": [
       {
@@ -914,12 +912,12 @@ export const projects: WorkProject[] = [
     "title": "SONA",
     "year": "2026",
     "cover": "/Portfolio/Sona/cover.jpg",
-    "story": "Hands on a mixer, ideas exchanged, music made together. Photography across three workshops and a film from the second bring Sona’s shared learning experience into view.",
+    "story": "Sona’s collaborative music workshops bring participants together to learn and make music. Photography across three sessions and a film from the second document that shared process.",
     "media": [
       {
         "type": "text",
         "title": "Workshop 01",
-        "body": "Hands on the mixer, ears on the music. We photographed the small experiments that make learning together visible."
+        "body": "Hands on the mixer, ears on the music. Small experiments make learning together visible."
       },
       {
         "type": "image",
@@ -974,7 +972,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Workshop 02",
-        "body": "At the decks and in the conversations around them, our photographs follow music becoming something shared."
+        "body": "At the decks and in the conversations around them, music becomes something shared."
       },
       {
         "type": "image",
@@ -1014,7 +1012,7 @@ export const projects: WorkProject[] = [
       {
         "type": "text",
         "title": "Workshop 03",
-        "body": "Watching, questioning, trying again. We followed the exchanges through which the workshop’s learning took shape."
+        "body": "Watching, questioning, trying again. The exchanges are where the workshop’s learning takes shape."
       },
       {
         "type": "image",
@@ -1061,8 +1059,8 @@ export const projects: WorkProject[] = [
       }
     ],
     "tags": [
-      "PHOTO",
-      "VIDEO"
+      "WORKSHOP PHOTOGRAPHY",
+      "WORKSHOP FILM"
     ]
   },
   {
@@ -1070,9 +1068,9 @@ export const projects: WorkProject[] = [
     "title": "NIKITA",
     "year": "2026",
     "cover": "/Portfolio/NIKITA/watch?v=BLn4uTtfIpU.jpg",
-    "story": "We filmed Nikita’s performance through its gestures, movement and atmosphere, giving a fleeting presence lasting form and another space to be encountered.",
+    "story": "A performance film for Nikita, documenting a live performance through its movement, gestures and atmosphere.",
     "tags": [
-      "VIDEO"
+      "PERFORMANCE FILM"
     ],
     "media": []
   }
