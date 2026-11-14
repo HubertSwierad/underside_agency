@@ -1,0 +1,14 @@
+.portfolio-image {
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+
+.portfolio-image.is-loaded {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-image {
+    transition-duration: 0.01ms;
+  }
+}
