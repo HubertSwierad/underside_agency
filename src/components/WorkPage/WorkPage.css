@@ -40,17 +40,19 @@
   gap: 12px;
 }
 
-.project-media-slide img {
-  display: block;
-  position: static;
+.project-media-slide .portfolio-image-frame {
   width: auto;
   height: var(--work-tile-height);
   max-width: none;
   flex: none;
+}
+
+.project-media-slide .portfolio-image,
+.project-media-slide .portfolio-image-placeholder {
   object-fit: contain;
 }
 
-.project-media-slide:has(figcaption) img {
+.project-media-slide:has(figcaption) .portfolio-image-frame {
   height: calc(var(--work-tile-height) - 28px);
 }
 

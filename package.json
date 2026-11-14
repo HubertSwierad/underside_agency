@@ -24,7 +24,8 @@
     "images:optimize": "python3 scripts/optimize_images.py",
     "prebuild": "node scripts/prepare-images.cjs",
     "prestart": "node scripts/discover-youtube.cjs",
-    "images:check": "node scripts/check-images.cjs"
+    "images:check": "node scripts/check-images.cjs",
+    "images:placeholders": "python3 scripts/generate-image-placeholders.py"
   },
   "eslintConfig": {
     "extends": [

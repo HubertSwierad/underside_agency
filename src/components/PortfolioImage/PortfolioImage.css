@@ -1,3 +1,20 @@
+.portfolio-image-frame {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  flex: none;
+}
+
+.portfolio-image-placeholder,
+.portfolio-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: inherit;
+}
+
 .portfolio-image {
   opacity: 0;
   transition: opacity 600ms ease;

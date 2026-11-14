@@ -146,9 +146,13 @@
   gap: 12px;
 }
 
-.project-tile img {
+.project-tile .portfolio-image-frame {
   width: 100%;
   height: calc(100% - 28px);
+}
+
+.project-tile .portfolio-image,
+.project-tile .portfolio-image-placeholder {
   object-fit: cover;
   pointer-events: none;
 }
@@ -188,7 +192,7 @@
 }
 
 @media (hover: hover) {
-  .project-tile:hover img {
+  .project-tile:hover .portfolio-image-frame {
     outline: 1px solid white;
     outline-offset: -1px;
   }

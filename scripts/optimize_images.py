@@ -81,15 +81,17 @@ def main():
     # Reserve the correct image proportions before lazy-loaded files arrive.
     if args.directory.resolve() == (ROOT / 'public' / 'Portfolio').resolve():
         dimensions = {}
-        for path in files:
-            info = subprocess.run(['sips', '-g', 'pixelWidth', '-g', 'pixelHeight', str(path)],
-                                  check=True, capture_output=True, text=True).stdout
-            values = [int(value) for value in re.findall(r'pixel(?:Width|Height):\s*(\d+)', info)]
-            if len(values) != 2:
-                raise RuntimeError(f'Could not read dimensions: {path}')
-            dimensions['/' + path.relative_to(ROOT / 'public').as_posix()] = dict(width=values[0], height=values[1])
+        for directory in (ROOT / 'public' / 'Portfolio', ROOT / 'public' / 'About'):
+            image_files = sorted(p for p in directory.rglob('*') if p.is_file() and p.suffix.lower() in {'.jpg', '.jpeg', '.png'})
+            for path in image_files:
+                info = subprocess.run(['sips', '-g', 'pixelWidth', '-g', 'pixelHeight', str(path)],
+                                      check=True, capture_output=True, text=True).stdout
+                values = [int(value) for value in re.findall(r'pixel(?:Width|Height):\s*(\d+)', info)]
+                if len(values) != 2:
+                    raise RuntimeError(f'Could not read dimensions: {path}')
+                dimensions['/' + path.relative_to(ROOT / 'public').as_posix()] = dict(width=values[0], height=values[1])
         (ROOT / 'src' / 'data' / 'imageDimensions.json').write_text(json.dumps(dimensions, indent=2) + '\n')
-        print('Updated image dimensions for stable lazy-loaded tiles.')
+        print('Updated image dimensions for portfolio and About tiles.')
 
 
 

@@ -710,5 +710,33 @@
   "/Portfolio/Wh/cover.jpg": {
     "width": 2048,
     "height": 1365
+  },
+  "/About/creative-direction-campaign-design.jpg": {
+    "width": 2000,
+    "height": 1500
+  },
+  "/About/creative-direction-cover.jpg": {
+    "width": 1024,
+    "height": 1536
+  },
+  "/About/creative-direction-music-visuals-poster.jpg": {
+    "width": 2160,
+    "height": 3840
+  },
+  "/About/digital-expirience-website-design.jpeg": {
+    "width": 1024,
+    "height": 768
+  },
+  "/About/digital-expirience-website-development.jpg": {
+    "width": 3384,
+    "height": 2659
+  },
+  "/About/hubert.jpg": {
+    "width": 1166,
+    "height": 1036
+  },
+  "/About/underside-team.jpg": {
+    "width": 1600,
+    "height": 1066
   }
 }

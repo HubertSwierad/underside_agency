@@ -119,12 +119,15 @@
   gap: 12px;
 }
 
-.about-media-slide img {
-  display: block;
+.about-media-slide .portfolio-image-frame {
   width: auto;
   height: var(--about-media-height);
   max-width: none;
   flex: none;
+}
+
+.about-media-slide .portfolio-image,
+.about-media-slide .portfolio-image-placeholder {
   object-fit: contain;
 }
 

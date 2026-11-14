@@ -26,7 +26,6 @@ export const aboutTiles: AboutTile[] = [
   { type: 'localVideo', src: '/About/horizon_logo.mp4', poster: '/Portfolio/Horizon/web/identity.jpg', title: 'Horizon visual identity', caption: 'BRAND IDENTITY', aspectRatio: 4 / 5, hasAudio:false},
   { type: 'image', src: '/About/creative-direction-campaign-design.jpg', alt: 'Creative direction and campaign design artwork', caption: 'CAMPAIGNS' },
   { type: 'image', src: '/About/creative-direction-cover.jpg', alt: 'Creative direction for music cover artwork', caption: 'ARTWORK' },
-  { type: 'localVideo', src: '/About/creative-direction-music-visuals.mp4', poster: '/About/creative-direction-music-visuals-poster.jpg', title: 'Creative direction for music visuals', caption: 'MUSIC FILM', aspectRatio: 9 / 16 },
 
   { type: 'text', title: 'Digital Design & Development', body: 'A website extends a project into a space of its own. Design and development bring it to life. Ongoing support and maintenance keep it clear, current and working well beyond launch.' },
   { type: 'image', src: '/About/digital-expirience-website-development.jpg', alt: 'Festival website displayed on a laptop', caption: 'DIGITAL EXPERIENCE' },

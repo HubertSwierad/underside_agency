@@ -35,6 +35,7 @@ function App() {
       : current.includes(id) ? current.filter(value => value !== id) : current);
   }, []);
   const [path, setPath] = useState(readPath);
+  const [nextCoverIndex, setNextCoverIndex] = useState(0);
   let projectSlug = '';
   if (path.startsWith('/work/')) {
     try { projectSlug = decodeURIComponent(path.slice('/work/'.length)); } catch { /* Invalid address has no selected project. */ }
@@ -423,7 +424,9 @@ function App() {
                       navigate(`/work/${encodeURIComponent(project.slug)}`);
                     }
                   }} key={project.slug} draggable={false}>
-                    <PortfolioImage src={project.cover} alt={`${project.title} portfolio`} eager={index === 0} />
+                    <PortfolioImage src={project.cover} alt={`${project.title} portfolio`} eager={index === 0}
+                      loadEnabled={index <= nextCoverIndex}
+                      onLoaded={() => setNextCoverIndex(current => current === index ? index + 1 : current)} />
                     <div className="tile-caption"><span>{project.title}</span></div>
                   </a>
                 ))}

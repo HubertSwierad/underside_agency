@@ -25,9 +25,13 @@ About owns its layout styles independently from Work. Shared video and slider na
 
 Published media lives in `public/About/` and `public/Portfolio/`. Edit the data files to change tile content and order.
 
-- `npm run images:optimize` — optimize portfolio photos and update image dimensions. Requires Python and macOS image tools.
+- `npm run images:optimize` — optimize oversized portfolio photos and refresh dimensions for Portfolio and About images. Requires Python and macOS image tools.
+- `npm run images:placeholders` — regenerate the tiny embedded WebP previews used while full images load. Writes `src/data/imagePlaceholders.json`; requires `cwebp` and up-to-date dimensions in `src/data/imageDimensions.json`.
+- `npm run build` also regenerates responsive WebP variants and image placeholders automatically.
 - `npm run images:check` — check that portfolio photos stay within 500 KB.
 - YouTube covers named `watch?v=VIDEO_ID.jpg` (or PNG/WebP) are discovered automatically before development and production builds.
+
+When adding or replacing About or Portfolio images, refresh their dimensions with `npm run images:optimize`, then regenerate previews with `npm run images:placeholders`. The build regenerates placeholders from the current source images as well.
 
 Image optimization keeps originals in the ignored `.image-originals/` directory. Optional source assets belong in `originals/` or `original-assets/`, outside the published `public/` directory.
 

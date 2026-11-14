@@ -5,4 +5,7 @@ const { spawnSync } = require('child_process');
 const variants = spawnSync('python3', ['scripts/generate-image-variants.py'], { stdio: 'inherit' });
 if (variants.error) throw variants.error;
 if (variants.status !== 0) process.exit(variants.status ?? 1);
+const placeholders = spawnSync('python3', ['scripts/generate-image-placeholders.py'], { stdio: 'inherit' });
+if (placeholders.error) throw placeholders.error;
+if (placeholders.status !== 0) process.exit(placeholders.status ?? 1);
 require('./check-images.cjs');
