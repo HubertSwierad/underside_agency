@@ -151,6 +151,17 @@
   height: calc(100% - 28px);
 }
 
+.project-tile .portfolio-image-frame::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border: 1px solid white;
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
 .project-tile .portfolio-image,
 .project-tile .portfolio-image-placeholder {
   object-fit: cover;
@@ -192,9 +203,15 @@
 }
 
 @media (hover: hover) {
-  .project-tile:hover .portfolio-image-frame {
-    outline: 1px solid white;
-    outline-offset: -1px;
+  .project-tile:hover .portfolio-image-frame::after,
+  .project-tile:focus-visible .portfolio-image-frame::after {
+    opacity: 1;
+  }
+}
+
+@media (hover: none) {
+  .project-tile:focus-visible .portfolio-image-frame::after {
+    opacity: 1;
   }
 }
 
