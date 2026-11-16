@@ -15,7 +15,7 @@ export const aboutTiles: AboutTile[] = [
   { type: 'image', src: '/Portfolio/Vali/workshops 2026/_NZ82384.jpg', alt: 'Vali Theater Lab participants moving together during a workshop', caption: 'EVENT DOCUMENTATION' },
   { type: 'image', src: '/Portfolio/Camila Lading/_NZ83345.jpg', alt: 'Camila Lading fashion campaign portrait with two models in expressive layered looks', caption: 'FASHION CAMPAIGNS' },
   { type: 'image', src: '/Portfolio/Horizon/E0081C03-722E-484D-933A-857F6D62EF38_1_102_o.jpeg', alt: 'Feunea performing live in vivid stage light', caption: 'ARTIST PORTRAITS' },
-  { type: 'image', src: '/Portfolio/Wh/_NZ89013.jpg', alt: 'Freewheelin staff member pictured inside the shop', caption: 'BRAND PORTRAITURE' },
+  { type: 'image', src: '/Portfolio/Wh/cover.jpg', alt: 'Freewheelin staff member pictured inside the shop', caption: 'BRAND PORTRAITURE' },
 
   { type: 'text', title: 'Film Production', body: 'Music, movement and atmosphere shape films that preserve the energy of a live moment and give it a life beyond the room.' },
   { type: 'youtubeVideo', src: '/Portfolio/FASHION SHOW/watch?v=pepfv6cDHf8.jpg', url: 'https://www.youtube.com/watch?v=pepfv6cDHf8', title: 'VIA Fashion Show film', caption: 'AFTERMOVIE', linkLabel: 'WATCH ON YOUTUBE' },
