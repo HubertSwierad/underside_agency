@@ -12,9 +12,9 @@ export const aboutTiles: AboutTile[] = [
   { type: 'image', src: '/About/hubert.jpg', alt: 'Hubert Świerad working with photographic prints in a studio', caption: 'HUBERT ŚWIERAD ▪ FOUNDER & CREATIVE DIRECTOR' },
   { type: 'text', title: 'Photography', body: 'Portraits and live moments are approached with an editorial eye. Gesture, light and atmosphere reveal the character of a person, place or performance.' },
   { type: 'image', src: '/Portfolio/Horizon/cover.jpeg', alt: 'Festival performance photographed in warm stage light', caption: 'LIVE PERFORMANCES' },
-  { type: 'image', src: '/Portfolio/Vali/workshops 2026/_NZ82384.jpg', alt: 'Vali Theater Lab participants moving together during a workshop', caption: 'EVENT DOCUMENTATION' },
   { type: 'image', src: '/Portfolio/Camila Lading/_NZ83345.jpg', alt: 'Camila Lading fashion campaign portrait with two models in expressive layered looks', caption: 'FASHION CAMPAIGNS' },
   { type: 'image', src: '/Portfolio/Horizon/E0081C03-722E-484D-933A-857F6D62EF38_1_102_o.jpeg', alt: 'Feunea performing live in vivid stage light', caption: 'ARTIST PORTRAITS' },
+  { type: 'image', src: '/Portfolio/Vali/workshops 2026/_NZ82384.jpg', alt: 'Vali Theater Lab participants moving together during a workshop', caption: 'EVENT DOCUMENTATION' },
   { type: 'image', src: '/Portfolio/Wh/cover.jpg', alt: 'Freewheelin staff member pictured inside the shop', caption: 'BRAND PORTRAITURE' },
 
   { type: 'text', title: 'Film Production', body: 'Music, movement and atmosphere shape films that preserve the energy of a live moment and give it a life beyond the room.' },
